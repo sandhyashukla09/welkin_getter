@@ -981,7 +981,57 @@
     .number-item { border-bottom: 1px solid var(--border); }
     .number-item:nth-child(even) { border-right: none; }
     
-    .section { padding: 4rem 0; }
+    /* Mobile Toggle */
+    .mobile-toggle {
+      display: flex;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      cursor: pointer;
+    }
+    
+    /* Mobile Nav Overlay */
+    .nav-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s var(--ease-out);
+    }
+    .nav-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .nav-overlay a {
+      font-size: 2rem;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      color: var(--text);
+    }
+    .close-nav {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .mobile-toggle { display: none; }
   }
   
   @media (max-width: 480px) {
@@ -1044,6 +1094,7 @@
     <div class="flex items-center gap-md">
       <a href="#contact" class="btn btn-outline" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">Sign In</a>
       <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1.5rem; font-size: 0.85rem;">Get Started</a>
+      <button class="mobile-toggle" id="mobile-toggle"><i data-lucide="menu"></i></button>
     </div>
   </div>
 </nav>
@@ -1867,5 +1918,36 @@
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+</script>
+
+<!-- Mobile Nav Overlay Structure -->
+<div class="nav-overlay" id="nav-overlay">
+  <div class="close-nav" id="close-nav"><i data-lucide="x"></i></div>
+  <a href="#home">Home</a>
+  <a href="#services">Services</a>
+  <a href="#process">Process</a>
+  <a href="#portfolio">Work</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<script>
+  // Mobile Nav Toggle
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const navOverlay = document.getElementById('nav-overlay');
+  const closeNav = document.getElementById('close-nav');
+  const overlayLinks = navOverlay.querySelectorAll('a');
+
+  mobileToggle.addEventListener('click', () => {
+    navOverlay.classList.add('active');
+  });
+
+  const hideOverlay = () => {
+    navOverlay.classList.remove('active');
+  };
+
+  closeNav.addEventListener('click', hideOverlay);
+  overlayLinks.forEach(link => link.addEventListener('click', hideOverlay));
 </script>
 </body>
