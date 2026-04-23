@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -410,31 +410,38 @@
   }
 
   /* ============================================================
-     TRUST TICKER
+     TRUST BADGES (static grid — no motion)
   ============================================================ */
-  .ticker-wrap {
+  .trust-band {
     background: #FFFFFF;
     padding: 2.5rem 0;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-    overflow: hidden;
   }
-  .ticker-track {
+  .trust-grid {
     display: flex;
-    gap: 5rem;
-    animation: ticker 40s linear infinite;
-    width: max-content;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
   }
-  @keyframes ticker {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  .ticker-item {
-    font-weight: 700;
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.75rem 2rem;
+    border-right: 1px solid var(--border);
     color: var(--text2);
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .trust-item:last-child { border-right: none; }
+  .trust-item svg { width: 18px; height: 18px; color: var(--primary); flex-shrink: 0; }
+  @media (max-width: 768px) {
+    .trust-item { border-right: none; border-bottom: 1px solid var(--border); width: 50%; justify-content: center; }
+    .trust-item:nth-child(even) { border-left: 1px solid var(--border); }
+    .trust-item:last-child, .trust-item:nth-last-child(2):nth-child(odd) { border-bottom: none; }
   }
 
 /* ============================================================
@@ -1153,8 +1160,8 @@
         High-performance web applications, custom LMS platforms, and performance-driven digital marketing. Designed to boost online visibility, deliver high ROI, and scale your growing business.
       </p>
       <div class="hero-ctas reveal">
-        <a href="#contact" class="btn btn-primary btn-lg">Schedule a Consultation <i data-lucide="arrow-right"></i></a>
-        <a href="#portfolio" class="btn btn-outline btn-lg">View Our Work</a>
+        <a href="#contact" class="btn btn-primary btn-lg" id="hero-cta-primary">Schedule a Consultation <i data-lucide="arrow-right"></i></a>
+        <a href="#portfolio" class="btn btn-outline btn-lg" id="hero-cta-secondary">View Our Work</a>
       </div>
       
       <div class="flex items-center gap-md reveal" style="margin-top: 2rem;">
@@ -1283,25 +1290,18 @@
 </section>
 
 <!-- ============================================================
-     TRUST TICKER
+     TRUST BADGES
 ============================================================ -->
-<div class="ticker-wrap">
-  <div class="ticker-track">
-    <div class="ticker-item">Trusted Across India</div>
-    <div class="ticker-item">ISO 27001 Certified</div>
-    <div class="ticker-item">High ROI Marketing</div>
-    <div class="ticker-item">98% Retention</div>
-    <div class="ticker-item">Pan-India Delivery</div>
-    <div class="ticker-item">Founder Led</div>
-    <div class="ticker-item">Scalable Growth</div>
-    <!-- Duplicate for seamless loop -->
-    <div class="ticker-item">Trusted Across India</div>
-    <div class="ticker-item">ISO 27001 Certified</div>
-    <div class="ticker-item">High ROI Marketing</div>
-    <div class="ticker-item">98% Retention</div>
-    <div class="ticker-item">Pan-India Delivery</div>
-    <div class="ticker-item">Founder Led</div>
-    <div class="ticker-item">Scalable Growth</div>
+<div class="trust-band">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item"><i data-lucide="shield-check"></i> ISO 27001 Certified</div>
+      <div class="trust-item"><i data-lucide="lock"></i> AES-256 Encryption</div>
+      <div class="trust-item"><i data-lucide="award"></i> 98% Client Retention</div>
+      <div class="trust-item"><i data-lucide="map-pin"></i> Pan-India Delivery</div>
+      <div class="trust-item"><i data-lucide="users"></i> Founder-Led Team</div>
+      <div class="trust-item"><i data-lucide="trending-up"></i> 250+ Projects Delivered</div>
+    </div>
   </div>
 </div>
 
@@ -1487,7 +1487,7 @@
          </div>
          <div class="p-content">
            <h3>Discovery</h3>
-           <p>We perform a deep dive into your business logic, enterprise requirements, and legacy constraints to create a bulletproof blueprint.</p>
+           <p>We perform a deep dive into your business logic, enterprise requirements, and legacy constraints to produce a clear, agreed-upon project specification.</p>
          </div>
       </div>
 
@@ -1515,7 +1515,7 @@
          </div>
          <div class="p-content">
            <h3>Development</h3>
-           <p>Agile engineering with direct founder-led quality assurance to ensure pixel-perfect delivery and military-grade security standards.</p>
+           <p>Agile sprints with direct founder-led QA checkpoints, WCAG-compliant UI delivery, and AES-256 encrypted data handling throughout.</p>
          </div>
       </div>
 
@@ -1554,7 +1554,7 @@
             <div class="card-icon" style="width: 40px; height: 40px; margin-bottom: 0;"><i data-lucide="check-circle-2" style="width: 20px;"></i></div>
             <div>
               <h4 style="font-size: 1rem;">Enterprise Security</h4>
-              <p style="font-size: 0.85rem; color: var(--text-muted);">Military-grade encryption and security protocols.</p>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">AES-256 encryption, SOC2-aligned practices, and DPDP Act compliance from day one.</p>
             </div>
           </div>
           <div class="flex items-center gap-md">
@@ -1894,7 +1894,7 @@
         </div>
         <div class="case-content">
           <h3>Fintech Intelligence Dashboard</h3>
-          <p>Engineered a military-grade financial intelligence dashboard delivering sub-second data visualizations for high-frequency trading analytics.</p>
+          <p>Engineered an SOC2-compliant financial intelligence dashboard delivering sub-second data visualizations for high-frequency trading analytics.</p>
           <p style="font-size:11px; color:var(--text4); margin-top:-0.5rem; margin-bottom:0.75rem;"><i data-lucide="shield" style="width:11px;height:11px;vertical-align:middle;"></i> Client name withheld per NDA — reference available on request</p>
           <div class="case-footer">
             <div class="case-metrics">
@@ -1998,35 +1998,79 @@
 <!-- ============================================================
      ABOUT / VISION
 ============================================================ -->
-<section class="section" id="about">
-  <div class="container" style="max-width: 900px;">
+<section class="section" id="about" style="background: var(--bg-alt);">
+  <style>
+    .about-founder-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-top: 4rem;
+    }
+    .founder-bio-card {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      background: var(--surface-solid);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: 2rem;
+      transition: all var(--t-base) var(--ease-spring);
+    }
+    .founder-bio-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--border3);
+    }
+    .founder-avatar {
+      width: 72px; height: 72px; border-radius: var(--r-md);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-size: 1.6rem; font-weight: 900;
+      color: white; flex-shrink: 0;
+    }
+    .founder-bio-card h4 { font-size: 1.05rem; margin-bottom: 2px; }
+    .founder-bio-card .f-role { font-size: 0.78rem; color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.65rem; }
+    .founder-bio-card p { font-size: 0.88rem; color: var(--text2); line-height: 1.7; }
+    .about-values { display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; margin-top: 4rem; }
+    .about-value-item { display: flex; align-items: center; gap: 0.65rem; font-size: 0.9rem; font-weight: 600; color: var(--text2); }
+    .about-value-item svg { width: 18px; height: 18px; color: var(--primary); }
+    @media (max-width: 768px) { .about-founder-grid { grid-template-columns: 1fr; } }
+  </style>
+  <div class="container" style="max-width: 1000px;">
     <div style="text-align: center;">
       <div class="section-eyebrow reveal" style="justify-content: center;">Our Story</div>
       <h2 class="reveal">Engineering Excellence <br>Since <span class="text-gradient">2020</span></h2>
-      <p class="reveal" style="color: var(--text-muted); font-size: 1.2rem; margin-top: 2rem; line-height: 1.8;">
-        WelkinGetter was founded on a simple principle: high-end software and effective digital growth shouldn't be reserved for massive corporations. We bring robust engineering standards and high-ROI digital marketing to local shops, startups, and growing enterprises across India.
+      <p class="reveal" style="color: var(--text-muted); font-size: 1.15rem; margin-top: 2rem; line-height: 1.8; max-width: 720px; margin-left: auto; margin-right: auto;">
+        WelkinGetter was founded on a simple principle: robust software and effective digital growth shouldn't be reserved for massive corporations. Starting in Indore in 2020, we've grown to serve 250+ businesses — from neighbourhood shops to pan-India enterprises — with the same rigour, transparency, and direct founder involvement every single time.
       </p>
-      
-      <div class="reveal" style="margin-top: 4rem; display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;">
-         <div style="text-align: center;">
-            <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--grad-surface); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: var(--primary);">
-               <i data-lucide="target" style="width: 32px;"></i>
-            </div>
-            <h4 style="font-size: 0.9rem;">Precision Focused</h4>
-         </div>
-         <div style="text-align: center;">
-            <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--grad-surface); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: var(--secondary);">
-               <i data-lucide="flame" style="width: 32px;"></i>
-            </div>
-            <h4 style="font-size: 0.9rem;">Innovation Driven</h4>
-         </div>
-         <div style="text-align: center;">
-            <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--grad-surface); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: var(--accent);">
-               <i data-lucide="heart" style="width: 32px;"></i>
-            </div>
-            <h4 style="font-size: 0.9rem;">Client Centric</h4>
-         </div>
+    </div>
+
+    <!-- Team / Founder Cards -->
+    <div class="about-founder-grid reveal">
+      <div class="founder-bio-card">
+        <div class="founder-avatar" style="background: linear-gradient(135deg, var(--primary), var(--secondary));">AD</div>
+        <div>
+          <h4>Anand Dubey</h4>
+          <div class="f-role">Founder & Chief Engineering Officer</div>
+          <p>Anand brings 8+ years of full-stack engineering experience, having led architecture for platforms serving 50,000+ concurrent users. He personally reviews every technical proposal before delivery begins — no hand-offs to junior developers.</p>
+        </div>
       </div>
+      <div class="founder-bio-card">
+        <div class="founder-avatar" style="background: linear-gradient(135deg, var(--accent), var(--orange));">SK</div>
+        <div>
+          <h4>Sandhya Kumar</h4>
+          <div class="f-role">Head of Digital Growth</div>
+          <p>Sandhya leads SEO, paid acquisition, and content strategy. With a track record of 3× lead growth for clients in retail and education, she focuses on measurable ROI over vanity metrics — every campaign has clear KPIs from week one.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Values strip -->
+    <div class="about-values reveal">
+      <div class="about-value-item"><i data-lucide="check-circle"></i> Direct founder access</div>
+      <div class="about-value-item"><i data-lucide="check-circle"></i> Fixed-scope delivery</div>
+      <div class="about-value-item"><i data-lucide="check-circle"></i> DPDP Act compliant</div>
+      <div class="about-value-item"><i data-lucide="check-circle"></i> Weekly progress reports</div>
+      <div class="about-value-item"><i data-lucide="check-circle"></i> No offshore hand-offs</div>
     </div>
   </div>
 </section>
@@ -2187,19 +2231,21 @@
       
       <div class="footer-col">
         <h5>Newsletter</h5>
-        <p style="color: var(--text-light); font-size: 0.85rem; margin-bottom: 1.5rem;">Get the latest insights on enterprise tech.</p>
+        <p style="color: var(--text-light); font-size: 0.85rem; margin-bottom: 0.5rem;">Monthly case studies &amp; tech deep-dives for Indian businesses. No spam, unsubscribe anytime.</p>
+        <p style="color: var(--text4); font-size: 0.78rem; margin-bottom: 1.25rem;">Avg. 1 email/month · Topics: LMS builds, SEO audits, cost benchmarks</p>
         <div class="flex gap-sm">
-          <input type="email" class="form-input" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: white; padding: 0.6rem 1rem;" placeholder="Email address">
-          <button class="btn btn-primary" style="padding: 0 1rem; border-radius: var(--r-md);"><i data-lucide="mail"></i></button>
+          <input type="email" id="newsletter-email" class="form-input" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: white; padding: 0.6rem 1rem;" placeholder="your@email.com">
+          <button id="newsletter-btn" class="btn btn-primary" style="padding: 0 1rem; border-radius: var(--r-md);" title="Subscribe"><i data-lucide="mail"></i></button>
         </div>
+        <p id="newsletter-msg" style="display:none; font-size:0.78rem; color:var(--green); margin-top:0.5rem;">✓ You're in! First issue arrives next month.</p>
       </div>
     </div>
     
     <div class="footer-bottom">
       <p>&copy; 2026 WelkinGetter Global IT Solutions. All rights reserved.</p>
       <div class="flex gap-md">
-        <a href="#" style="color: var(--text-light);">Privacy Policy</a>
-        <a href="#" style="color: var(--text-light);">Terms of Service</a>
+        <a href="privacy.html" style="color: var(--text-light);">Privacy Policy</a>
+        <a href="terms.html" style="color: var(--text-light);">Terms of Service</a>
       </div>
     </div>
   </div>
@@ -2451,13 +2497,38 @@
 
   mobileToggle.addEventListener('click', () => {
     navOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden'; // prevent background scroll
   });
 
   const hideOverlay = () => {
     navOverlay.classList.remove('active');
+    document.body.style.overflow = '';
   };
 
   closeNav.addEventListener('click', hideOverlay);
   overlayLinks.forEach(link => link.addEventListener('click', hideOverlay));
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') hideOverlay();
+  });
+
+  // Newsletter
+  const newsletterBtn = document.getElementById('newsletter-btn');
+  const newsletterEmail = document.getElementById('newsletter-email');
+  const newsletterMsg = document.getElementById('newsletter-msg');
+  if (newsletterBtn) {
+    newsletterBtn.addEventListener('click', () => {
+      const val = newsletterEmail ? newsletterEmail.value.trim() : '';
+      if (!val || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+        newsletterEmail.style.borderColor = '#ef4444';
+        setTimeout(() => { newsletterEmail.style.borderColor = ''; }, 2000);
+        return;
+      }
+      newsletterBtn.disabled = true;
+      newsletterMsg.style.display = 'block';
+      newsletterEmail.value = '';
+    });
+  }
 </script>
 </body>
