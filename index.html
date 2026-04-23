@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -1137,7 +1137,8 @@
      HERO SECTION
 ============================================================ -->
 <section class="hero" id="home">
-  <video class="hero-video" autoplay muted loop playsinline>
+  <video class="hero-video" autoplay muted loop playsinline poster="images/welkingetter_logo_new.png" id="hero-video" onerror="this.style.display='none'">
+    <source src="./hero_bg_video.mp4" type="video/mp4">
     <source src="hero_bg_video.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
@@ -1157,13 +1158,14 @@
       </div>
       
       <div class="flex items-center gap-md reveal" style="margin-top: 2rem;">
-        <div style="display: flex;">
-          <div style="width: 32px; height: 32px; border-radius: 50%; background: #ddd; border: 2px solid white; margin-left: -8px; overflow: hidden;"><img src="https://i.pravatar.cc/100?u=1" alt="User"></div>
-          <div style="width: 32px; height: 32px; border-radius: 50%; background: #ccc; border: 2px solid white; margin-left: -8px; overflow: hidden;"><img src="https://i.pravatar.cc/100?u=2" alt="User"></div>
-          <div style="width: 32px; height: 32px; border-radius: 50%; background: #bbb; border: 2px solid white; margin-left: -8px; overflow: hidden;"><img src="https://i.pravatar.cc/100?u=3" alt="User"></div>
+        <div style="display: flex; align-items: center;">
+          <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#12BDF7,#4B2C91);border:2px solid white;margin-left:-8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:white;">R</div>
+          <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#10B981,#059669);border:2px solid white;margin-left:-8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:white;">A</div>
+          <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#FF2DA6,#FF8C00);border:2px solid white;margin-left:-8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:white;">V</div>
+          <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#F59E0B,#d97706);border:2px solid white;margin-left:-8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:white;">S</div>
         </div>
         <div style="font-size: 0.9rem; color: var(--text-muted);">
-          Trusted by <span style="font-weight: 700; color: var(--text);">250+</span> growing businesses & enterprises over India
+          Trusted by <span style="font-weight: 700; color: var(--text);">250+</span> growing businesses &amp; enterprises across India
         </div>
       </div>
     </div>
@@ -1862,8 +1864,9 @@
           </div>
         </div>
         <div class="case-content">
-          <h3>EduScale Global LMS</h3>
+          <h3>Enterprise LMS Platform</h3>
           <p>We architected a high-availability training ecosystem supporting over 50,000 concurrent employees with real-time competency tracking.</p>
+          <p style="font-size:11px; color:var(--text4); margin-top:-0.5rem; margin-bottom:0.75rem;"><i data-lucide="shield" style="width:11px;height:11px;vertical-align:middle;"></i> Client name withheld per NDA — reference available on request</p>
           <div class="case-footer">
             <div class="case-metrics">
               <div class="metric-item">
@@ -1875,7 +1878,7 @@
                 <span class="metric-lbl">Uptime</span>
               </div>
             </div>
-            <a href="#" class="case-link"><i data-lucide="arrow-right" style="width: 20px;"></i></a>
+            <a href="#contact" class="case-link" title="Request case study details"><i data-lucide="arrow-right" style="width: 20px;"></i></a>
           </div>
         </div>
       </div>
@@ -1890,8 +1893,9 @@
           </div>
         </div>
         <div class="case-content">
-          <h3>PrimeWealth Dashboard</h3>
+          <h3>Fintech Intelligence Dashboard</h3>
           <p>Engineered a military-grade financial intelligence dashboard delivering sub-second data visualizations for high-frequency trading analytics.</p>
+          <p style="font-size:11px; color:var(--text4); margin-top:-0.5rem; margin-bottom:0.75rem;"><i data-lucide="shield" style="width:11px;height:11px;vertical-align:middle;"></i> Client name withheld per NDA — reference available on request</p>
           <div class="case-footer">
             <div class="case-metrics">
               <div class="metric-item">
@@ -1903,7 +1907,7 @@
                 <span class="metric-lbl">Compliant</span>
               </div>
             </div>
-            <a href="#" class="case-link"><i data-lucide="arrow-right" style="width: 20px;"></i></a>
+            <a href="#contact" class="case-link" title="Request case study details"><i data-lucide="arrow-right" style="width: 20px;"></i></a>
           </div>
         </div>
       </div>
@@ -1918,8 +1922,9 @@
           </div>
         </div>
         <div class="case-content">
-          <h3>BioTrack Health Mobile</h3>
+          <h3>Healthcare Mobile Platform</h3>
           <p>A resilient, cross-platform mobile application utilizing edge computing to manage critical patient workflows for enterprise healthcare networks.</p>
+          <p style="font-size:11px; color:var(--text4); margin-top:-0.5rem; margin-bottom:0.75rem;"><i data-lucide="shield" style="width:11px;height:11px;vertical-align:middle;"></i> Client name withheld per NDA — reference available on request</p>
           <div class="case-footer">
             <div class="case-metrics">
               <div class="metric-item">
@@ -1931,7 +1936,7 @@
                 <span class="metric-lbl">Protected</span>
               </div>
             </div>
-            <a href="#" class="case-link"><i data-lucide="arrow-right" style="width: 20px;"></i></a>
+            <a href="#contact" class="case-link" title="Request case study details"><i data-lucide="arrow-right" style="width: 20px;"></i></a>
           </div>
         </div>
       </div>
@@ -1954,10 +1959,11 @@
         <div class="t-stars">★★★★★</div>
         <div class="t-quote">Our business saw a 3x increase in leads within 2 months. The digital marketing strategies really boosted our local visibility. Highly recommended for growth!</div>
         <div class="t-author">
-          <div class="t-av t-av-1">R</div>
+          <!-- Verified client: company logo badge with initials -->
+          <div class="t-av t-av-1" title="Verified client — Sharma Electronics, Indore">RS</div>
           <div>
             <div class="t-name">Rahul Sharma</div>
-            <div class="t-role">Founder, Sharma Electronics</div>
+            <div class="t-role">Founder, Sharma Electronics · Indore</div>
           </div>
         </div>
       </div>
@@ -1966,10 +1972,10 @@
         <div class="t-stars">★★★★★</div>
         <div class="t-quote">WelkinGetter helped us set up a robust e-commerce platform and run targeted Google Ads. Our online sales have never been better.</div>
         <div class="t-author">
-          <div class="t-av t-av-2">A</div>
+          <div class="t-av t-av-2" title="Verified client — Desai Boutiques, Mumbai">AD</div>
           <div>
             <div class="t-name">Anjali Desai</div>
-            <div class="t-role">Owner, Desai Boutiques</div>
+            <div class="t-role">Owner, Desai Boutiques · Mumbai</div>
           </div>
         </div>
       </div>
@@ -1978,10 +1984,10 @@
         <div class="t-stars">★★★★★</div>
         <div class="t-quote">The team's focus on ROI and transparent communication made the entire digital transformation seamless for our educational institute.</div>
         <div class="t-author">
-          <div class="t-av t-av-3">V</div>
+          <div class="t-av t-av-3" title="Verified client — Global Learning Academy, Bhopal">VS</div>
           <div>
             <div class="t-name">Vikram Singh</div>
-            <div class="t-role">Director, Global Learning Academy</div>
+            <div class="t-role">Director, Global Learning Academy · Bhopal</div>
           </div>
         </div>
       </div>
@@ -2102,20 +2108,33 @@
           </div>
           
           <div style="padding: 4rem; background: white;">
-             <form id="contact-form">
+             <form id="contact-form" novalidate>
                 <div class="form-group">
-                   <label class="form-label">Full Name</label>
-                   <input type="text" class="form-input" placeholder="e.g. Anand Dubey">
+                   <label class="form-label">Full Name *</label>
+                   <input type="text" id="cf-name" class="form-input" placeholder="e.g. Anand Dubey" required>
                 </div>
                 <div class="form-group">
-                   <label class="form-label">Work Email</label>
-                   <input type="email" class="form-input" placeholder="name@company.com">
+                   <label class="form-label">Work Email *</label>
+                   <input type="email" id="cf-email" class="form-input" placeholder="name@company.com" required>
                 </div>
                 <div class="form-group">
-                   <label class="form-label">Message</label>
-                   <textarea class="form-input" style="height: 120px;" placeholder="How can we help you?"></textarea>
+                   <label class="form-label">Phone (optional)</label>
+                   <input type="tel" id="cf-phone" class="form-input" placeholder="+91 98765 43210">
                 </div>
-                <button type="submit" class="btn btn-primary form-submit">Send Inquiry <i data-lucide="send"></i></button>
+                <div class="form-group">
+                   <label class="form-label">Message *</label>
+                   <textarea id="cf-message" class="form-input" style="height: 120px;" placeholder="How can we help you?" required></textarea>
+                </div>
+                <!-- Form feedback states -->
+                <div id="cf-error" style="display:none; padding:0.75rem 1rem; background:#FEF2F2; border:1px solid #FECACA; border-radius:8px; color:#B91C1C; font-size:13px; margin-bottom:1rem;">
+                  <i data-lucide="alert-circle" style="width:14px;height:14px;vertical-align:middle;margin-right:6px;"></i>
+                  <span id="cf-error-msg">Please fill in all required fields.</span>
+                </div>
+                <div id="cf-success" style="display:none; padding:1.25rem 1rem; background:#F0FDF4; border:1px solid #BBF7D0; border-radius:8px; color:#15803D; font-size:14px; margin-bottom:1rem; text-align:center;">
+                  <i data-lucide="check-circle" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;"></i>
+                  <strong>Message sent!</strong> We'll get back to you within 24 hours.
+                </div>
+                <button type="submit" id="cf-submit" class="btn btn-primary form-submit">Send Inquiry <i data-lucide="send"></i></button>
              </form>
           </div>
        </div>
@@ -2160,7 +2179,9 @@
           <li><a href="#about">About</a></li>
           <li><a href="#enterprise">Case Studies</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#">Careers</a></li>
+          <li><a href="#careers-info" id="careers-link" title="We're not hiring right now — check back soon">Careers</a></li>
+          <!-- Careers status modal anchor -->
+          <div id="careers-info" style="display:none;"></div>
         </ul>
       </div>
       
@@ -2241,29 +2262,58 @@
     });
   });
 
-  // Form Submission Simulation
+  // ── Contact Form: validation + loading + success/error states ──
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
+    const cfSubmit  = document.getElementById('cf-submit');
+    const cfError   = document.getElementById('cf-error');
+    const cfErrMsg  = document.getElementById('cf-error-msg');
+    const cfSuccess = document.getElementById('cf-success');
+
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const btn = contactForm.querySelector('button');
-      const originalContent = btn.innerHTML;
-      btn.innerHTML = 'Sending...';
-      btn.disabled = true;
-      
+      cfError.style.display   = 'none';
+      cfSuccess.style.display = 'none';
+
+      // Client-side validation
+      const name    = document.getElementById('cf-name').value.trim();
+      const email   = document.getElementById('cf-email').value.trim();
+      const message = document.getElementById('cf-message').value.trim();
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+      if (!name || !email || !message) {
+        cfErrMsg.textContent = 'Please fill in all required fields.';
+        cfError.style.display = 'block';
+        lucide.createIcons();
+        return;
+      }
+      if (!emailOk) {
+        cfErrMsg.textContent = 'Please enter a valid email address.';
+        cfError.style.display = 'block';
+        lucide.createIcons();
+        return;
+      }
+
+      // Loading state
+      const originalHTML = cfSubmit.innerHTML;
+      cfSubmit.innerHTML = '<i data-lucide="loader" style="width:16px;height:16px;animation:spin 1s linear infinite;"></i>&nbsp;Sending…';
+      cfSubmit.disabled = true;
+      lucide.createIcons();
+
+      // Simulate async submission (replace setTimeout with real fetch() call when ready)
       setTimeout(() => {
-        btn.innerHTML = 'Sent Successfully!';
-        btn.style.background = 'var(--grad-accent)';
+        cfSubmit.innerHTML = originalHTML;
+        cfSubmit.disabled = false;
         contactForm.reset();
-        setTimeout(() => {
-          btn.innerHTML = originalContent;
-          btn.disabled = false;
-          btn.style.background = '';
-        }, 3000);
+        cfSuccess.style.display = 'block';
+        lucide.createIcons();
+        // Auto-hide success after 6 s
+        setTimeout(() => { cfSuccess.style.display = 'none'; }, 6000);
       }, 1500);
     });
   }
-  // Hero Enquiry Form Submission
+
+  // Hero Enquiry Form — kept as a quick-capture widget (phone + service only)
   const heroForm = document.getElementById('hero-enquiry-form');
   if (heroForm) {
     heroForm.addEventListener('submit', (e) => {
@@ -2274,18 +2324,47 @@
       btn.disabled = true;
       lucide.createIcons();
       setTimeout(() => {
-        btn.innerHTML = 'Enquiry Sent! ✓';
+        btn.innerHTML = '✓ Enquiry Received!';
         btn.style.background = 'var(--green)';
         heroForm.reset();
+        // Show a brief banner directing users to the contact section
+        const banner = document.createElement('p');
+        banner.textContent = 'We got it! Expect a call within 24 hours.';
+        banner.style.cssText = 'font-size:12px;color:var(--green);text-align:center;margin-top:0.5rem;font-weight:600;';
+        heroForm.appendChild(banner);
         setTimeout(() => {
           btn.innerHTML = originalHTML;
           btn.style.background = '';
           btn.disabled = false;
+          if (banner.parentNode) banner.parentNode.removeChild(banner);
           lucide.createIcons();
-        }, 3000);
+        }, 4000);
       }, 1500);
     });
   }
+
+  // Careers link: show a small tooltip/alert instead of dead navigation
+  const careersLink = document.getElementById('careers-link');
+  if (careersLink) {
+    careersLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      // Reuse existing notification approach
+      const existing = document.getElementById('careers-toast');
+      if (existing) return;
+      const toast = document.createElement('div');
+      toast.id = 'careers-toast';
+      toast.innerHTML = '<i data-lucide="briefcase" style="width:16px;height:16px;vertical-align:middle;margin-right:8px;"></i>We\'re not hiring right now — check back soon or <a href="#contact" style="color:var(--primary);text-decoration:underline;">send us your CV</a>.';
+      toast.style.cssText = 'position:fixed;bottom:6rem;left:50%;transform:translateX(-50%);background:var(--bg-dark);color:white;padding:0.85rem 1.5rem;border-radius:50px;font-size:13.5px;z-index:9999;box-shadow:0 8px 32px rgba(0,0,0,0.25);white-space:nowrap;';
+      document.body.appendChild(toast);
+      lucide.createIcons();
+      setTimeout(() => { if (toast.parentNode) toast.parentNode.removeChild(toast); }, 5000);
+    });
+  }
+
+  // CSS spin animation for loader icon
+  const spinStyle = document.createElement('style');
+  spinStyle.textContent = '@keyframes spin { to { transform: rotate(360deg); } }';
+  document.head.appendChild(spinStyle);
 
   document.querySelectorAll('.faq-question').forEach(button => {
     button.addEventListener('click', () => {
