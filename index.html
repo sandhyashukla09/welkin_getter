@@ -106,6 +106,8 @@
   img { max-width: 100%; display: block; }
   a { color: inherit; text-decoration: none; transition: all var(--t-base) var(--ease); }
   button { cursor: pointer; border: none; background: none; font-family: inherit; }
+  
+
 
   /* ============================================================
      TYPOGRAPHY
@@ -136,7 +138,7 @@
     margin: 0 auto;
     padding: 0 2rem;
   }
-  .section { padding: 6rem 0; }
+  .section { padding: 6rem 0; scroll-margin-top: 100px; }
   .flex { display: flex; }
   .items-center { align-items: center; }
   .justify-between { justify-content: space-between; }
@@ -258,10 +260,11 @@
     align-items: center;
   }
   .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     height: 70px;
   }
   .navbar-inner {
@@ -334,8 +337,9 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center center;
     z-index: 0;
-    opacity: 0.15;
+    opacity: 1;
     pointer-events: none;
   }
   .hero-overlay {
@@ -368,8 +372,8 @@
     max-width: 800px;
   }
   .hero-sub {
-    font-size: 1.2rem;
-    color: var(--text-muted);
+    font-size: 1.35rem;
+    color: var(--text2);
     max-width: 600px;
     margin-bottom: 2.5rem;
   }
@@ -427,7 +431,7 @@
   }
   .ticker-item {
     font-weight: 700;
-    color: var(--text-light);
+    color: var(--text2);
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
@@ -438,7 +442,7 @@
 ============================================================ */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--space-lg);
   margin-top: var(--space-2xl);
 }
@@ -522,7 +526,7 @@
   background-clip: text;
 }
 .number-item .num-label {
-  font-size: 13px; color: var(--text3); font-weight: 500;
+  font-size: 14px; color: var(--text2); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
 }
 
 /* ============================================================
@@ -987,7 +991,8 @@
       grid-template-columns: 1fr; 
     }
     
-    .process-grid {
+    .process-grid,
+    .enterprise-process-grid {
       grid-template-columns: 1fr;
       gap: 2rem;
     }
@@ -1039,8 +1044,8 @@
       visibility: visible;
     }
     .nav-overlay a {
-      font-size: 2rem;
-      font-weight: 700;
+      font-size: 1.6rem;
+      font-weight: 600;
       font-family: var(--font-heading);
       color: var(--text);
     }
@@ -1133,22 +1138,22 @@
 ============================================================ -->
 <section class="hero" id="home">
   <video class="hero-video" autoplay muted loop playsinline>
-    <source src="https://player.vimeo.com/external/494252666.hd.mp4?s=2d51D3dc5C55Fd2d20184534720e5e0D2D2b1e60&profile_id=175" type="video/mp4">
+    <source src="hero_bg_video.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-grid"></div>
   <div class="container flex items-center">
     <div style="flex: 1;">
       <div class="section-eyebrow reveal">The Future of Enterprise IT</div>
-      <h1 class="hero-headline reveal">
+      <h1 class="hero-headline reveal" style="color: white;">
         Scale Your Business with <span class="text-gradient">Intelligent Solutions</span>
       </h1>
       <p class="hero-sub reveal">
-        High-performance web applications, premium LMS platforms, and custom software strategy for modern enterprises. Zero friction. Total transparency.
+        High-performance web applications, custom LMS platforms, and performance-driven digital marketing. Designed to boost online visibility, deliver high ROI, and scale your growing business.
       </p>
       <div class="hero-ctas reveal">
-        <a href="#contact" class="btn btn-primary btn-lg">Schedule a Demo <i data-lucide="arrow-right"></i></a>
-        <a href="#enterprise" class="btn btn-outline btn-lg">View Use Cases</a>
+        <a href="#contact" class="btn btn-primary btn-lg">Schedule a Consultation <i data-lucide="arrow-right"></i></a>
+        <a href="#portfolio" class="btn btn-outline btn-lg">View Our Work</a>
       </div>
       
       <div class="flex items-center gap-md reveal" style="margin-top: 2rem;">
@@ -1158,7 +1163,7 @@
           <div style="width: 32px; height: 32px; border-radius: 50%; background: #bbb; border: 2px solid white; margin-left: -8px; overflow: hidden;"><img src="https://i.pravatar.cc/100?u=3" alt="User"></div>
         </div>
         <div style="font-size: 0.9rem; color: var(--text-muted);">
-          Trusted by <span style="font-weight: 700; color: var(--text);">250+</span> global enterprises
+          Trusted by <span style="font-weight: 700; color: var(--text);">250+</span> growing businesses & enterprises over India
         </div>
       </div>
     </div>
@@ -1280,21 +1285,21 @@
 ============================================================ -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <div class="ticker-item">Fortune 500 Trusted</div>
+    <div class="ticker-item">Trusted Across India</div>
     <div class="ticker-item">ISO 27001 Certified</div>
-    <div class="ticker-item">AWS Partner Network</div>
+    <div class="ticker-item">High ROI Marketing</div>
     <div class="ticker-item">98% Retention</div>
-    <div class="ticker-item">Global Delivery</div>
+    <div class="ticker-item">Pan-India Delivery</div>
     <div class="ticker-item">Founder Led</div>
-    <div class="ticker-item">Enterprise Scale</div>
+    <div class="ticker-item">Scalable Growth</div>
     <!-- Duplicate for seamless loop -->
-    <div class="ticker-item">Fortune 500 Trusted</div>
+    <div class="ticker-item">Trusted Across India</div>
     <div class="ticker-item">ISO 27001 Certified</div>
-    <div class="ticker-item">AWS Partner Network</div>
+    <div class="ticker-item">High ROI Marketing</div>
     <div class="ticker-item">98% Retention</div>
-    <div class="ticker-item">Global Delivery</div>
+    <div class="ticker-item">Pan-India Delivery</div>
     <div class="ticker-item">Founder Led</div>
-    <div class="ticker-item">Enterprise Scale</div>
+    <div class="ticker-item">Scalable Growth</div>
   </div>
 </div>
 
@@ -1347,6 +1352,19 @@
           <span class="tag">AWS / Azure</span>
         </div>
       </div>
+
+      <div class="service-card reveal" style="transition-delay: 0.3s;">
+        <div class="service-num">04 / DIGITAL MARKETING</div>
+        <div class="card-icon" style="color: var(--orange);"><i data-lucide="megaphone"></i></div>
+        <h3>Digital Marketing</h3>
+        <p>Boost your online presence with SEO, Social Media Marketing, Google Ads, Content Marketing, and Performance Campaigns tailored for business growth.</p>
+        <div class="service-tags">
+          <span class="tag">SEO</span>
+          <span class="tag">Google Ads</span>
+          <span class="tag">Social Media</span>
+          <span class="tag">Lead Gen</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1358,7 +1376,7 @@
   <style>
     .enterprise-process-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 2.5rem;
       position: relative;
     }
@@ -1551,8 +1569,8 @@
          <div style="width: 100%; aspect-ratio: 16/10; background: var(--grad-main); border-radius: var(--r-xl); padding: 2rem; position: relative; overflow: hidden; box-shadow: var(--shadow-lg);">
             <img src="digital_transformation_team_1776246060916.png" alt="Our Team" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.6; mix-blend-mode: overlay;">
             <div class="glass" style="position: absolute; bottom: 10%; left: 10%; right: 10%; padding: 1.5rem; border-radius: var(--r-md); border: 1px solid rgba(255,255,255,0.3);">
-              <div style="font-style: italic; color: var(--text); font-size: 0.9rem;">"WelkinGetter transformed our digital operations. Their LMS solution scaled our global training programs within months."</div>
-              <div style="margin-top: 0.75rem; font-weight: 700; font-size: 0.85rem;">David Chen · CTO at TechStream</div>
+              <div style="font-style: italic; color: var(--text); font-size: 0.9rem;">"WelkinGetter transformed our digital operations. Their custom enterprise solution scaled our pan-India operations within months."</div>
+              <div style="margin-top: 0.75rem; font-weight: 700; font-size: 0.85rem;">Siddharth Rao · CTO at BharatTech Solutions</div>
             </div>
          </div>
       </div>
@@ -1628,14 +1646,14 @@
 <section class="section" id="enterprise" style="background: var(--bg-dark); color: white;">
   <div class="container">
     <div style="text-align: center; margin-bottom: 4rem;">
-      <div class="section-eyebrow" style="justify-content: center; color: var(--primary);">Global Scale</div>
-      <h2 style="color: white;">Trusted by Industry <span style="color: var(--primary);">Leaders</span></h2>
+      <div class="section-eyebrow" style="justify-content: center; color: var(--primary);">Pan-India Reach</div>
+      <h2 style="color: white;">Trusted by Growing <span style="color: var(--primary);">Businesses</span></h2>
     </div>
     
     <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); text-align: center;">
       <div class="reveal">
         <div style="font-size: 3.5rem; font-weight: 800; font-family: var(--font-heading); background: var(--grad-main); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">250+</div>
-        <div style="color: var(--text-light); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; margin-top: 0.5rem;">Successful Launches</div>
+        <div style="color: var(--text-light); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; margin-top: 0.5rem;">Successful Projects</div>
       </div>
       <div class="reveal" style="transition-delay: 0.1s;">
         <div style="font-size: 3.5rem; font-weight: 800; font-family: var(--font-heading); background: var(--grad-accent); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">98%</div>
@@ -1934,36 +1952,36 @@
     <div class="testimonials-grid">
       <div class="testimonial-card reveal">
         <div class="t-stars">★★★★★</div>
-        <div class="t-quote">WelkinGetter delivered our LMS platform 2 weeks ahead of schedule. The quality of code is exceptional.</div>
+        <div class="t-quote">Our business saw a 3x increase in leads within 2 months. The digital marketing strategies really boosted our local visibility. Highly recommended for growth!</div>
         <div class="t-author">
-          <div class="t-av t-av-1">SK</div>
+          <div class="t-av t-av-1">R</div>
           <div>
-            <div class="t-name">Sarah Koenig</div>
-            <div class="t-role">Founder, LearnWise</div>
+            <div class="t-name">Rahul Sharma</div>
+            <div class="t-role">Founder, Sharma Electronics</div>
           </div>
         </div>
       </div>
 
       <div class="testimonial-card reveal" style="transition-delay: 0.1s;">
         <div class="t-stars">★★★★★</div>
-        <div class="t-quote">Their enterprise web solution handled our 400% traffic surge during the product launch with zero downtime.</div>
+        <div class="t-quote">WelkinGetter helped us set up a robust e-commerce platform and run targeted Google Ads. Our online sales have never been better.</div>
         <div class="t-author">
-          <div class="t-av t-av-2">MR</div>
+          <div class="t-av t-av-2">A</div>
           <div>
-            <div class="t-name">Michael Ross</div>
-            <div class="t-role">CTO, Finova</div>
+            <div class="t-name">Anjali Desai</div>
+            <div class="t-role">Owner, Desai Boutiques</div>
           </div>
         </div>
       </div>
 
       <div class="testimonial-card reveal" style="transition-delay: 0.2s;">
         <div class="t-stars">★★★★★</div>
-        <div class="t-quote">Founder-led means we get expert answers instantly. No middlemen, no friction. Just pure engineering.</div>
+        <div class="t-quote">The team's focus on ROI and transparent communication made the entire digital transformation seamless for our educational institute.</div>
         <div class="t-author">
-          <div class="t-av t-av-3">JH</div>
+          <div class="t-av t-av-3">V</div>
           <div>
-            <div class="t-name">James Harper</div>
-            <div class="t-role">Ops Director, GlobalIT</div>
+            <div class="t-name">Vikram Singh</div>
+            <div class="t-role">Director, Global Learning Academy</div>
           </div>
         </div>
       </div>
@@ -1980,7 +1998,7 @@
       <div class="section-eyebrow reveal" style="justify-content: center;">Our Story</div>
       <h2 class="reveal">Engineering Excellence <br>Since <span class="text-gradient">2020</span></h2>
       <p class="reveal" style="color: var(--text-muted); font-size: 1.2rem; margin-top: 2rem; line-height: 1.8;">
-        WelkinGetter was founded on a simple principle: high-end software shouldn't be reserved for the fortune 500. We bring enterprise-level engineering standards to companies of all sizes, specializing in high-performance web ecosystems and educational technology.
+        WelkinGetter was founded on a simple principle: high-end software and effective digital growth shouldn't be reserved for massive corporations. We bring robust engineering standards and high-ROI digital marketing to local shops, startups, and growing enterprises across India.
       </p>
       
       <div class="reveal" style="margin-top: 4rem; display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;">
@@ -2008,132 +2026,7 @@
 </section>
 
 
-<!-- ============================================================
-     ENTERPRISE TECH CAPABILITIES (Replaced Pricing)
-============================================================ -->
-<section class="section" style="background: var(--bg-alt); position: relative; overflow: hidden;">
-  <style>
-    .icon-ecosystem-wrapper {
-      position: relative;
-      width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 440px;
-    }
-    .ecosystem-core {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      background: var(--grad-main);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 40px rgba(18, 189, 247, 0.4), inset 0 0 20px rgba(255,255,255,0.5);
-      position: relative;
-      z-index: 10;
-      color: white;
-      animation: pulse-core 4s infinite alternate;
-    }
-    @keyframes pulse-core {
-      0% { box-shadow: 0 0 30px rgba(18, 189, 247, 0.3), inset 0 0 20px rgba(255,255,255,0.5); transform: scale(1); }
-      100% { box-shadow: 0 0 60px rgba(75, 44, 145, 0.5), inset 0 0 20px rgba(255,255,255,0.5); transform: scale(1.05); }
-    }
-    .floating-icon {
-      position: absolute;
-      width: 65px;
-      height: 65px;
-      border-radius: var(--r-xl);
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: var(--shadow-md);
-      transition: all 0.5s var(--ease-spring);
-      color: var(--text);
-    }
-    .floating-icon:hover {
-      transform: scale(1.15) !important;
-      background: white;
-      color: var(--primary);
-      box-shadow: var(--shadow-lg);
-      z-index: 20;
-    }
-    
-    /* Layout coordinates and floating animations */
-    .icon-pos-1 { top: 5%; left: 15%; animation: float-eco 6s ease-in-out infinite alternate; color: var(--primary); }
-    .icon-pos-2 { top: 15%; right: 15%; animation: float-eco 5s ease-in-out infinite alternate-reverse; color: var(--secondary); }
-    .icon-pos-3 { bottom: 10%; left: 20%; animation: float-eco 7s ease-in-out infinite alternate; color: var(--accent); }
-    .icon-pos-4 { bottom: 15%; right: 20%; animation: float-eco 5.5s ease-in-out infinite alternate-reverse; color: var(--green); }
-    .icon-pos-5 { top: 50%; left: 2%; transform: translateY(-50%); animation: float-eco 6.5s ease-in-out infinite alternate; color: var(--orange); }
-    .icon-pos-6 { top: 50%; right: 2%; transform: translateY(-50%); animation: float-eco 6s ease-in-out infinite alternate-reverse; color: var(--gold); }
 
-    @keyframes float-eco {
-      0% { margin-top: 0px; }
-      100% { margin-top: -20px; }
-    }
-
-    /* Connecting lines background pattern */
-    .eco-grid-bg {
-      position: absolute;
-      inset: 0;
-      background-image: 
-        radial-gradient(circle at center, rgba(18, 189, 247, 0.05) 0%, transparent 60%),
-        linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
-      background-size: 100% 100%, 40px 40px, 40px 40px;
-      z-index: 1;
-      opacity: 0.8;
-      pointer-events: none;
-    }
-
-    @media (max-width: 768px) {
-      .icon-ecosystem-wrapper { min-height: 320px; padding: 2rem 1rem; }
-      .ecosystem-core { width: 100px; height: 100px; }
-      .floating-icon { width: 50px; height: 50px; }
-      .floating-icon svg { width: 22px; height: 22px; }
-      .icon-pos-1 { left: 5%; top: 10%; }
-      .icon-pos-2 { right: 5%; top: 15%;}
-      .icon-pos-3 { bottom: 5%; left: 10%; }
-      .icon-pos-4 { bottom: 5%; right: 10%; }
-      .icon-pos-5 { display: none; }
-      .icon-pos-6 { display: none; }
-    }
-  </style>
-
-  <div class="eco-grid-bg"></div>
-
-  <div class="container reveal" style="position: relative; z-index: 2;">
-    <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
-      <div class="section-eyebrow" style="justify-content: center; font-size: 0.85rem; letter-spacing: 0.15em;">Enterprise Ecosystem</div>
-      <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem;">Seamless <span class="text-gradient">Technology Integration</span></h2>
-      <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.7;">
-        Our solutions integrate flawlessly into your existing corporate infrastructure, empowering scale, security, and growth across all vital business sectors.
-      </p>
-    </div>
-
-    <div class="icon-ecosystem-wrapper">
-      <!-- Core -->
-      <div class="ecosystem-core">
-        <i data-lucide="globe" style="width: 55px; height: 55px;"></i>
-      </div>
-      
-      <!-- Orbiting Icons -->
-      <div class="floating-icon icon-pos-1"><i data-lucide="cloud"></i></div>
-      <div class="floating-icon icon-pos-2"><i data-lucide="shield-check"></i></div>
-      <div class="floating-icon icon-pos-3"><i data-lucide="rocket"></i></div>
-      <div class="floating-icon icon-pos-4"><i data-lucide="bar-chart-2"></i></div>
-      <div class="floating-icon icon-pos-5"><i data-lucide="database"></i></div>
-      <div class="floating-icon icon-pos-6"><i data-lucide="cpu"></i></div>
-    </div>
-  </div>
-</section>
 
 <!-- ============================================================
      FAQ SECTION
@@ -2194,7 +2087,7 @@
        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0;">
           <div style="padding: 4rem; background: var(--grad-main); color: white;">
              <h2 style="color: white; margin-bottom: 2rem;">Let's Build Something <span style="opacity: 0.7;">Extraordinary</span></h2>
-             <p style="opacity: 0.9; margin-bottom: 3rem;">Ready to take your business to the next level? Our specialists are ready to help you architect the future.</p>
+             <p style="opacity: 0.9; margin-bottom: 3rem;">Ready to take your business to the next level? Our specialists are ready to help you architect the future and drive massive digital growth.</p>
              
              <div style="display: grid; gap: 2rem;">
                 <div class="flex items-center gap-md">
@@ -2242,7 +2135,7 @@
           <span style="font-weight: 800; font-size: 1.4rem; letter-spacing: -0.02em;">WelkinGetter</span>
         </a>
         <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.7;">
-          Expert-led digital transformation for modern enterprises. We build high-performance software that drives growth globally.
+          Expert-led digital transformation & marketing for growing businesses. We build high-performance software and drive local growth across India with high ROI.
         </p>
         <div class="footer-socials">
           <a href="#" class="social-icon"><i data-lucide="linkedin" style="width: 18px;"></i></a>
@@ -2256,7 +2149,7 @@
         <ul class="footer-nav">
           <li><a href="#services">LMS Platforms</a></li>
           <li><a href="#services">Enterprise Web</a></li>
-          <li><a href="#services">Cloud Workflows</a></li>
+          <li><a href="#services">Digital Marketing</a></li>
           <li><a href="#services">Custom Apps</a></li>
         </ul>
       </div>
