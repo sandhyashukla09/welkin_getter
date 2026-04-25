@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom LMS Ecosystems — WelkinGetter</title>
+<meta name="description" content="Specialized learning management systems with automated certification and advanced analytics.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2312BDF7'/><text y='22' x='5' font-size='18' font-family='sans-serif' font-weight='bold' fill='white'>W</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  :root {
+    --primary:     #12BDF7; --secondary:   #4B2C91; --accent:      #FF2DA6; --accent2:     #1CB5E0;
+    --bg:          #F8F9FA; --bg-alt:      #FFFFFF; --bg-dark:     #0F172A;
+    --text:        #1A1F2B; --text2:       #334155; --text3:       #64748B; --text-muted:  #64748B;
+    --font-heading: 'Poppins', sans-serif; --font-body: 'Inter', sans-serif;
+    --r-xl:  24px; --r-2xl: 32px; --t-base: 0.3s; --ease: cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-lg:  0 20px 48px rgba(75, 44, 145, 0.12);
+    --grad-main:   linear-gradient(135deg, var(--primary), var(--secondary));
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 700; line-height: 1.2; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.8rem 2rem; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-decoration: none; }
+  .btn-primary { background: var(--grad-main); color: white; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(18, 189, 247, 0.3); }
+
+  .navbar { height: 80px; display: flex; align-items: center; background: white; border-bottom: 1px solid rgba(0,0,0,0.05); }
+  .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: inherit; font-weight: 800; font-size: 1.4rem; }
+  
+  .service-hero { padding: 8rem 0; background: var(--bg-alt); position: relative; overflow: hidden; }
+  .hero-grid { position: absolute; inset: 0; background-image: radial-gradient(var(--secondary) 0.5px, transparent 0.5px); background-size: 30px 30px; opacity: 0.1; }
+  .service-hero h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 1.5rem; }
+  .service-hero p { font-size: 1.2rem; color: var(--text2); max-width: 700px; margin-bottom: 2.5rem; }
+
+  .features { padding: 6rem 0; }
+  .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+  .feature-card { background: white; padding: 2.5rem; border-radius: var(--r-xl); border: 1px solid rgba(0,0,0,0.05); }
+  .feature-card i { color: var(--secondary); margin-bottom: 1rem; width: 32px; height: 32px; }
+
+  .cta-section { padding: 6rem 0; background: var(--bg-dark); color: white; text-align: center; }
+  .cta-section h2 { margin-bottom: 1.5rem; }
+  .cta-section p { opacity: 0.8; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+  footer { padding: 4rem 0; background: #050912; color: #64748B; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+
+  .whatsapp-float { position: fixed; bottom: 2rem; left: 2rem; width: 60px; height: 60px; background: #25D366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+    <a href="index.html" class="logo">
+      <img src="images/welkin_getter_logo.jpeg" alt="Logo" style="height: 40px; border-radius: 8px;">
+      <span>WelkinGetter</span>
+    </a>
+    <a href="index.html#contact" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">Start Project</a>
+  </div>
+</nav>
+
+<header class="service-hero">
+  <div class="hero-grid"></div>
+  <div class="container">
+    <div class="section-eyebrow" style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">Solutions / EdTech</div>
+    <h1>Custom <span style="color: var(--secondary);">LMS Ecosystems</span> for Training at Scale</h1>
+    <p>We build specialized learning management systems that automate the entire training lifecycle. From certification workflows to advanced student analytics for global enterprises.</p>
+    <div style="display: flex; gap: 1rem;">
+      <a href="index.html#contact" class="btn btn-primary">Request Demo</a>
+      <a href="index.html#portfolio" class="btn" style="border: 1px solid var(--text); color: var(--text);">Our EdTech Successes</a>
+    </div>
+  </div>
+</header>
+
+<section class="features">
+  <div class="container">
+    <h2 style="margin-bottom: 3rem; text-align: center;">Built for <span style="color: var(--secondary);">Learning Impact</span></h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <i data-lucide="award"></i>
+        <h3>Automated Certification</h3>
+        <p>Custom certificate generation, validation, and automated renewal tracking for compliance-heavy industries.</p>
+      </div>
+      <div class="feature-card">
+        <i data-lucide="bar-chart-3"></i>
+        <h3>Advanced Analytics</h3>
+        <p>Deep insights into student performance, course completion rates, and knowledge gap identification.</p>
+      </div>
+      <div class="feature-card">
+        <i data-lucide="gamepad-2"></i>
+        <h3>Gamification Engines</h3>
+        <p>Badges, leaderboards, and experience-based progression systems to boost engagement by up to 300%.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to transform your training?</h2>
+    <p>Empower your workforce with a custom-built learning environment tailored to your specific business goals.</p>
+    <a href="index.html#contact" class="btn btn-primary">Book a Strategic Consultation</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026 WelkinGetter Global IT Solutions. All rights reserved.</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/919770329202" class="whatsapp-float">
+  <i data-lucide="message-circle" style="width: 32px; height: 32px;"></i>
+</a>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>

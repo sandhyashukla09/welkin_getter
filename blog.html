@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources & Insights — WelkinGetter</title>
+<meta name="description" content="Expert articles on engineering, growth, and digital transformation for Indian enterprises.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2312BDF7'/><text y='22' x='5' font-size='18' font-family='sans-serif' font-weight='bold' fill='white'>W</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  :root {
+    --primary:     #12BDF7; --secondary:   #4B2C91; --accent:      #FF2DA6; --accent2:     #1CB5E0;
+    --bg:          #F8F9FA; --bg-alt:      #FFFFFF; --bg-dark:     #0F172A;
+    --text:        #1A1F2B; --text2:       #334155; --text3:       #64748B; --text-muted:  #64748B;
+    --font-heading: 'Poppins', sans-serif; --font-body: 'Inter', sans-serif;
+    --r-xl:  24px; --r-2xl: 32px; --t-base: 0.3s; --ease: cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-lg:  0 20px 48px rgba(75, 44, 145, 0.12);
+    --grad-main:   linear-gradient(135deg, var(--primary), var(--secondary));
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 700; line-height: 1.2; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.8rem 2rem; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-decoration: none; }
+  .btn-primary { background: var(--grad-main); color: white; }
+
+  .navbar { height: 80px; display: flex; align-items: center; background: white; border-bottom: 1px solid rgba(0,0,0,0.05); }
+  .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: inherit; font-weight: 800; font-size: 1.4rem; }
+  
+  .blog-hero { padding: 8rem 0; background: var(--bg-alt); text-align: center; }
+  .blog-hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; }
+
+  .blog-list { padding: 4rem 0; }
+  .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
+  .blog-card { background: white; border-radius: var(--r-xl); overflow: hidden; border: 1px solid rgba(0,0,0,0.05); transition: all 0.3s ease; }
+  .blog-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+  .blog-img { height: 220px; width: 100%; object-fit: cover; }
+  .blog-content { padding: 2rem; }
+  .blog-date { font-size: 0.8rem; color: var(--text3); margin-bottom: 0.5rem; display: block; }
+  .blog-title { font-size: 1.25rem; margin-bottom: 1rem; }
+  .blog-link { color: var(--primary); font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+
+  footer { padding: 4rem 0; background: #050912; color: #64748B; text-align: center; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+    <a href="index.html" class="logo">
+      <img src="images/welkin_getter_logo.jpeg" alt="Logo" style="height: 40px; border-radius: 8px;">
+      <span>WelkinGetter</span>
+    </a>
+    <a href="index.html#contact" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">Get Started</a>
+  </div>
+</nav>
+
+<header class="blog-hero">
+  <div class="container">
+    <h1>Resources & <span style="color: var(--primary);">Insights</span></h1>
+    <p>Expert articles on engineering, growth, and digital transformation for Indian enterprises.</p>
+  </div>
+</header>
+
+<section class="blog-list">
+  <div class="container">
+    <div class="blog-grid">
+      <article class="blog-card">
+        <img src="blog_lms_future_1776927489913.png" alt="Future of LMS" class="blog-img">
+        <div class="blog-content">
+          <span class="blog-date">April 15, 2026 · 8 min read</span>
+          <h3 class="blog-title">The Future of LMS: AI-Driven Competency Tracking in 2026</h3>
+          <p style="color: var(--text2); margin-bottom: 1.5rem; font-size: 0.95rem;">How we're using edge computing to deliver personalized learning paths for massive employee cohorts...</p>
+          <a href="#" class="blog-link">Read Full Article <i data-lucide="arrow-right" style="width: 14px;"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="blog_scalable_web_1776927667901.png" alt="Scalable Web Apps" class="blog-img">
+        <div class="blog-content">
+          <span class="blog-date">March 28, 2026 · 6 min read</span>
+          <h3 class="blog-title">Building for Bharat: Scaling Web Apps for 500M+ Users</h3>
+          <p style="color: var(--text2); margin-bottom: 1.5rem; font-size: 0.95rem;">Optimizing Core Web Vitals for low-bandwidth regions without compromising on enterprise features...</p>
+          <a href="#" class="blog-link">Read Full Article <i data-lucide="arrow-right" style="width: 14px;"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="blog_marketing_2026_1776927704830.png" alt="Digital Marketing ROI" class="blog-img">
+        <div class="blog-content">
+          <span class="blog-date">March 12, 2026 · 10 min read</span>
+          <h3 class="blog-title">Beyond Performance: The New ROI Metrics for B2B Marketing</h3>
+          <p style="color: var(--text2); margin-bottom: 1.5rem; font-size: 0.95rem;">Why lead quality is outperforming lead quantity for Indian SMBs in the enterprise tech space...</p>
+          <a href="#" class="blog-link">Read Full Article <i data-lucide="arrow-right" style="width: 14px;"></i></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026 WelkinGetter Global IT Solutions. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
