@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WelkinGetter Global IT Solutions | Build. Scale. Deliver.</title>
-    <meta name="description" content="High-performance web applications, custom LMS platforms, and performance-driven digital marketing.">
-    
+    <meta name="description"
+        content="High-performance web applications, custom LMS platforms, and performance-driven digital marketing.">
+
     <!-- SEO Best Practices -->
     <meta property="og:title" content="WelkinGetter Global IT Solutions">
-    <meta property="og:description" content="High-performance web applications, custom LMS platforms, and performance-driven digital marketing.">
+    <meta property="og:description"
+        content="High-performance web applications, custom LMS platforms, and performance-driven digital marketing.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://welkin-getter.vercel.app/">
     <meta property="og:image" content="https://welkingetter.com/wp-content/uploads/2024/12/Antra-Home.jpg">
@@ -19,19 +22,26 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- Icons -->
     <script src="https://unpkg.com/lucide@0.395.0" defer></script>
 
     <style>
         /* Design Tokens */
         :root {
-            --primary: #8B5CF6; /* Vibrant Purple */
-            --secondary: #EC4899; /* Vibrant Pink */
-            --accent: #F43F5E; /* Vibrant Rose */
-            --accent2: #0EA5E9; /* Vibrant Sky Blue */
-            --accent3: #10B981; /* Emerald */
+            --primary: #8B5CF6;
+            /* Vibrant Purple */
+            --secondary: #EC4899;
+            /* Vibrant Pink */
+            --accent: #F43F5E;
+            /* Vibrant Rose */
+            --accent2: #0EA5E9;
+            /* Vibrant Sky Blue */
+            --accent3: #10B981;
+            /* Emerald */
             --orange: #F97316;
             --green: #10B981;
             --gold: #EAB308;
@@ -48,7 +58,9 @@
         }
 
         /* Reset & Base */
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -66,7 +78,12 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: var(--font-heading);
             font-weight: 700;
             line-height: 1.2;
@@ -118,7 +135,7 @@
             color: var(--text2);
             font-size: 1.125rem;
             max-width: 700px;
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
         }
 
         /* Skip to Content */
@@ -132,6 +149,7 @@
             z-index: 9999;
             transition: top 0.2s;
         }
+
         .skip-link:focus {
             top: 0;
         }
@@ -154,6 +172,7 @@
             transform: translateY(30px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
+
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
@@ -190,6 +209,7 @@
             color: var(--text);
             border: 2px solid var(--text);
         }
+
         .btn-outline:hover {
             background: var(--text);
             color: white;
@@ -230,6 +250,7 @@
                 justify-content: space-between;
                 align-items: center;
             }
+
             .nav-links {
                 justify-content: flex-end;
             }
@@ -238,12 +259,12 @@
         .logo-wrap {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.75rem;
             font-family: var(--font-heading);
             font-weight: 800;
             font-size: 1.75rem;
             color: white;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             padding-left: 0.5rem;
         }
@@ -269,13 +290,15 @@
             font-weight: 500;
             color: white;
             position: relative;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
             display: inline-flex;
             align-items: center;
             gap: 6px;
         }
-        
-        .navbar.scrolled .nav-links a, .navbar.scrolled .logo-wrap, .navbar.scrolled .hamburger {
+
+        .navbar.scrolled .nav-links a,
+        .navbar.scrolled .logo-wrap,
+        .navbar.scrolled .hamburger {
             color: var(--text);
         }
 
@@ -292,7 +315,7 @@
             top: 100%;
             left: 0;
             background: white;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             padding: 1rem 0;
             min-width: 250px;
@@ -365,7 +388,7 @@
             text-align: center;
             padding: 0;
         }
-        
+
         .mobile-menu .dropdown-menu a {
             font-size: 1.1rem;
             margin: 0.5rem 0;
@@ -381,10 +404,11 @@
             color: white;
             padding: 12px 24px;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             z-index: 3000;
             transition: transform 0.3s ease;
         }
+
         .toast.show {
             transform: translateX(-50%) translateY(0);
         }
@@ -395,7 +419,7 @@
             height: 100vh;
             display: flex;
             align-items: center;
-            padding-top: 160px;
+            padding-top: 200px;
             overflow: hidden;
             background-color: var(--bg-dark);
             color: white;
@@ -431,6 +455,10 @@
             height: calc(100vh - var(--nav-height));
         }
 
+        .hero-content {
+            margin-top: 2rem;
+        }
+
         .hero-content h1 {
             font-size: clamp(2.5rem, 5vw, 4rem);
             color: white;
@@ -444,7 +472,7 @@
 
         .hero-sub {
             font-size: 0.975rem;
-            color: rgba(255,255,255,0.8);
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 1.5rem;
             max-width: 600px;
             line-height: 1.6;
@@ -456,11 +484,12 @@
             margin-bottom: 2rem;
             flex-wrap: wrap;
         }
-        
+
         .hero .btn-outline {
             color: white;
             border-color: white;
         }
+
         .hero .btn-outline:hover {
             background: white;
             color: var(--bg-dark);
@@ -491,12 +520,16 @@
             font-weight: 700;
             margin-left: -10px;
         }
-        .avatar:first-child { margin-left: 0; }
+
+        .avatar:first-child {
+            margin-left: 0;
+        }
 
         .social-proof-text {
             font-size: 0.875rem;
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 255, 255, 0.7);
         }
+
         .social-proof-text strong {
             color: white;
         }
@@ -509,7 +542,7 @@
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255, 255, 255, 0.5);
             margin-bottom: 1rem;
         }
 
@@ -522,7 +555,7 @@
             filter: grayscale(100%);
             transition: all 0.3s ease;
         }
-        
+
         .logo-strip:hover {
             opacity: 1;
             filter: grayscale(0%);
@@ -548,7 +581,7 @@
         }
 
         .hero-form-card p {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.875rem;
             margin-bottom: 1.5rem;
         }
@@ -567,16 +600,16 @@
             font-family: var(--font-body);
             transition: border-color 0.3s ease;
         }
-        
+
         .form-control::placeholder {
-            color: rgba(255,255,255,0.5);
+            color: rgba(255, 255, 255, 0.5);
         }
 
         .form-control:focus {
             outline: none;
             border-color: var(--primary);
         }
-        
+
         .form-control option {
             background: var(--bg-dark);
             color: white;
@@ -595,7 +628,7 @@
         .form-footer {
             margin-top: 1rem;
             font-size: 0.75rem;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255, 255, 255, 0.5);
             text-align: center;
         }
 
@@ -603,9 +636,11 @@
             .hero .container {
                 grid-template-columns: 1fr;
             }
+
             .hero-form-card {
                 display: none;
             }
+
             .hero-content {
                 text-align: center;
                 display: flex;
@@ -617,8 +652,8 @@
         /* Trust Band */
         .trust-band {
             background: white;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
         }
 
         .trust-grid {
@@ -638,37 +673,48 @@
             font-weight: 500;
             color: var(--text2);
         }
-        
-        .trust-item img, .trust-item i {
+
+        .trust-item img,
+        .trust-item i {
             color: var(--primary);
         }
 
         @media (max-width: 1024px) {
-            .trust-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem 1rem; }
+            .trust-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem 1rem;
+            }
         }
+
         @media (max-width: 600px) {
-            .trust-grid { grid-template-columns: repeat(2, 1fr); }
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         /* Common Section Padding */
         section {
-            padding: 10rem 0;
+            padding: 3rem 0;
+        }
+
+        section.hero {
+            padding-bottom: 10rem;
         }
 
         /* Services */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .service-card {
             background: white;
             border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -676,7 +722,7 @@
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             border-color: var(--primary);
         }
 
@@ -689,18 +735,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .service-card h3 {
             font-size: 1.25rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .service-card p {
             color: var(--text2);
             font-size: 0.95rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             flex-grow: 1;
         }
 
@@ -730,31 +776,36 @@
         }
 
         @media (max-width: 1024px) {
-            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
+
         @media (max-width: 600px) {
-            .services-grid { grid-template-columns: 1fr; }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Process */
         .process-section {
             background: var(--bg);
         }
-        
+
         .process-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
             position: relative;
         }
 
         .process-card {
             background: white;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 16px;
             position: relative;
             z-index: 2;
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .process-step {
@@ -770,23 +821,29 @@
 
         .process-icon {
             color: var(--secondary);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .process-card h3 {
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             font-size: 1.2rem;
         }
+
         .process-card p {
             color: var(--text2);
             font-size: 0.95rem;
         }
 
         @media (max-width: 1024px) {
-            .process-grid { grid-template-columns: repeat(2, 1fr); }
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
+
         @media (max-width: 600px) {
-            .process-grid { grid-template-columns: 1fr; }
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Why Us */
@@ -797,7 +854,7 @@
         .why-us .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 2rem;
             align-items: center;
         }
 
@@ -805,7 +862,7 @@
             margin-top: 2rem;
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1rem;
         }
 
         .feature-row {
@@ -820,6 +877,7 @@
         .feature-text h4 {
             margin-bottom: 0.25rem;
         }
+
         .feature-text p {
             color: var(--text2);
             font-size: 0.95rem;
@@ -828,13 +886,13 @@
         .stat-panel {
             background: var(--bg-dark);
             border-radius: 20px;
-            padding: 3rem;
+            padding: 2rem;
             color: white;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
         .stat-bar-container {
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
 
         .stat-label {
@@ -844,6 +902,7 @@
             font-weight: 500;
             font-size: 0.95rem;
         }
+
         .stat-label span:last-child {
             color: var(--primary);
             font-weight: 700;
@@ -851,10 +910,11 @@
 
         .stat-bar {
             height: 8px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 4px;
             overflow: hidden;
         }
+
         .stat-fill {
             height: 100%;
             background: linear-gradient(90deg, var(--primary), var(--accent));
@@ -864,40 +924,47 @@
         }
 
         .founder-quote {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .founder-quote p {
             font-style: italic;
-            color: rgba(255,255,255,0.8);
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 1rem;
         }
+
         .founder-quote strong {
             color: white;
             display: block;
         }
+
         .founder-quote span {
             font-size: 0.85rem;
             color: var(--primary);
         }
 
         @media (max-width: 1024px) {
-            .why-us .container { grid-template-columns: 1fr; }
+            .why-us .container {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Numbers Band */
         .numbers-band {
             background: var(--bg-dark);
             color: white;
-            padding: 4rem 0;
+            padding: 2rem 0;
         }
+
         .numbers-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             text-align: center;
         }
+
         .number-stat {
             font-family: var(--font-heading);
             font-size: 3rem;
@@ -909,13 +976,17 @@
             line-height: 1;
             margin-bottom: 0.5rem;
         }
+
         .number-label {
             font-weight: 500;
             letter-spacing: 1px;
-            color: rgba(255,255,255,0.8);
+            color: rgba(255, 255, 255, 0.8);
         }
+
         @media (max-width: 768px) {
-            .numbers-grid { grid-template-columns: repeat(2, 1fr); }
+            .numbers-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         /* Portfolio */
@@ -926,9 +997,10 @@
         .filter-pills {
             display: flex;
             gap: 1rem;
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
             flex-wrap: wrap;
         }
+
         .filter-pill {
             padding: 0.5rem 1.5rem;
             border-radius: 30px;
@@ -936,10 +1008,12 @@
             color: var(--text2);
             font-weight: 500;
             cursor: pointer;
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
-        .filter-pill.active, .filter-pill:hover {
+
+        .filter-pill.active,
+        .filter-pill:hover {
             background: var(--primary);
             color: white;
             border-color: var(--primary);
@@ -948,19 +1022,20 @@
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .case-card {
             background: white;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
+
         .case-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
 
         .case-img {
@@ -970,7 +1045,7 @@
         }
 
         .case-content {
-            padding: 1.5rem;
+            padding: 1rem;
         }
 
         .case-category {
@@ -993,62 +1068,76 @@
         }
 
         @media (max-width: 768px) {
-            .portfolio-grid { grid-template-columns: 1fr; }
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Testimonials */
         .testimonials {
             background: white;
         }
+
         .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
         }
+
         .testimonial-card {
             background: var(--bg);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 16px;
         }
+
         .stars {
             color: var(--gold);
             margin-bottom: 1rem;
         }
+
         .testimonial-quote {
             font-style: italic;
             color: var(--text2);
             margin-bottom: 1.5rem;
         }
+
         .testimonial-author {
             font-weight: 700;
         }
+
         .testimonial-company {
             color: var(--text3);
             font-size: 0.85rem;
         }
+
         @media (max-width: 1024px) {
-            .testimonial-grid { grid-template-columns: 1fr; }
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Regarding Us */
         .regarding-us {
             background: var(--bg);
         }
+
         .team-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-            margin-bottom: 3rem;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
         }
+
         .team-card {
             background: white;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 16px;
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             align-items: flex-start;
         }
+
         .team-avatar {
             width: 80px;
             height: 80px;
@@ -1061,20 +1150,40 @@
             color: white;
             flex-shrink: 0;
         }
-        .avatar-ad { background: linear-gradient(135deg, var(--primary), var(--secondary)); }
-        .avatar-sk { background: linear-gradient(135deg, var(--accent), var(--orange)); }
-        
-        .team-info h4 { font-size: 1.25rem; margin-bottom: 0.25rem; }
-        .team-role { color: var(--primary); font-size: 0.9rem; font-weight: 500; margin-bottom: 1rem; }
-        .team-info p { color: var(--text2); font-size: 0.95rem; }
+
+        .avatar-ad {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        .avatar-sk {
+            background: linear-gradient(135deg, var(--accent), var(--orange));
+        }
+
+        .team-info h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .team-role {
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .team-info p {
+            color: var(--text2);
+            font-size: 0.95rem;
+        }
 
         .values-strip {
             display: flex;
             flex-wrap: wrap;
-            gap: 1.5rem;
+            gap: 1rem;
             justify-content: center;
-            margin-top: 3rem;
+            margin-top: 1.5rem;
         }
+
         .value-item {
             display: flex;
             align-items: center;
@@ -1082,24 +1191,36 @@
             font-weight: 500;
             color: var(--text);
         }
-        .value-item i { color: var(--green); }
+
+        .value-item i {
+            color: var(--green);
+        }
 
         @media (max-width: 768px) {
-            .team-grid { grid-template-columns: 1fr; }
-            .team-card { flex-direction: column; align-items: center; text-align: center; }
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
         }
 
         /* Tech Stack */
         .tech-stack {
-            padding: 4rem 0;
+            padding: 2rem 0;
             background: white;
             text-align: center;
             overflow: hidden;
         }
+
         .tech-stack h3 {
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             font-size: 1.5rem;
         }
+
         .marquee-container {
             display: flex;
             gap: 4rem;
@@ -1110,52 +1231,96 @@
             filter: grayscale(100%);
             transition: all 0.3s ease;
         }
+
         .marquee-container:hover {
             opacity: 1;
             filter: grayscale(0%);
         }
+
         .marquee-container img {
             height: 40px;
             object-fit: contain;
         }
 
         /* Blog */
-        .blog { background: var(--bg); }
+        .blog {
+            background: var(--bg);
+        }
+
         .blog-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
         }
+
         .blog-card {
             background: white;
             border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            padding: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
-        .blog-card:hover { transform: translateY(-3px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
-        .blog-meta { color: var(--text3); font-size: 0.75rem; margin-bottom: 0.75rem; display: flex; justify-content: space-between; }
-        .blog-card h4 { font-size: 1.1rem; margin-bottom: 1rem; line-height: 1.4; }
-        .blog-link { color: var(--primary); font-weight: 600; font-size: 0.85rem; display: flex; align-items: center; gap: 0.25rem; }
-        @media (max-width: 1024px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 600px) { .blog-grid { grid-template-columns: 1fr; } }
+
+        .blog-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-meta {
+            color: var(--text3);
+            font-size: 0.75rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .blog-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .blog-link {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        @media (max-width: 1024px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 
         /* FAQ */
-        .faq { background: white; }
+        .faq {
+            background: white;
+        }
+
         .faq-item {
             border: 1.5px solid #000;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             border-radius: 4px;
             overflow: hidden;
             transition: all 0.3s ease;
         }
+
         .faq-question {
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem;
+            padding: 1rem 1.5rem;
             background: none;
             border: none;
             font-size: 1.1rem;
@@ -1164,9 +1329,11 @@
             text-align: left;
             cursor: pointer;
         }
+
         .faq-question i {
             transition: transform 0.3s ease;
         }
+
         .faq-answer {
             max-height: 0;
             overflow: hidden;
@@ -1174,113 +1341,268 @@
             color: var(--text2);
             padding: 0 1.5rem;
         }
+
         .faq-item.active .faq-answer {
             max-height: 200px;
-            padding-bottom: 1.5rem;
+            padding-bottom: 1rem;
         }
+
         .faq-item.active .faq-question i {
             transform: rotate(180deg);
             color: var(--primary);
         }
 
         /* Contact */
-        .contact { background: var(--bg); }
+        .contact {
+            background: var(--bg);
+        }
+
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 2rem;
             background: white;
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
         }
+
         .contact-info {
             background: linear-gradient(135deg, var(--bg-dark), var(--secondary));
             color: white;
-            padding: 4rem;
+            padding: 2rem;
         }
-        .contact-info h3 { color: white; font-size: 2rem; margin-bottom: 1rem; }
-        .contact-info p { color: rgba(255,255,255,0.8); margin-bottom: 3rem; }
-        .contact-details { display: flex; flex-direction: column; gap: 1.5rem; }
-        .contact-detail { display: flex; align-items: flex-start; gap: 1rem; }
-        .contact-detail i { color: var(--primary); margin-top: 0.25rem; }
-        
+
+        .contact-info h3 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-detail i {
+            color: var(--primary);
+            margin-top: 0.25rem;
+        }
+
         .contact-form-container {
-            padding: 4rem;
+            padding: 2rem;
         }
+
         .contact-form .form-control {
-            border-color: rgba(0,0,0,0.1);
+            border-color: rgba(0, 0, 0, 0.1);
             background: var(--bg);
             color: var(--text);
         }
-        .contact-form .form-control:focus { border-color: var(--primary); }
-        .contact-form .form-control::placeholder { color: var(--text3); }
-        .form-message { display: none; padding: 1rem; border-radius: 8px; margin-top: 1rem; font-weight: 500; }
-        .form-message.success { display: block; background: rgba(16, 185, 129, 0.1); color: var(--green); }
-        .form-message.error { display: block; background: rgba(239, 68, 68, 0.1); color: #EF4444; }
+
+        .contact-form .form-control:focus {
+            border-color: var(--primary);
+        }
+
+        .contact-form .form-control::placeholder {
+            color: var(--text3);
+        }
+
+        .form-message {
+            display: none;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        .form-message.success {
+            display: block;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--green);
+        }
+
+        .form-message.error {
+            display: block;
+            background: rgba(239, 68, 68, 0.1);
+            color: #EF4444;
+        }
 
         @media (max-width: 1024px) {
-            .contact-grid { grid-template-columns: 1fr; }
-            .contact-info, .contact-form-container { padding: 2rem; }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info,
+            .contact-form-container {
+                padding: 2rem;
+            }
         }
 
         /* Footer */
         .footer {
             background: var(--bg-dark);
             color: white;
-            padding: 4rem 0 2rem;
+            padding: 2rem 0 1rem;
         }
+
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
         }
-        .footer-logo { font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem; margin-bottom: 1rem; display: block; color: white;}
-        .footer-tagline { color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
-        .social-links { display: flex; gap: 1rem; }
+
+        .footer-logo {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: block;
+            color: white;
+        }
+
+        .footer-tagline {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
         .social-links a {
-            width: 36px; height: 36px; border-radius: 50%;
-            background: rgba(255,255,255,0.1);
-            display: flex; align-items: center; justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: all 0.3s ease;
         }
-        .social-links a:hover { background: var(--primary); transform: translateY(-3px); }
 
-        .footer h4 { color: white; margin-bottom: 1.5rem; font-size: 1.1rem; }
-        .footer-links { list-style: none; }
-        .footer-links li { margin-bottom: 0.75rem; }
-        .footer-links a { color: rgba(255,255,255,0.7); transition: color 0.3s ease; }
-        .footer-links a:hover { color: var(--primary); padding-left: 5px; }
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
 
-        .newsletter p { color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 0.5rem; }
-        .newsletter small { display: block; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
-        .newsletter-form { display: flex; gap: 0.5rem; }
-        .newsletter-form input { flex: 1; padding: 0.75rem; border-radius: 8px; border: none; background: rgba(255,255,255,0.1); color: white; }
-        .newsletter-form button { background: var(--primary); color: white; border: none; padding: 0 1rem; border-radius: 8px; cursor: pointer; }
+        .footer h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .newsletter p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .newsletter small {
+            display: block;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.75rem;
+            border-radius: 8px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .newsletter-form button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+        }
 
         .footer-bottom {
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 1rem;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255, 255, 255, 0.5);
             font-size: 0.85rem;
         }
-        .footer-bottom-links { display: flex; gap: 1.5rem; }
 
-        .footer-badges { display: flex; gap: 1rem; margin-top: 1.5rem; }
-        .footer-badges img { height: 40px; background: white; padding: 5px; border-radius: 4px; }
+        .footer-bottom-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-badges {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .footer-badges img {
+            height: 40px;
+            background: white;
+            padding: 5px;
+            border-radius: 4px;
+        }
 
         @media (max-width: 1024px) {
-            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
+
         @media (max-width: 600px) {
-            .footer-grid { grid-template-columns: 1fr; }
-            .footer-bottom { flex-direction: column; text-align: center; }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
         }
 
         /* Floating Elements */
@@ -1302,18 +1624,44 @@
             height: 54px;
             overflow: hidden;
         }
+
         .whatsapp-cta:hover {
             width: 200px;
         }
+
         .wa-icon {
-            width: 34px; height: 34px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+            width: 34px;
+            height: 34px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+
         .wa-text {
-            white-space: nowrap; padding-left: 10px; font-weight: 600; font-size: 0.9rem; opacity: 0; transition: opacity 0.3s ease;
+            white-space: nowrap;
+            padding-left: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
-        .whatsapp-cta:hover .wa-text { opacity: 1; }
+
+        .whatsapp-cta:hover .wa-text {
+            opacity: 1;
+        }
+
         .wa-badge {
-            position: absolute; top: 0; right: 0; background: var(--accent); color: white; font-size: 0.6rem; font-weight: 800; padding: 2px 6px; border-radius: 10px; border: 2px solid white;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--accent);
+            color: white;
+            font-size: 0.6rem;
+            font-weight: 800;
+            padding: 2px 6px;
+            border-radius: 10px;
+            border: 2px solid white;
         }
 
         .back-to-top {
@@ -1328,7 +1676,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             cursor: pointer;
             z-index: 2000;
             opacity: 0;
@@ -1337,16 +1685,19 @@
             transition: all 0.3s ease;
             border: none;
         }
+
         .back-to-top.visible {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
+
         .back-to-top:hover {
             transform: translateY(-5px);
         }
     </style>
 </head>
+
 <body>
 
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -1362,12 +1713,13 @@
                 <img src="images/welkin_getter_logo.jpeg" alt="WelkinGetter Logo">
                 <span>WelkinGetter</span>
             </a>
-            
+
             <div class="nav-links" id="navLinks">
                 <a href="#home">Home</a>
                 <a href="#about">Regarding Us</a>
                 <div class="dropdown">
-                    <a href="#services" aria-haspopup="true" aria-expanded="false">Services <i data-lucide="chevron-down" style="width: 14px;"></i></a>
+                    <a href="#services" aria-haspopup="true" aria-expanded="false">Services <i
+                            data-lucide="chevron-down" style="width: 14px;"></i></a>
                     <div class="dropdown-menu">
                         <a href="service-web-platforms.html">Web Development</a>
                         <a href="service-cloud-native-apps.html">Mobile App Development</a>
@@ -1387,7 +1739,8 @@
 
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
-        <button class="hamburger" id="closeMenuBtn" aria-label="Close menu" style="display:block; position:absolute; top:30px; right:30px; color:var(--text);">
+        <button class="hamburger" id="closeMenuBtn" aria-label="Close menu"
+            style="display:block; position:absolute; top:30px; right:30px; color:var(--text);">
             <i data-lucide="x"></i>
         </button>
         <a href="#home" class="mobile-link">Home</a>
@@ -1407,28 +1760,35 @@
         <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="hero-bg">
-                <video autoplay loop muted playsinline class="hero-video" poster="https://welkingetter.com/wp-content/uploads/2024/12/Antra-Home.jpg">
+                <video autoplay loop muted playsinline class="hero-video"
+                    poster="https://welkingetter.com/wp-content/uploads/2024/12/Antra-Home.jpg">
                     <source src="hero_bg_video.mp4" type="video/mp4">
                 </video>
                 <div class="hero-overlay"></div>
             </div>
-            
+
             <div class="container">
                 <div class="hero-content reveal">
                     <h1>Skilled <br> Developers & <br> <span style="color: var(--primary);">Programmers.</span></h1>
-                    <p class="hero-sub">High-performance web applications, custom LMS platforms, and performance-driven digital marketing. Designed to boost online visibility, deliver high ROI, and scale your growing business.</p>
-                    
+                    <p class="hero-sub">High-performance web applications, custom LMS platforms, and performance-driven
+                        digital marketing. Designed to boost online visibility, deliver high ROI, and scale your growing
+                        business.</p>
+
                     <div class="hero-ctas">
-                        <a href="https://calendly.com/welkingetter/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Schedule a Consultation</a>
+                        <a href="https://calendly.com/welkingetter/30min" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-primary">Schedule a Consultation</a>
                         <a href="#portfolio" class="btn btn-outline">View Our Work</a>
                     </div>
 
                     <div class="social-proof">
                         <div class="avatar-group">
                             <div class="avatar">R</div>
-                            <div class="avatar" style="background: linear-gradient(135deg, var(--accent), var(--orange));">A</div>
-                            <div class="avatar" style="background: linear-gradient(135deg, var(--green), var(--primary));">V</div>
-                            <div class="avatar" style="background: linear-gradient(135deg, var(--secondary), var(--accent));">S</div>
+                            <div class="avatar"
+                                style="background: linear-gradient(135deg, var(--accent), var(--orange));">A</div>
+                            <div class="avatar"
+                                style="background: linear-gradient(135deg, var(--green), var(--primary));">V</div>
+                            <div class="avatar"
+                                style="background: linear-gradient(135deg, var(--secondary), var(--accent));">S</div>
                         </div>
                         <div class="social-proof-text">
                             Trusted by <strong>250+</strong> growing businesses & enterprises across India
@@ -1438,11 +1798,16 @@
                     <div class="client-logos">
                         <div class="client-logos-label">Trusted by growing businesses across India</div>
                         <div class="logo-strip">
-                            <img src="https://welkingetter.com/wp-content/uploads/2024/12/granary-logo.png" alt="Granary">
-                            <img src="https://welkingetter.com/wp-content/uploads/2024/12/Logo-1.png" alt="Client Logo 1" onerror="this.style.display='none'">
-                            <img src="https://welkingetter.com/wp-content/uploads/2024/12/Logo-new.png" alt="Client Logo 2" onerror="this.style.display='none'">
-                            <img src="https://welkingetter.com/wp-content/uploads/2024/12/NATURE-IN-YOU.png" alt="Nature In You">
-                            <img src="https://welkingetter.com/wp-content/uploads/2024/12/AntraLogo-white.png" alt="Antra Entertainment">
+                            <img src="https://welkingetter.com/wp-content/uploads/2024/12/granary-logo.png"
+                                alt="Granary">
+                            <img src="https://welkingetter.com/wp-content/uploads/2024/12/Logo-1.png"
+                                alt="Client Logo 1" onerror="this.style.display='none'">
+                            <img src="https://welkingetter.com/wp-content/uploads/2024/12/Logo-new.png"
+                                alt="Client Logo 2" onerror="this.style.display='none'">
+                            <img src="https://welkingetter.com/wp-content/uploads/2024/12/NATURE-IN-YOU.png"
+                                alt="Nature In You">
+                            <img src="https://welkingetter.com/wp-content/uploads/2024/12/AntraLogo-white.png"
+                                alt="Antra Entertainment">
                         </div>
                     </div>
                 </div>
@@ -1450,10 +1815,11 @@
                 <div class="hero-form-card reveal" style="transition-delay: 0.2s;">
                     <h3>Start Your Project Today</h3>
                     <p>Tell us what you need — we'll get back within 24 hours.</p>
-                    
+
                     <form id="heroForm" onsubmit="handleHeroSubmit(event)">
                         <div class="form-group">
-                            <input type="tel" id="heroPhone" class="form-control" placeholder="Phone Number" required autocomplete="tel">
+                            <input type="tel" id="heroPhone" class="form-control" placeholder="Phone Number" required
+                                autocomplete="tel">
                         </div>
                         <div class="form-group">
                             <select id="heroService" class="form-control" required>
@@ -1470,10 +1836,12 @@
                         <div class="form-group">
                             <textarea id="heroMessage" class="form-control" placeholder="Message" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Enquiry <i data-lucide="send" style="width:16px;"></i></button>
+                        <button type="submit" class="btn btn-primary">Send Enquiry <i data-lucide="send"
+                                style="width:16px;"></i></button>
                         <div id="heroFormMsg" class="form-message"></div>
                         <div class="form-footer">
-                            <i data-lucide="lock" style="width:12px; display:inline; margin-bottom:-2px;"></i> Your data is 100% secure and never shared.
+                            <i data-lucide="lock" style="width:12px; display:inline; margin-bottom:-2px;"></i> Your data
+                            is 100% secure and never shared.
                         </div>
                     </form>
                 </div>
@@ -1483,7 +1851,8 @@
         <!-- Trust Band -->
         <div class="trust-band reveal">
             <div class="container trust-grid">
-                <div class="trust-item"><i data-lucide="shield-check"></i> ISO 27001 Certified · Reg. No. IS-2024-IN-00347 · <a href="#contact" style="color:var(--primary);">Verify</a></div>
+                <div class="trust-item"><i data-lucide="shield-check"></i> ISO 27001 Certified · Reg. No.
+                    IS-2024-IN-00347 · <a href="#contact" style="color:var(--primary);">Verify</a></div>
                 <div class="trust-item"><i data-lucide="lock"></i> AES-256 Encryption</div>
                 <div class="trust-item"><i data-lucide="award"></i> 98% Client Retention</div>
                 <div class="trust-item"><i data-lucide="map-pin"></i> Pan-India Delivery</div>
@@ -1496,48 +1865,65 @@
         <section id="services">
             <div class="container">
                 <span class="section-eyebrow reveal">Expertise & Solutions</span>
-                <h2 class="section-heading reveal">Enterprise-Grade <span class="text-gradient">Digital Transformation</span></h2>
-                <p class="section-body reveal">We build the infrastructure that powers modern businesses, from high-scale learning systems to automated cloud workflows.</p>
+                <h2 class="section-heading reveal">Enterprise-Grade <span class="text-gradient">Digital
+                        Transformation</span></h2>
+                <p class="section-body reveal">We build the infrastructure that powers modern businesses, from
+                    high-scale learning systems to automated cloud workflows.</p>
 
                 <div class="services-grid">
                     <div class="service-card reveal">
-                        <div class="service-icon"><i data-lucide="layout-dashboard" style="width:32px; height:32px;"></i></div>
+                        <div class="service-icon"><i data-lucide="layout-dashboard"
+                                style="width:32px; height:32px;"></i></div>
                         <h3>01 / Corporate Web Platforms</h3>
-                        <p>Bespoke enterprise websites and dashboards built with Next.js and headless architectures for maximum speed and security.</p>
+                        <p>Bespoke enterprise websites and dashboards built with Next.js and headless architectures for
+                            maximum speed and security.</p>
                         <div class="tags">
-                            <span class="tag">Next.js</span><span class="tag">Headless CMS</span><span class="tag">Core Web Vitals</span>
+                            <span class="tag">Next.js</span><span class="tag">Headless CMS</span><span class="tag">Core
+                                Web Vitals</span>
                         </div>
-                        <a href="service-web-platforms.html" class="service-link">Learn More <i data-lucide="arrow-right" style="width:16px;"></i></a>
+                        <a href="service-web-platforms.html" class="service-link">Learn More <i
+                                data-lucide="arrow-right" style="width:16px;"></i></a>
                     </div>
 
                     <div class="service-card reveal" style="transition-delay: 0.1s;">
-                        <div class="service-icon"><i data-lucide="smartphone" style="width:32px; height:32px;"></i></div>
-                        <h3>02 / Mobile App Development</h3>
-                        <p>Scalable mobile and desktop applications built to deliver seamless user experiences across all devices and platforms.</p>
-                        <div class="tags">
-                            <span class="tag">React Native</span><span class="tag">Flutter</span><span class="tag">Node.js</span><span class="tag">AWS / Azure</span>
+                        <div class="service-icon"><i data-lucide="smartphone" style="width:32px; height:32px;"></i>
                         </div>
-                        <a href="service-cloud-native-apps.html" class="service-link">Learn More <i data-lucide="arrow-right" style="width:16px;"></i></a>
+                        <h3>02 / Mobile App Development</h3>
+                        <p>Scalable mobile and desktop applications built to deliver seamless user experiences across
+                            all devices and platforms.</p>
+                        <div class="tags">
+                            <span class="tag">React Native</span><span class="tag">Flutter</span><span
+                                class="tag">Node.js</span><span class="tag">AWS / Azure</span>
+                        </div>
+                        <a href="service-cloud-native-apps.html" class="service-link">Learn More <i
+                                data-lucide="arrow-right" style="width:16px;"></i></a>
                     </div>
 
                     <div class="service-card reveal" style="transition-delay: 0.2s;">
-                        <div class="service-icon"><i data-lucide="graduation-cap" style="width:32px; height:32px;"></i></div>
-                        <h3>03 / Custom LMS Ecosystems</h3>
-                        <p>Specialized learning management systems with automated certification, gamification, and advanced student analytics.</p>
-                        <div class="tags">
-                            <span class="tag">LearnDash</span><span class="tag">Gamification</span><span class="tag">SCORM</span>
+                        <div class="service-icon"><i data-lucide="graduation-cap" style="width:32px; height:32px;"></i>
                         </div>
-                        <a href="service-lms-ecosystems.html" class="service-link">Learn More <i data-lucide="arrow-right" style="width:16px;"></i></a>
+                        <h3>03 / Custom LMS Ecosystems</h3>
+                        <p>Specialized learning management systems with automated certification, gamification, and
+                            advanced student analytics.</p>
+                        <div class="tags">
+                            <span class="tag">LearnDash</span><span class="tag">Gamification</span><span
+                                class="tag">SCORM</span>
+                        </div>
+                        <a href="service-lms-ecosystems.html" class="service-link">Learn More <i
+                                data-lucide="arrow-right" style="width:16px;"></i></a>
                     </div>
 
                     <div class="service-card reveal" style="transition-delay: 0.3s;">
                         <div class="service-icon"><i data-lucide="megaphone" style="width:32px; height:32px;"></i></div>
                         <h3>04 / Digital Marketing</h3>
-                        <p>Boost your online presence with SEO, Social Media Marketing, Google Ads, Content Marketing, and Performance Campaigns tailored for business growth.</p>
+                        <p>Boost your online presence with SEO, Social Media Marketing, Google Ads, Content Marketing,
+                            and Performance Campaigns tailored for business growth.</p>
                         <div class="tags">
-                            <span class="tag">SEO</span><span class="tag">Google Ads</span><span class="tag">Social Media</span><span class="tag">Lead Gen</span>
+                            <span class="tag">SEO</span><span class="tag">Google Ads</span><span class="tag">Social
+                                Media</span><span class="tag">Lead Gen</span>
                         </div>
-                        <a href="service-digital-marketing.html" class="service-link">Learn More <i data-lucide="arrow-right" style="width:16px;"></i></a>
+                        <a href="service-digital-marketing.html" class="service-link">Learn More <i
+                                data-lucide="arrow-right" style="width:16px;"></i></a>
                     </div>
                 </div>
             </div>
@@ -1548,35 +1934,40 @@
             <div class="container">
                 <span class="section-eyebrow reveal">Our Methodology</span>
                 <h2 class="section-heading reveal">How We Deliver <span class="text-gradient">Excellence</span></h2>
-                <p class="section-body reveal">A structured, enterprise-grade approach designed to minimize risk, accelerate time-to-market, and ensure highly scalable digital foundations.</p>
+                <p class="section-body reveal">A structured, enterprise-grade approach designed to minimize risk,
+                    accelerate time-to-market, and ensure highly scalable digital foundations.</p>
 
                 <div class="process-grid">
                     <div class="process-card reveal">
                         <div class="process-step">01</div>
                         <i data-lucide="search" class="process-icon" style="width:32px; height:32px;"></i>
                         <h3>Discovery</h3>
-                        <p>We perform a deep dive into your business logic, enterprise requirements, and legacy constraints to produce a clear, agreed-upon project specification.</p>
+                        <p>We perform a deep dive into your business logic, enterprise requirements, and legacy
+                            constraints to produce a clear, agreed-upon project specification.</p>
                     </div>
-                    
+
                     <div class="process-card reveal" style="transition-delay: 0.1s;">
                         <div class="process-step">02</div>
                         <i data-lucide="layers" class="process-icon" style="width:32px; height:32px;"></i>
                         <h3>Architecture</h3>
-                        <p>Designing scalable, secure, and cloud-native technical systems that integrate seamlessly with your existing operational workflows.</p>
+                        <p>Designing scalable, secure, and cloud-native technical systems that integrate seamlessly with
+                            your existing operational workflows.</p>
                     </div>
 
                     <div class="process-card reveal" style="transition-delay: 0.2s;">
                         <div class="process-step">03</div>
                         <i data-lucide="code" class="process-icon" style="width:32px; height:32px;"></i>
                         <h3>Development</h3>
-                        <p>Agile sprints with direct founder-led QA checkpoints, WCAG-compliant UI delivery, and AES-256 encrypted data handling throughout.</p>
+                        <p>Agile sprints with direct founder-led QA checkpoints, WCAG-compliant UI delivery, and AES-256
+                            encrypted data handling throughout.</p>
                     </div>
 
                     <div class="process-card reveal" style="transition-delay: 0.3s;">
                         <div class="process-step">04</div>
                         <i data-lucide="rocket" class="process-icon" style="width:32px; height:32px;"></i>
                         <h3>Deployment</h3>
-                        <p>Continuous integration, zero-downtime global scaling, followed by rigorous post-launch monitoring and 24/7 prioritized support.</p>
+                        <p>Continuous integration, zero-downtime global scaling, followed by rigorous post-launch
+                            monitoring and 24/7 prioritized support.</p>
                     </div>
                 </div>
             </div>
@@ -1587,9 +1978,14 @@
             <div class="container">
                 <div class="why-content reveal">
                     <span class="section-eyebrow">The Welkin Advantage</span>
-                    <h2 class="section-heading">Why Enterprises Choose <span class="text-gradient">WelkinGetter</span></h2>
-                    <p style="color:var(--text2); font-size:1.05rem; margin-bottom:1.5rem;">"At WelkinGetter Global IT Solutions, we don't just offer services — we deliver innovation, efficiency, and growth to help your business soar to new heights. Our dedicated team of technology experts leverages cutting-edge solutions to drive transformation, ensuring your business stays ahead in an ever-evolving digital landscape."</p>
-                    
+                    <h2 class="section-heading">Why Enterprises Choose <span class="text-gradient">WelkinGetter</span>
+                    </h2>
+                    <p style="color:var(--text2); font-size:1.05rem; margin-bottom:1.5rem;">"At WelkinGetter Global IT
+                        Solutions, we don't just offer services — we deliver innovation, efficiency, and growth to help
+                        your business soar to new heights. Our dedicated team of technology experts leverages
+                        cutting-edge solutions to drive transformation, ensuring your business stays ahead in an
+                        ever-evolving digital landscape."</p>
+
                     <div class="why-features">
                         <div class="feature-row">
                             <div class="feature-icon">🛡️</div>
@@ -1610,20 +2006,28 @@
 
                 <div class="stat-panel reveal" style="transition-delay: 0.2s;">
                     <div class="stat-bar-container">
-                        <div class="stat-label"><span>Average Performance Boost</span> <span class="counter" data-target="94">0%</span></div>
-                        <div class="stat-bar"><div class="stat-fill" data-width="94%"></div></div>
+                        <div class="stat-label"><span>Average Performance Boost</span> <span class="counter"
+                                data-target="94">0%</span></div>
+                        <div class="stat-bar">
+                            <div class="stat-fill" data-width="94%"></div>
+                        </div>
                     </div>
                     <div class="stat-bar-container">
                         <div class="stat-label"><span>Deployment Velocity</span> <span>3× Faster</span></div>
-                        <div class="stat-bar"><div class="stat-fill" data-width="85%"></div></div>
+                        <div class="stat-bar">
+                            <div class="stat-fill" data-width="85%"></div>
+                        </div>
                     </div>
                     <div class="stat-bar-container">
                         <div class="stat-label"><span>Post-Launch Support</span> <span>24/7/365</span></div>
-                        <div class="stat-bar"><div class="stat-fill" data-width="100%"></div></div>
+                        <div class="stat-bar">
+                            <div class="stat-fill" data-width="100%"></div>
+                        </div>
                     </div>
 
                     <div class="founder-quote">
-                        <p>"I personally oversee every architectural decision to ensure our clients receive true enterprise-grade quality."</p>
+                        <p>"I personally oversee every architectural decision to ensure our clients receive true
+                            enterprise-grade quality."</p>
                         <strong>— Anand Dubey</strong>
                         <span>Chief Engineering Officer</span>
                     </div>
@@ -1658,7 +2062,7 @@
             <div class="container">
                 <span class="section-eyebrow reveal">Case Studies</span>
                 <h2 class="section-heading reveal">Proven <span class="text-gradient">Success Stories</span></h2>
-                
+
                 <div class="filter-pills reveal">
                     <div class="filter-pill active">All Work</div>
                     <div class="filter-pill">Web Development</div>
@@ -1668,43 +2072,52 @@
 
                 <div class="portfolio-grid">
                     <div class="case-card reveal">
-                        <img src="https://welkingetter.com/wp-content/uploads/2024/12/Antra-Home.jpg" alt="Antra Entertainment" class="case-img">
+                        <img src="https://welkingetter.com/wp-content/uploads/2024/12/Antra-Home.jpg"
+                            alt="Antra Entertainment" class="case-img">
                         <div class="case-content">
                             <div class="case-category">Enterprise</div>
                             <h3>Antra Entertainment</h3>
-                            <p>Full-stack entertainment platform with dynamic content management and streaming-optimised delivery.</p>
+                            <p>Full-stack entertainment platform with dynamic content management and streaming-optimised
+                                delivery.</p>
                         </div>
                     </div>
 
                     <div class="case-card reveal" style="transition-delay: 0.1s;">
-                        <img src="https://welkingetter.com/wp-content/uploads/2024/12/Pearl-Property-Solutions.jpg" alt="Pearl Property Solutions" class="case-img">
+                        <img src="https://welkingetter.com/wp-content/uploads/2024/12/Pearl-Property-Solutions.jpg"
+                            alt="Pearl Property Solutions" class="case-img">
                         <div class="case-content">
                             <div class="case-category">Enterprise</div>
                             <h3>Pearl Property Solutions</h3>
-                            <p>Property listings portal with advanced search, agent dashboards, and lead capture workflows.</p>
+                            <p>Property listings portal with advanced search, agent dashboards, and lead capture
+                                workflows.</p>
                         </div>
                     </div>
 
                     <div class="case-card reveal" style="transition-delay: 0.2s;">
-                        <img src="https://welkingetter.com/wp-content/uploads/2024/12/Limousine-London-2.jpg" alt="Limousine London" class="case-img">
+                        <img src="https://welkingetter.com/wp-content/uploads/2024/12/Limousine-London-2.jpg"
+                            alt="Limousine London" class="case-img">
                         <div class="case-content">
                             <div class="case-category">Enterprise</div>
                             <h3>Limousine London</h3>
-                            <p>Premium booking platform for a luxury chauffeur service — real-time availability, Stripe payments, and SMS confirmations.</p>
+                            <p>Premium booking platform for a luxury chauffeur service — real-time availability, Stripe
+                                payments, and SMS confirmations.</p>
                         </div>
                     </div>
 
                     <div class="case-card reveal">
-                        <img src="https://welkingetter.com/wp-content/uploads/2024/12/Suveinakama-Legal.jpg" alt="Suveinakama Legal" class="case-img">
+                        <img src="https://welkingetter.com/wp-content/uploads/2024/12/Suveinakama-Legal.jpg"
+                            alt="Suveinakama Legal" class="case-img">
                         <div class="case-content">
                             <div class="case-category">Enterprise</div>
                             <h3>Suveinakama Legal</h3>
-                            <p>Professional legal services website with secure document submission and appointment scheduling.</p>
+                            <p>Professional legal services website with secure document submission and appointment
+                                scheduling.</p>
                         </div>
                     </div>
 
                     <div class="case-card reveal" style="transition-delay: 0.1s;">
-                        <img src="https://welkingetter.com/wp-content/uploads/2024/12/The-Professional.jpg" alt="The Professional" class="case-img">
+                        <img src="https://welkingetter.com/wp-content/uploads/2024/12/The-Professional.jpg"
+                            alt="The Professional" class="case-img">
                         <div class="case-content">
                             <div class="case-category">Enterprise</div>
                             <h3>The Professional</h3>
@@ -1721,19 +2134,23 @@
                 <div class="testimonial-grid">
                     <div class="testimonial-card reveal">
                         <div class="stars">★★★★★</div>
-                        <p class="testimonial-quote">"Welkingetter highly recommended. Completed another project for me in great timing and precisely to my specifications. Thank you team Welkingetter."</p>
+                        <p class="testimonial-quote">"Welkingetter highly recommended. Completed another project for me
+                            in great timing and precisely to my specifications. Thank you team Welkingetter."</p>
                         <div class="testimonial-author">Kia-Re C</div>
                         <div class="testimonial-company">PageSpeedOU</div>
                     </div>
                     <div class="testimonial-card reveal" style="transition-delay: 0.1s;">
                         <div class="stars">★★★★★</div>
-                        <p class="testimonial-quote">"WelkinGetter team did an excellent job for me, from the start to finish. Team helped me create my website from scratch and dealt with me patiently. Extremely hardworking and would definitely recommend them. Will work with them again soon."</p>
+                        <p class="testimonial-quote">"WelkinGetter team did an excellent job for me, from the start to
+                            finish. Team helped me create my website from scratch and dealt with me patiently. Extremely
+                            hardworking and would definitely recommend them. Will work with them again soon."</p>
                         <div class="testimonial-author">Mohamed K.</div>
                         <div class="testimonial-company">Zahabu</div>
                     </div>
                     <div class="testimonial-card reveal" style="transition-delay: 0.2s;">
                         <div class="stars">★★★★★</div>
-                        <p class="testimonial-quote">"They have been a wonderful help to me. Very obliging and did everything I needed them to do."</p>
+                        <p class="testimonial-quote">"They have been a wonderful help to me. Very obliging and did
+                            everything I needed them to do."</p>
                         <div class="testimonial-author">Sarah R</div>
                         <div class="testimonial-company">Steen Interiors</div>
                     </div>
@@ -1745,8 +2162,13 @@
         <section id="about" class="regarding-us">
             <div class="container">
                 <span class="section-eyebrow reveal">Our Story</span>
-                <h2 class="section-heading reveal">Engineering Excellence Since <span class="text-gradient">2020</span></h2>
-                <p class="section-body reveal">WelkinGetter Global IT Solutions is a pioneering IT services and software development company, dedicated to providing comprehensive, tailor-made solutions to businesses across the globe. With a focus on innovation, excellence, and client satisfaction, we started in Indore in 2020 and have grown to serve 250+ businesses — from neighbourhood shops to pan-India enterprises.</p>
+                <h2 class="section-heading reveal">Engineering Excellence Since <span class="text-gradient">2020</span>
+                </h2>
+                <p class="section-body reveal">WelkinGetter Global IT Solutions is a pioneering IT services and software
+                    development company, dedicated to providing comprehensive, tailor-made solutions to businesses
+                    across the globe. With a focus on innovation, excellence, and client satisfaction, we started in
+                    Indore in 2020 and have grown to serve 250+ businesses — from neighbourhood shops to pan-India
+                    enterprises.</p>
 
                 <div class="team-grid">
                     <div class="team-card reveal">
@@ -1754,7 +2176,9 @@
                         <div class="team-info">
                             <h4>Anand Dubey</h4>
                             <div class="team-role">Founder & Chief Engineering Officer</div>
-                            <p>Anand brings 8+ years of full-stack engineering experience, having led architecture for platforms serving 50,000+ concurrent users. He personally reviews every technical proposal before delivery begins — no hand-offs to junior developers.</p>
+                            <p>Anand brings 8+ years of full-stack engineering experience, having led architecture for
+                                platforms serving 50,000+ concurrent users. He personally reviews every technical
+                                proposal before delivery begins — no hand-offs to junior developers.</p>
                         </div>
                     </div>
                     <div class="team-card reveal" style="transition-delay: 0.1s;">
@@ -1762,17 +2186,23 @@
                         <div class="team-info">
                             <h4>Sandhya Kumar</h4>
                             <div class="team-role">Head of Digital Growth</div>
-                            <p>Sandhya leads SEO, paid acquisition, and content strategy. With a track record of 3× lead growth for clients in retail and education, she focuses on measurable ROI over vanity metrics — every campaign has clear KPIs from week one.</p>
+                            <p>Sandhya leads SEO, paid acquisition, and content strategy. With a track record of 3× lead
+                                growth for clients in retail and education, she focuses on measurable ROI over vanity
+                                metrics — every campaign has clear KPIs from week one.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="reveal">
                     <h3 style="margin-bottom:0.5rem;">Our Vision</h3>
-                    <p style="color:var(--text2); margin-bottom:1.5rem;">Our mission is to empower businesses through innovative technology solutions that drive efficiency, growth, and digital transformation. We are committed to delivering high-quality, cost-effective solutions.</p>
-                    
+                    <p style="color:var(--text2); margin-bottom:1.5rem;">Our mission is to empower businesses through
+                        innovative technology solutions that drive efficiency, growth, and digital transformation. We
+                        are committed to delivering high-quality, cost-effective solutions.</p>
+
                     <h3 style="margin-bottom:0.5rem;">Our Mission</h3>
-                    <p style="color:var(--text2);">To be a global leader in IT services and software development by continually advancing our technical capabilities and expanding our service offerings, fostering innovation and driving positive change in the world of technology.</p>
+                    <p style="color:var(--text2);">To be a global leader in IT services and software development by
+                        continually advancing our technical capabilities and expanding our service offerings, fostering
+                        innovation and driving positive change in the world of technology.</p>
                 </div>
 
                 <div class="values-strip reveal">
@@ -1790,12 +2220,18 @@
             <div class="container">
                 <h3>Technology Stack</h3>
                 <div class="marquee-container">
-                    <img src="https://welkingetter.com/wp-content/uploads/2024/12/wordpress1.png" alt="WordPress" onerror="this.style.display='none'">
-                    <img src="https://welkingetter.com/wp-content/uploads/2024/12/flutter.png" alt="Flutter" onerror="this.style.display='none'">
-                    <img src="https://welkingetter.com/wp-content/uploads/2024/12/shopify.png" alt="Shopify" onerror="this.style.display='none'">
-                    <img src="https://welkingetter.com/wp-content/uploads/2024/12/google-ads.png" alt="Google Ads" onerror="this.style.display='none'">
-                    <img src="https://welkingetter.com/wp-content/uploads/2024/12/google-analytics.png" alt="Google Analytics" onerror="this.style.display='none'">
-                    <img src="https://welkingetter.com/wp-content/uploads/2024/12/semrush.png" alt="SEMrush" onerror="this.style.display='none'">
+                    <img src="https://welkingetter.com/wp-content/uploads/2024/12/wordpress1.png" alt="WordPress"
+                        onerror="this.style.display='none'">
+                    <img src="https://welkingetter.com/wp-content/uploads/2024/12/flutter.png" alt="Flutter"
+                        onerror="this.style.display='none'">
+                    <img src="https://welkingetter.com/wp-content/uploads/2024/12/shopify.png" alt="Shopify"
+                        onerror="this.style.display='none'">
+                    <img src="https://welkingetter.com/wp-content/uploads/2024/12/google-ads.png" alt="Google Ads"
+                        onerror="this.style.display='none'">
+                    <img src="https://welkingetter.com/wp-content/uploads/2024/12/google-analytics.png"
+                        alt="Google Analytics" onerror="this.style.display='none'">
+                    <img src="https://welkingetter.com/wp-content/uploads/2024/12/semrush.png" alt="SEMrush"
+                        onerror="this.style.display='none'">
                 </div>
             </div>
         </section>
@@ -1805,31 +2241,37 @@
             <div class="container">
                 <span class="section-eyebrow reveal">Resources & Insights</span>
                 <h2 class="section-heading reveal">Tech <span class="text-gradient">Deep-Dives</span></h2>
-                <p class="section-body reveal">Expert articles on engineering, growth, and digital transformation for Indian enterprises. Published monthly · No spam · <a href="blog.html" style="color:var(--primary); font-weight:600;">Browse all 12 articles →</a></p>
+                <p class="section-body reveal">Expert articles on engineering, growth, and digital transformation for
+                    Indian enterprises. Published monthly · No spam · <a href="blog.html"
+                        style="color:var(--primary); font-weight:600;">Browse all 12 articles →</a></p>
 
                 <div class="blog-grid">
                     <div class="blog-card reveal">
                         <div class="blog-meta"><span>April 15, 2026</span><span>8 min</span></div>
                         <h4>The Future of LMS: AI-Driven Competency Tracking in 2026</h4>
-                        <a href="blog.html" class="blog-link">Read Article <i data-lucide="arrow-right" style="width:14px;"></i></a>
+                        <a href="blog.html" class="blog-link">Read Article <i data-lucide="arrow-right"
+                                style="width:14px;"></i></a>
                     </div>
                     <div class="blog-card reveal" style="transition-delay: 0.1s;">
                         <div class="blog-meta"><span>March 28, 2026</span><span>6 min</span></div>
                         <h4>Building for Bharat: Scaling Web Apps for 500M+ Users</h4>
-                        <a href="blog.html" class="blog-link">Read Article <i data-lucide="arrow-right" style="width:14px;"></i></a>
+                        <a href="blog.html" class="blog-link">Read Article <i data-lucide="arrow-right"
+                                style="width:14px;"></i></a>
                     </div>
                     <div class="blog-card reveal" style="transition-delay: 0.2s;">
                         <div class="blog-meta"><span>March 12, 2026</span><span>10 min</span></div>
                         <h4>Beyond Performance: The New ROI Metrics for B2B Marketing</h4>
-                        <a href="blog.html" class="blog-link">Read Article <i data-lucide="arrow-right" style="width:14px;"></i></a>
+                        <a href="blog.html" class="blog-link">Read Article <i data-lucide="arrow-right"
+                                style="width:14px;"></i></a>
                     </div>
                     <div class="blog-card reveal" style="transition-delay: 0.3s;">
                         <div class="blog-meta"><span>February 20, 2026</span><span>7 min</span></div>
                         <h4>DPDP Act 2023: What Every Indian Tech Startup Must Do Now</h4>
-                        <a href="blog.html" class="blog-link">Read Article <i data-lucide="arrow-right" style="width:14px;"></i></a>
+                        <a href="blog.html" class="blog-link">Read Article <i data-lucide="arrow-right"
+                                style="width:14px;"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="text-center reveal" style="text-align: center;">
                     <a href="blog.html" class="btn btn-primary">Browse All Resources</a>
                 </div>
@@ -1839,9 +2281,11 @@
         <!-- FAQ -->
         <section id="faq" class="faq">
             <div class="container" style="max-width: 800px;">
-                <span class="section-eyebrow reveal" style="text-align:center; justify-content:center;">Support Center</span>
-                <h2 class="section-heading reveal" style="text-align:center;">Common <span class="text-gradient">Inquiries</span></h2>
-                
+                <span class="section-eyebrow reveal" style="text-align:center; justify-content:center;">Support
+                    Center</span>
+                <h2 class="section-heading reveal" style="text-align:center;">Common <span
+                        class="text-gradient">Inquiries</span></h2>
+
                 <div class="faq-list reveal" style="margin-top: 3rem;">
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">
@@ -1849,7 +2293,8 @@
                             <i data-lucide="chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Most core enterprise web platforms are delivered within 8–12 weeks, depending on complexity and integrations. MVP projects can be delivered in as little as 4 weeks.</p>
+                            <p>Most core enterprise web platforms are delivered within 8–12 weeks, depending on
+                                complexity and integrations. MVP projects can be delivered in as little as 4 weeks.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -1858,7 +2303,8 @@
                             <i data-lucide="chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Yes, we offer various support and maintenance tiers, from basic security updates to dedicated on-call engineering support.</p>
+                            <p>Yes, we offer various support and maintenance tiers, from basic security updates to
+                                dedicated on-call engineering support.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -1867,7 +2313,8 @@
                             <i data-lucide="chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Absolutely. We specialize in building modern interfaces on top of legacy architecture through secure API bridges and data migration strategies.</p>
+                            <p>Absolutely. We specialize in building modern interfaces on top of legacy architecture
+                                through secure API bridges and data migration strategies.</p>
                         </div>
                     </div>
                 </div>
@@ -1880,8 +2327,9 @@
                 <div class="contact-grid reveal">
                     <div class="contact-info">
                         <h3>Let's Build Something <br><strong>Extraordinary</strong></h3>
-                        <p>Ready to take your business to the next level? Our specialists are ready to help you architect the future and drive massive digital growth.</p>
-                        
+                        <p>Ready to take your business to the next level? Our specialists are ready to help you
+                            architect the future and drive massive digital growth.</p>
+
                         <div class="contact-details">
                             <div class="contact-detail">
                                 <i data-lucide="mail"></i>
@@ -1899,30 +2347,40 @@
                                 <span>5, Mhow Naka, Main Road, Biyabani, Indore (M.P.) 452001</span>
                             </div>
                             <div class="contact-detail" style="margin-top:1rem;">
-                                <a href="https://calendly.com/welkingetter/30min" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="color:white; border-color:white;">Book on Calendly</a>
+                                <a href="https://calendly.com/welkingetter/30min" target="_blank"
+                                    rel="noopener noreferrer" class="btn btn-outline"
+                                    style="color:white; border-color:white;">Book on Calendly</a>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="contact-form-container">
                         <form id="mainContactForm" class="contact-form" onsubmit="handleContactSubmit(event)">
                             <div class="form-group" style="margin-bottom:1.5rem;">
-                                <label for="contactName" style="display:block; margin-bottom:0.5rem; font-weight:500;">Full Name*</label>
+                                <label for="contactName"
+                                    style="display:block; margin-bottom:0.5rem; font-weight:500;">Full Name*</label>
                                 <input type="text" id="contactName" class="form-control" required autocomplete="name">
                             </div>
                             <div class="form-group" style="margin-bottom:1.5rem;">
-                                <label for="contactEmail" style="display:block; margin-bottom:0.5rem; font-weight:500;">Work Email*</label>
-                                <input type="email" id="contactEmail" class="form-control" required autocomplete="email">
+                                <label for="contactEmail"
+                                    style="display:block; margin-bottom:0.5rem; font-weight:500;">Work Email*</label>
+                                <input type="email" id="contactEmail" class="form-control" required
+                                    autocomplete="email">
                             </div>
                             <div class="form-group" style="margin-bottom:1.5rem;">
-                                <label for="contactPhone" style="display:block; margin-bottom:0.5rem; font-weight:500;">Phone (optional)</label>
+                                <label for="contactPhone"
+                                    style="display:block; margin-bottom:0.5rem; font-weight:500;">Phone
+                                    (optional)</label>
                                 <input type="tel" id="contactPhone" class="form-control" autocomplete="tel">
                             </div>
                             <div class="form-group" style="margin-bottom:1.5rem;">
-                                <label for="contactMessage" style="display:block; margin-bottom:0.5rem; font-weight:500;">Message*</label>
-                                <textarea id="contactMessage" class="form-control" required style="min-height:120px;"></textarea>
+                                <label for="contactMessage"
+                                    style="display:block; margin-bottom:0.5rem; font-weight:500;">Message*</label>
+                                <textarea id="contactMessage" class="form-control" required
+                                    style="min-height:120px;"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Send Inquiry <i data-lucide="send" style="width:16px;"></i></button>
+                            <button type="submit" class="btn btn-primary">Send Inquiry <i data-lucide="send"
+                                    style="width:16px;"></i></button>
                             <div id="contactFormMsg" class="form-message"></div>
                         </form>
                     </div>
@@ -1932,7 +2390,10 @@
 
         <!-- Google Map Section -->
         <section class="map-section reveal" style="padding: 0; line-height: 0;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.500858172901!2d75.8439084750811!3d22.709617979391004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd1ddad985b3%3A0x45be486a443156ea!2sWelkinGetter%2BGlobal%2BIT%2BSolutions!5e0!3m2!1sen!2sin!4v1714025368000!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.500858172901!2d75.8439084750811!3d22.709617979391004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd1ddad985b3%3A0x45be486a443156ea!2sWelkinGetter%2BGlobal%2BIT%2BSolutions!5e0!3m2!1sen!2sin!4v1714025368000!5m2!1sen!2sin"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
     </main>
 
@@ -1949,7 +2410,7 @@
                         <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
                     </div>
                 </div>
-                
+
                 <div>
                     <h4>Solutions</h4>
                     <ul class="footer-links">
@@ -1977,7 +2438,8 @@
                     <small>Avg. 1 email/month · Topics: LMS builds, SEO audits, cost benchmarks</small>
                     <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
                         <input type="email" placeholder="Enter your email" required aria-label="Email for newsletter">
-                        <button type="submit" aria-label="Subscribe"><i data-lucide="arrow-right" style="width:18px;"></i></button>
+                        <button type="submit" aria-label="Subscribe"><i data-lucide="arrow-right"
+                                style="width:18px;"></i></button>
                     </form>
                 </div>
             </div>
@@ -1989,18 +2451,22 @@
                     <a href="terms.html">Terms of Service</a>
                 </div>
                 <div class="footer-badges">
-                    <img src="https://welkingetter.com/wp-content/uploads/2024/01/topdevelopers-badge.png" alt="Top Web Development Companies 2024" onerror="this.style.display='none'">
-                    <img src="https://welkingetter.com/wp-content/uploads/2024/01/upwork-badge.png" alt="Upwork Verified" onerror="this.style.display='none'">
+                    <img src="https://welkingetter.com/wp-content/uploads/2024/01/topdevelopers-badge.png"
+                        alt="Top Web Development Companies 2024" onerror="this.style.display='none'">
+                    <img src="https://welkingetter.com/wp-content/uploads/2024/01/upwork-badge.png"
+                        alt="Upwork Verified" onerror="this.style.display='none'">
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- Floating Elements -->
-    <a href="https://wa.me/919770329202?text=Hi%20WelkinGetter%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" class="whatsapp-cta" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/919770329202?text=Hi%20WelkinGetter%2C%20I%27d%20like%20to%20discuss%20a%20project."
+        target="_blank" rel="noopener noreferrer" class="whatsapp-cta" aria-label="Chat on WhatsApp">
         <div class="wa-badge">Active</div>
         <div class="wa-icon"><i data-lucide="message-circle" style="width:28px; height:28px;"></i></div>
-        <div class="wa-text">Chat on WhatsApp<br><small style="font-weight:400; font-size:0.75rem;">Mon–Sat, 9am–8pm IST</small></div>
+        <div class="wa-text">Chat on WhatsApp<br><small style="font-weight:400; font-size:0.75rem;">Mon–Sat, 9am–8pm
+                IST</small></div>
     </a>
 
     <button id="backToTop" class="back-to-top" aria-label="Back to top">
@@ -2017,10 +2483,10 @@
             const navbar = document.getElementById('navbar');
             const scrollProgress = document.getElementById('scrollProgress');
             const backToTop = document.getElementById('backToTop');
-            
+
             window.addEventListener('scroll', () => {
                 const scrollPos = window.scrollY;
-                
+
                 // Navbar frosted glass
                 if (scrollPos > 50) {
                     navbar.classList.add('scrolled');
@@ -2072,7 +2538,7 @@
 
             // Scroll Reveal Animation
             const revealElements = document.querySelectorAll('.reveal');
-            
+
             const revealOptions = {
                 threshold: 0.1,
                 rootMargin: "0px 0px -50px 0px"
@@ -2082,20 +2548,20 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('active');
-                        
+
                         // Trigger stat bars if they are in this element
                         const statFills = entry.target.querySelectorAll('.stat-fill');
                         statFills.forEach(fill => {
                             fill.style.width = fill.getAttribute('data-width');
                         });
-                        
+
                         const counters = entry.target.querySelectorAll('.counter');
                         counters.forEach(counter => {
                             const target = +counter.getAttribute('data-target');
                             const increment = target / 100;
                             let current = 0;
                             const updateCounter = () => {
-                                if(current < target) {
+                                if (current < target) {
                                     current += increment;
                                     counter.innerText = Math.ceil(current) + "%";
                                     setTimeout(updateCounter, 15);
@@ -2119,7 +2585,7 @@
                 question.addEventListener('click', () => {
                     const item = question.parentElement;
                     const isActive = item.classList.contains('active');
-                    
+
                     // Close all
                     document.querySelectorAll('.faq-item').forEach(faq => {
                         faq.classList.remove('active');
@@ -2149,49 +2615,93 @@
             e.preventDefault();
             const form = e.target;
             const msg = document.getElementById('heroFormMsg');
-            // Simulate API call
             const btn = form.querySelector('button');
             const originalText = btn.innerHTML;
             btn.innerHTML = 'Sending...';
             btn.disabled = true;
-            
-            setTimeout(() => {
-                msg.textContent = "Message sent! We'll get back to you within 24 hours.";
+
+            const scriptURL = "https://script.google.com/macros/s/AKfycbwPopQ3TooqV9GEKeBd7jRrfr0t5x68ZXHLe3BIN7oyC2G1kyV3DqA1bXWxyrrW5ryHYg/exec";
+
+            const data = {
+                formType: "Quick Enquiry",
+                phone: document.getElementById("heroPhone").value,
+                service: document.getElementById("heroService").value,
+                message: document.getElementById("heroMessage").value
+            };
+
+            fetch(scriptURL, {
+                method: "POST",
+                body: JSON.stringify(data),
+                mode: "no-cors"
+            })
+            .then(res => {
+                msg.textContent = "Enquiry Sent Successfully! We'll get back to you within 24 hours.";
                 msg.className = "form-message success";
+                msg.style.display = 'block';
                 form.reset();
                 btn.innerHTML = originalText;
                 btn.disabled = false;
-                
+
                 setTimeout(() => {
                     msg.style.display = 'none';
                     msg.className = "form-message";
                 }, 5000);
-            }, 1000);
+            })
+            .catch(err => {
+                msg.textContent = "Error sending enquiry. Please try again.";
+                msg.className = "form-message error";
+                msg.style.display = 'block';
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            });
         }
 
         function handleContactSubmit(e) {
             e.preventDefault();
             const form = e.target;
             const msg = document.getElementById('contactFormMsg');
-            // Simulate API call
             const btn = form.querySelector('button');
             const originalText = btn.innerHTML;
             btn.innerHTML = 'Sending...';
             btn.disabled = true;
-            
-            setTimeout(() => {
-                msg.textContent = "Message sent! We'll get back to you within 24 hours.";
+
+            const scriptURL = "https://script.google.com/macros/s/AKfycbwPopQ3TooqV9GEKeBd7jRrfr0t5x68ZXHLe3BIN7oyC2G1kyV3DqA1bXWxyrrW5ryHYg/exec";
+
+            const data = {
+                formType: "Contact Form",
+                fullName: document.getElementById("contactName").value,
+                email: document.getElementById("contactEmail").value,
+                phone: document.getElementById("contactPhone").value,
+                message: document.getElementById("contactMessage").value
+            };
+
+            fetch(scriptURL, {
+                method: "POST",
+                body: JSON.stringify(data),
+                mode: "no-cors"
+            })
+            .then(res => {
+                msg.textContent = "Form Submitted Successfully! We'll get back to you within 24 hours.";
                 msg.className = "form-message success";
+                msg.style.display = 'block';
                 form.reset();
                 btn.innerHTML = originalText;
                 btn.disabled = false;
-                
+
                 setTimeout(() => {
                     msg.style.display = 'none';
                     msg.className = "form-message";
                 }, 5000);
-            }, 1000);
+            })
+            .catch(err => {
+                msg.textContent = "Error submitting form. Please try again.";
+                msg.className = "form-message error";
+                msg.style.display = 'block';
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            });
         }
     </script>
 </body>
+
 </html>

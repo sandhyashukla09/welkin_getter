@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WelkinGetter — Build. Scale. Deliver.</title>
+<title>WelkinGetter â€” Build. Scale. Deliver.</title>
 <meta name="description" content="Custom web development, LMS platforms, mobile apps and digital marketing. Based in Indore, delivering globally.">
 <meta property="og:title" content="WelkinGetter Global IT Solutions">
-<meta property="og:description" content="Your end-to-end tech partner. Custom websites, LMS, apps, and marketing — one team, zero middlemen.">
+<meta property="og:description" content="Your end-to-end tech partner. Custom websites, LMS, apps, and marketing â€” one team, zero middlemen.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2312BDF7'/><text y='22' x='5' font-size='18' font-family='sans-serif' font-weight='bold' fill='white'>W</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
 
   <style>
   /* ============================================================
-     DESIGN SYSTEM — WelkinGetter Enterprise v3
+     DESIGN SYSTEM â€” WelkinGetter Enterprise v3
   ============================================================ */
   :root {
     /* Brand Colors */
@@ -63,11 +63,11 @@
     --font-body:    'Inter', sans-serif;
     
     /* Spacing & Radii */
-    --space-sm:    1rem;
-    --space-md:    1.5rem;
-    --space-lg:    2rem;
-    --space-xl:    3rem;
-    --space-2xl:   4rem;
+    --space-sm:    0.5rem;
+    --space-md:    1rem;
+    --space-lg:    1.5rem;
+    --space-xl:    2rem;
+    --space-2xl:   2.5rem;
     
     --r-sm:  8px;
     --r-md:  12px;
@@ -139,11 +139,11 @@
     margin: 0 auto;
     padding: 0 2rem;
   }
-  .section { padding: 10rem 0; scroll-margin-top: 100px; }
+  .section { padding: 1.5rem 0; scroll-margin-top: 60px; }
   .flex { display: flex; }
   .items-center { align-items: center; }
   .justify-between { justify-content: space-between; }
-  .grid { display: grid; gap: 2rem; }
+  .grid { display: grid; gap: 1.5rem; }
 
   /* ============================================================
      COMPONENTS
@@ -214,12 +214,7 @@
   /* ============================================================
      CARDS
   ============================================================ */
-  .card {
-    background: var(--surface-solid);
-    border: 1px solid var(--border);
-    border-top: 3px solid var(--primary);
-    border-radius: var(--r-lg);
-    padding: 2.5rem;
+  .card {`n    background: var(--surface-solid);`n    border: 1px solid var(--border);`n    border-top: 3px solid var(--primary);`n    border-radius: var(--r-lg);`n    padding: 1.5rem;
     transition: all var(--t-base) var(--ease);
     box-shadow: var(--shadow-sm);
   }
@@ -254,7 +249,7 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 80px;
+    height: 65px;
     z-index: 1000;
     transition: all var(--t-base) var(--ease);
     display: flex;
@@ -266,7 +261,7 @@
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    height: 70px;
+    height: 60px;
   }
   .navbar-inner {
     display: flex;
@@ -283,7 +278,7 @@
     font-family: var(--font-heading);
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1.75rem;
   }
   .logo-mark {
     width: 40px;
@@ -324,7 +319,7 @@
   ============================================================ */
   .hero {
     min-height: 100vh;
-    padding-top: 160px;
+    padding-top: 200px;
     display: flex;
     align-items: center;
     position: relative;
@@ -411,11 +406,9 @@
   }
 
   /* ============================================================
-     TRUST BADGES (static grid — no motion)
+     TRUST BADGES (static grid â€” no motion)
   ============================================================ */
-  .trust-band {
-    background: #FFFFFF;
-    padding: 2.5rem 0;
+  .trust-band {`n    background: #FFFFFF;`n    padding: 1rem 0;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
   }
@@ -449,9 +442,9 @@
      CLIENT LOGOS (Social Proof)
   ============================================================ */
   .client-logos {
-    padding: 2rem 0;
+    padding: 1rem 0;
     background: transparent;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
   .logos-container {
     display: flex;
@@ -540,8 +533,7 @@
     object-fit: contain;
     background: var(--bg2);
   }
-  .blog-content {
-    padding: 1.5rem;
+  .blog-content {`n    padding: 1rem;
   }
   .blog-date {
     font-size: 0.75rem;
@@ -579,8 +571,7 @@
   gap: var(--space-lg);
   margin-top: var(--space-2xl);
 }
-.service-card {
-  padding: 2rem;
+.service-card {`n  padding: 1.5rem;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--r-xl);
@@ -636,14 +627,13 @@
   background: var(--bg2);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  padding: 3rem 0;
+  padding: 1.5rem 0;
 }
 .numbers-grid {
   display: grid; grid-template-columns: repeat(4,1fr);
   gap: 0;
 }
-.number-item {
-  text-align: center; padding: 2rem;
+.number-item {`n  text-align: center; padding: 1.5rem;
   border-right: 1px solid var(--border);
   position: relative;
 }
@@ -677,9 +667,7 @@
   background: linear-gradient(90deg, transparent, var(--accent3), var(--accent), var(--accent3), transparent);
   opacity: 0.4;
 }
-.process-step {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--r-xl); padding: 2rem;
+.process-step {`n  background: var(--surface); border: 1px solid var(--border);`n  border-radius: var(--r-xl); padding: 1.5rem;
   text-align: center; position: relative; z-index: 1;
   transition: all var(--t-base) var(--ease-spring);
 }
@@ -719,7 +707,7 @@
 
 .why-item {
   display: flex; gap: var(--space-md); align-items: flex-start;
-  padding: 1.4rem; background: var(--surface); border: 1px solid var(--border);
+  padding: 1rem; background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--r-lg);
   transition: border-color var(--t-base) var(--ease), transform var(--t-base) var(--ease-spring);
 }
@@ -735,9 +723,7 @@
 .why-item p { font-size: 13px; color: var(--text2); line-height: 1.65; }
 
 /* Right panel - Stats visualizer */
-.why-panel {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--r-2xl); padding: 2.5rem;
+.why-panel {`n  background: var(--surface); border: 1px solid var(--border);`n  border-radius: var(--r-2xl); padding: 1.5rem;
   position: relative; overflow: hidden;
 }
 .why-panel::before {
@@ -781,9 +767,7 @@
    TESTIMONIALS
 ============================================================ */
 .testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-lg); }
-.testimonial-card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--r-xl); padding: 2rem;
+.testimonial-card {`n  background: var(--surface); border: 1px solid var(--border);`n  border-radius: var(--r-xl); padding: 1.5rem;
   display: flex; flex-direction: column; gap: var(--space-md);
   transition: all var(--t-base) var(--ease-spring);
 }
@@ -844,7 +828,7 @@
   width: 140px; height: 140px; border-radius: 50%;
   filter: blur(40px); opacity: 0.6;
 }
-.p-info { padding: 1.5rem; }
+.p-info { padding: 1rem; }
 .p-info h3 { font-size: 1rem; margin-bottom: 5px; }
 .p-info p { font-size: 13px; color: var(--text2); margin-bottom: var(--space-md); }
 .p-meta { display: flex; align-items: center; justify-content: space-between; }
@@ -876,9 +860,7 @@
   display: grid; grid-template-columns: repeat(3,1fr);
   gap: var(--space-lg); align-items: start; margin-top: var(--space-2xl);
 }
-.price-card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--r-2xl); padding: 2.5rem;
+.price-card {`n  background: var(--surface); border: 1px solid var(--border);`n  border-radius: var(--r-2xl); padding: 1.5rem;
   position: relative;
   transition: all var(--t-base) var(--ease-spring);
 }
@@ -948,7 +930,7 @@
 /* ============================================================
    PHASE 6: CONTACT SECTION
 ============================================================ */
-.contact-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 4rem; }
+.contact-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 2rem; }
 .contact-info { display: flex; flex-direction: column; gap: var(--space-xl); }
 
 .contact-detail {
@@ -976,9 +958,7 @@
 .response-promise .rp-label { font-size: 12px; color: var(--text2); margin-top: 4px; }
 
 /* Phase 6: Form */
-.form-wrap {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--r-2xl); padding: 2.5rem;
+.form-wrap {`n  background: var(--surface); border: 1px solid var(--border);`n  border-radius: var(--r-2xl); padding: 1.5rem;
 }
 .form-2col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
   /* ============================================================
@@ -1021,15 +1001,9 @@
   .footer {
     background: var(--bg-dark);
     color: white;
-    padding: 6rem 0 3rem;
+    padding: 2rem 0 1rem;
   }
-  .footer-main {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 4rem;
-    margin-bottom: 4rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 4rem;
+  .footer-main {`n    display: grid;`n    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));`n    gap: 1.5rem;`n    margin-bottom: 1.5rem;`n    border-bottom: 1px solid rgba(255, 255, 255, 0.1);`n    padding-bottom: 1.5rem;
   }
   .footer-col h5 {
     color: white;
@@ -1463,7 +1437,7 @@
         <div class="case-content">
           <h3>Enterprise LMS Platform</h3>
           <p>We architected a high-availability training ecosystem supporting over 50,000 concurrent employees with real-time competency tracking.</p>
-          <p style="font-size:11px; color:var(--text4); margin-top:-0.5rem; margin-bottom:0.75rem;"><i data-lucide="shield" style="width:11px;height:11px;vertical-align:middle;"></i> Client name withheld per NDA — reference available on request</p>
+          <p style="font-size:11px; color:var(--text4); margin-top:-0.5rem; margin-bottom:0.75rem;"><i data-lucide="shield" style="width:11px;height:11px;vertical-align:middle;"></i> Client name withheld per NDA â€” reference available on request</p>
           <div class="case-footer">
             <div class="case-metrics">
               <div class="metric-item">
@@ -1492,7 +1466,7 @@
         <div class="case-content">
           <h3>Fintech Intelligence Dashboard</h3>
           <p>Engineered an SOC2-compliant financial intelligence dashboard delivering sub-second data visualizations for high-frequency trading analytics.</p>
-          <p style="font-size:11px; color:var(--text4); margin-top:-0.5rem; margin-bottom:0.75rem;"><i data-lucide="shield" style="width:11px;height:11px;vertical-align:middle;"></i> Client name withheld per NDA — reference available on request</p>
+          <p style="font-size:11px; color:var(--text4); margin-top:-0.5rem; margin-bottom:0.75rem;"><i data-lucide="shield" style="width:11px;height:11px;vertical-align:middle;"></i> Client name withheld per NDA â€” reference available on request</p>
           <div class="case-footer">
             <div class="case-metrics">
               <div class="metric-item">
@@ -1521,7 +1495,7 @@
         <div class="case-content">
           <h3>Healthcare Mobile Platform</h3>
           <p>A resilient, cross-platform mobile application utilizing edge computing to manage critical patient workflows for enterprise healthcare networks.</p>
-          <p style="font-size:11px; color:var(--text4); margin-top:-0.5rem; margin-bottom:0.75rem;"><i data-lucide="shield" style="width:11px;height:11px;vertical-align:middle;"></i> Client name withheld per NDA — reference available on request</p>
+          <p style="font-size:11px; color:var(--text4); margin-top:-0.5rem; margin-bottom:0.75rem;"><i data-lucide="shield" style="width:11px;height:11px;vertical-align:middle;"></i> Client name withheld per NDA â€” reference available on request</p>
           <div class="case-footer">
             <div class="case-metrics">
               <div class="metric-item">
@@ -1582,7 +1556,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="case-studies.html">Case Studies</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="#careers-info" id="careers-link" title="We're not hiring right now — check back soon">Careers</a></li>
+          <li><a href="#careers-info" id="careers-link" title="We're not hiring right now â€” check back soon">Careers</a></li>
           <!-- Careers status modal anchor -->
           <div id="careers-info" style="display:none;"></div>
         </ul>
@@ -1591,12 +1565,12 @@
       <div class="footer-col">
         <h5>Newsletter</h5>
         <p style="color: var(--text-light); font-size: 0.85rem; margin-bottom: 0.5rem;">Monthly case studies &amp; tech deep-dives for Indian businesses. No spam, unsubscribe anytime.</p>
-        <p style="color: var(--text4); font-size: 0.78rem; margin-bottom: 1.25rem;">Avg. 1 email/month · Topics: LMS builds, SEO audits, cost benchmarks</p>
+        <p style="color: var(--text4); font-size: 0.78rem; margin-bottom: 1.25rem;">Avg. 1 email/month Â· Topics: LMS builds, SEO audits, cost benchmarks</p>
         <div class="flex gap-sm">
           <input type="email" id="newsletter-email" class="form-input" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: white; padding: 0.6rem 1rem;" placeholder="your@email.com">
           <button id="newsletter-btn" class="btn btn-primary" style="padding: 0 1rem; border-radius: var(--r-md);" title="Subscribe"><i data-lucide="mail"></i></button>
         </div>
-        <p id="newsletter-msg" style="display:none; font-size:0.78rem; color:var(--green); margin-top:0.5rem;">✓ You're in! First issue arrives next month.</p>
+        <p id="newsletter-msg" style="display:none; font-size:0.78rem; color:var(--green); margin-top:0.5rem;">âœ“ You're in! First issue arrives next month.</p>
       </div>
     </div>
     
@@ -1667,7 +1641,7 @@
     });
   });
 
-  // ── Contact Form: validation + loading + success/error states ──
+  // â”€â”€ Contact Form: validation + loading + success/error states â”€â”€
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
     const cfSubmit  = document.getElementById('cf-submit');
@@ -1701,7 +1675,7 @@
 
       // Loading state
       const originalHTML = cfSubmit.innerHTML;
-      cfSubmit.innerHTML = '<i data-lucide="loader" style="width:16px;height:16px;animation:spin 1s linear infinite;"></i>&nbsp;Sending…';
+      cfSubmit.innerHTML = '<i data-lucide="loader" style="width:16px;height:16px;animation:spin 1s linear infinite;"></i>&nbsp;Sendingâ€¦';
       cfSubmit.disabled = true;
       lucide.createIcons();
 
@@ -1718,18 +1692,18 @@
     });
   }
 
-  // Hero Enquiry Form — kept as a quick-capture widget (phone + service only)
+  // Hero Enquiry Form â€” kept as a quick-capture widget (phone + service only)
   const heroForm = document.getElementById('hero-enquiry-form');
   if (heroForm) {
     heroForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const btn = document.getElementById('hero-form-btn');
       const originalHTML = btn.innerHTML;
-      btn.innerHTML = 'Sending… <i data-lucide="loader" style="width:16px;height:16px;"></i>';
+      btn.innerHTML = 'Sendingâ€¦ <i data-lucide="loader" style="width:16px;height:16px;"></i>';
       btn.disabled = true;
       lucide.createIcons();
       setTimeout(() => {
-        btn.innerHTML = '✓ Enquiry Received!';
+        btn.innerHTML = 'âœ“ Enquiry Received!';
         btn.style.background = 'var(--green)';
         heroForm.reset();
         // Show a brief banner directing users to the contact section
@@ -1758,7 +1732,7 @@
       if (existing) return;
       const toast = document.createElement('div');
       toast.id = 'careers-toast';
-      toast.innerHTML = '<i data-lucide="briefcase" style="width:16px;height:16px;vertical-align:middle;margin-right:8px;"></i>We\'re not hiring right now — check back soon or <a href="#contact" style="color:var(--primary);text-decoration:underline;">send us your CV</a>.';
+      toast.innerHTML = '<i data-lucide="briefcase" style="width:16px;height:16px;vertical-align:middle;margin-right:8px;"></i>We\'re not hiring right now â€” check back soon or <a href="#contact" style="color:var(--primary);text-decoration:underline;">send us your CV</a>.';
       toast.style.cssText = 'position:fixed;bottom:6rem;left:50%;transform:translateX(-50%);background:var(--bg-dark);color:white;padding:0.85rem 1.5rem;border-radius:50px;font-size:13.5px;z-index:9999;box-shadow:0 8px 32px rgba(0,0,0,0.25);white-space:nowrap;';
       document.body.appendChild(toast);
       lucide.createIcons();
@@ -1899,4 +1873,5 @@
 </a>
 
 </body>
+
 
