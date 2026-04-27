@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Limousine London — Case Study | WelkinGetter</title>
+<meta name="description" content="Premium booking platform for a luxury chauffeur service — real-time availability, Stripe payments, and SMS confirmations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@0.395.0" defer></script>
+<style>
+:root{--primary:#8B5CF6;--secondary:#EC4899;--bg:#F8F9FA;--bg-dark:#0F172A;--text:#0F172A;--text2:#334155;--text3:#64748B;--font-heading:'Poppins',sans-serif;--font-body:'Inter',sans-serif;--grad:linear-gradient(135deg,var(--primary),var(--secondary));}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);color:var(--text);background:var(--bg);line-height:1.7;overflow-x:hidden;}
+img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
+h1,h2,h3,h4{font-family:var(--font-heading);font-weight:700;line-height:1.2;}
+.container{max-width:1100px;margin:0 auto;padding:0 2rem;}
+.text-gradient{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;border-radius:50px;font-weight:600;font-family:var(--font-heading);cursor:pointer;border:none;transition:all .3s ease;font-size:.9rem;}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 4px 20px rgba(139,92,246,.35);}
+.btn-primary:hover{transform:translateY(-2px);}
+.btn-outline{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.2);}
+.navbar{position:fixed;top:0;width:100%;height:72px;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,.06);display:flex;align-items:center;}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;width:100%;}
+.logo{display:flex;align-items:center;gap:.75rem;font-family:var(--font-heading);font-weight:800;font-size:1.3rem;color:var(--text);}
+.logo img{height:34px;border-radius:6px;}
+.nav-right{display:flex;align-items:center;gap:1.5rem;}
+.nav-right a{font-weight:500;color:var(--text3);font-size:.9rem;}
+.nav-right a:hover{color:var(--primary);}
+.cs-hero{padding-top:72px;background:linear-gradient(160deg,#0a0a0a 0%,#1a1a2e 50%,#0F172A 100%);color:#fff;position:relative;overflow:hidden;}
+.cs-hero::before{content:'';position:absolute;top:-150px;right:-150px;width:500px;height:500px;background:radial-gradient(circle,rgba(234,179,8,.15),transparent 70%);border-radius:50%;}
+.cs-hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:350px;height:350px;background:radial-gradient(circle,rgba(139,92,246,.12),transparent 70%);border-radius:50%;}
+.hero-content{padding:4rem 0 0;position:relative;z-index:2;}
+.breadcrumb{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:1.5rem;flex-wrap:wrap;}
+.breadcrumb a{color:rgba(255,255,255,.6);}.breadcrumb span{color:rgba(255,255,255,.3);}
+.cs-label{display:inline-block;background:rgba(234,179,8,.15);border:1px solid rgba(234,179,8,.35);color:#fde68a;font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:.35rem 1rem;border-radius:50px;margin-bottom:1rem;}
+.hero-content h1{font-size:clamp(2.2rem,5vw,3.5rem);margin-bottom:1rem;color:#fff;}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,.7);max-width:600px;margin-bottom:2rem;}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem;}
+.hero-img-wrap{position:relative;z-index:2;margin-top:2rem;}
+.hero-img-wrap img{width:100%;height:420px;object-fit:cover;border-radius:20px 20px 0 0;box-shadow:0 -20px 60px rgba(234,179,8,.15);}
+.meta-strip{background:#fff;border-bottom:1px solid rgba(0,0,0,.06);}
+.meta-grid{display:grid;grid-template-columns:repeat(4,1fr);}
+.meta-item{padding:1.5rem 2rem;border-right:1px solid rgba(0,0,0,.06);}
+.meta-item:last-child{border-right:none;}
+.meta-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3);margin-bottom:.4rem;}
+.meta-value{font-size:.95rem;font-weight:600;color:var(--text);}
+@media(max-width:768px){.meta-grid{grid-template-columns:1fr 1fr;}.meta-item{border-right:none;border-bottom:1px solid rgba(0,0,0,.06);}}
+.section{padding:4rem 0;}.section-alt{background:#fff;}
+.eyebrow{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--primary);margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem;}
+.eyebrow::before{content:'';width:16px;height:2px;background:var(--grad);border-radius:2px;}
+.section h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:1.25rem;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+@media(max-width:768px){.two-col{grid-template-columns:1fr;gap:2rem;}}
+.sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;}
+@media(max-width:500px){.sol-grid{grid-template-columns:1fr;}}
+.sol-card{background:var(--bg);border:1px solid rgba(139,92,246,.12);border-radius:14px;padding:1.25rem;}
+.sol-card h4{font-size:.95rem;margin-bottom:.4rem;}
+.sol-card p{font-size:.85rem;color:var(--text3);margin:0;}
+.sol-icon{width:36px;height:36px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center;margin-bottom:.75rem;}
+.sol-icon svg{color:#fff;width:18px;height:18px;}
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem;}
+@media(max-width:768px){.results-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.results-grid{grid-template-columns:1fr;}}
+.result-card{background:#fff;border-radius:16px;padding:1.75rem;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid rgba(139,92,246,.08);}
+.result-num{font-family:var(--font-heading);font-size:2.5rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:.5rem;}
+.result-label{font-size:.85rem;color:var(--text3);font-weight:500;}
+.tech-pills{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem;}
+.tech-pill{background:#fff;border:1.5px solid rgba(139,92,246,.2);color:var(--primary);font-size:.8rem;font-weight:600;padding:.4rem 1rem;border-radius:50px;}
+.cs-cta{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;padding:4rem 0;text-align:center;}
+.cs-cta h2{color:#fff;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:1rem;}
+.cs-cta p{color:rgba(255,255,255,.8);max-width:500px;margin:0 auto 2rem;}
+.btn-white{background:#fff;color:var(--primary);font-weight:700;display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;border-radius:50px;font-family:var(--font-heading);transition:all .3s;}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2);}
+.footer{background:var(--bg-dark);color:rgba(255,255,255,.6);text-align:center;padding:1.5rem;font-size:.85rem;}
+.footer a{color:var(--primary);}
+.wa-float{position:fixed;bottom:2rem;left:2rem;width:54px;height:54px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:999;transition:transform .3s;}
+.wa-float:hover{transform:scale(1.1);}
+.back-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;background:var(--grad);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;opacity:0;visibility:hidden;transform:translateY(10px);transition:all .3s;z-index:999;}
+.back-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+.cs-nav{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;padding:3rem 0;}
+.cs-nav a{background:#fff;border:1px solid rgba(139,92,246,.15);border-radius:16px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1rem;transition:all .3s;}
+.cs-nav a:hover{border-color:var(--primary);transform:translateY(-3px);box-shadow:0 8px 24px rgba(139,92,246,.12);}
+.nav-dir{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text3);}
+.nav-title{font-weight:700;color:var(--text);font-size:.95rem;}
+.nav-next{justify-content:flex-end;text-align:right;flex-direction:row-reverse;}
+@media(max-width:600px){.cs-nav{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">
+      <img src="images/welkin_getter_logo.jpeg" alt="WelkinGetter">
+      <span>WelkinGetter</span>
+    </a>
+    <div class="nav-right">
+      <a href="index.html#portfolio">← All Projects</a>
+      <a href="index.html#contact" class="btn btn-primary" style="padding:.55rem 1.25rem;">Start a Project</a>
+    </div>
+  </div>
+</nav>
+
+<section class="cs-hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><span>/</span>
+        <a href="index.html#portfolio">Case Studies</a><span>/</span>
+        <span>Limousine London</span>
+      </div>
+      <div class="cs-label">Web Development · Luxury Services</div>
+      <h1>Limousine<br><span class="text-gradient">London</span></h1>
+      <p class="hero-sub">A premium booking platform for a London-based luxury chauffeur service — real-time vehicle availability, Stripe payments, and instant SMS booking confirmations.</p>
+      <div class="hero-ctas">
+        <a href="index.html#contact" class="btn btn-primary"><i data-lucide="zap" style="width:16px;"></i>Start Your Project</a>
+        <a href="index.html#portfolio" class="btn btn-outline">View All Work</a>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <img src="https://welkingetter.com/wp-content/uploads/2024/12/Limousine-London-2.jpg" alt="Limousine London Booking Platform">
+    </div>
+  </div>
+</section>
+
+<div class="meta-strip">
+  <div class="container">
+    <div class="meta-grid">
+      <div class="meta-item"><div class="meta-label">Industry</div><div class="meta-value">Luxury Transport</div></div>
+      <div class="meta-item"><div class="meta-label">Service</div><div class="meta-value">Booking Platform + Payments</div></div>
+      <div class="meta-item"><div class="meta-label">Duration</div><div class="meta-value">8 Weeks</div></div>
+      <div class="meta-item"><div class="meta-label">Region</div><div class="meta-value">London, UK</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <div class="eyebrow">Project Overview</div>
+        <h2>Booking Platform for <span class="text-gradient">Premium Clients</span></h2>
+        <p>Limousine London is a high-end chauffeur service operating across Greater London, catering to corporate executives, VIP clients, and airport transfers. They needed a booking experience as premium as their vehicles.</p>
+        <p>WelkinGetter delivered a custom booking platform where clients can check real-time vehicle availability, select service packages, pay securely via Stripe, and instantly receive SMS confirmations — with a fully branded, luxury aesthetic that converts hesitant visitors into confirmed bookings.</p>
+      </div>
+      <div>
+        <div class="eyebrow">Tech Stack</div>
+        <h2>Technologies Used</h2>
+        <div class="tech-pills">
+          <span class="tech-pill">WordPress</span>
+          <span class="tech-pill">WooCommerce</span>
+          <span class="tech-pill">Stripe API</span>
+          <span class="tech-pill">Twilio SMS</span>
+          <span class="tech-pill">Custom Availability Engine</span>
+          <span class="tech-pill">Google Calendar API</span>
+          <span class="tech-pill">SMTP Email</span>
+          <span class="tech-pill">Elementor Pro</span>
+        </div>
+        <div style="margin-top:2rem;background:linear-gradient(135deg,rgba(234,179,8,.06),rgba(139,92,246,.04));border:1px solid rgba(234,179,8,.2);border-radius:16px;padding:1.5rem;">
+          <div style="font-weight:700;margin-bottom:.5rem;">Client</div>
+          <div style="color:var(--text2);font-size:.95rem;">Limousine London — a premium chauffeur company serving corporate and private clients across the UK capital with a fleet of luxury vehicles.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <div class="eyebrow">The Challenge</div>
+        <h2>What We Were <span class="text-gradient">Solving</span></h2>
+        <p>Limousine London was taking bookings via phone calls and WhatsApp — a system prone to double-bookings and revenue leakage. Key pain points:</p>
+        <div style="display:flex;flex-direction:column;gap:.9rem;margin-top:1rem;">
+          <div style="display:flex;align-items:flex-start;gap:.75rem;"><i data-lucide="alert-triangle" style="width:18px;min-width:18px;color:#f59e0b;margin-top:3px;"></i><span style="font-size:.95rem;color:var(--text2);">Manual booking led to frequent scheduling conflicts</span></div>
+          <div style="display:flex;align-items:flex-start;gap:.75rem;"><i data-lucide="alert-triangle" style="width:18px;min-width:18px;color:#f59e0b;margin-top:3px;"></i><span style="font-size:.95rem;color:var(--text2);">No online payment — clients had to call or bank transfer</span></div>
+          <div style="display:flex;align-items:flex-start;gap:.75rem;"><i data-lucide="alert-triangle" style="width:18px;min-width:18px;color:#f59e0b;margin-top:3px;"></i><span style="font-size:.95rem;color:var(--text2);">No automated reminders — high no-show rate</span></div>
+          <div style="display:flex;align-items:flex-start;gap:.75rem;"><i data-lucide="alert-triangle" style="width:18px;min-width:18px;color:#f59e0b;margin-top:3px;"></i><span style="font-size:.95rem;color:var(--text2);">Existing website felt generic — didn't reflect luxury brand</span></div>
+        </div>
+      </div>
+      <div style="background:var(--bg);border-radius:20px;padding:2rem;border:1px solid rgba(0,0,0,.06);">
+        <div class="eyebrow">Key Goals</div>
+        <h3 style="margin-bottom:1.25rem;">What Success Looked Like</h3>
+        <div style="display:flex;flex-direction:column;gap:.9rem;">
+          <div style="display:flex;align-items:center;gap:.75rem;"><i data-lucide="check-circle" style="width:20px;color:#10b981;min-width:20px;"></i><span style="font-size:.95rem;color:var(--text2);">Self-service online booking with real-time availability</span></div>
+          <div style="display:flex;align-items:center;gap:.75rem;"><i data-lucide="check-circle" style="width:20px;color:#10b981;min-width:20px;"></i><span style="font-size:.95rem;color:var(--text2);">Stripe payment processing with instant confirmation</span></div>
+          <div style="display:flex;align-items:center;gap:.75rem;"><i data-lucide="check-circle" style="width:20px;color:#10b981;min-width:20px;"></i><span style="font-size:.95rem;color:var(--text2);">Automated SMS reminders 24h before each booking</span></div>
+          <div style="display:flex;align-items:center;gap:.75rem;"><i data-lucide="check-circle" style="width:20px;color:#10b981;min-width:20px;"></i><span style="font-size:.95rem;color:var(--text2);">Premium dark-luxury design to match brand positioning</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">Our Solution</div>
+    <h2 style="max-width:600px;margin-bottom:1rem;">How WelkinGetter <span class="text-gradient">Engineered It</span></h2>
+    <p style="color:var(--text2);max-width:650px;margin-bottom:2rem;">We built a custom booking engine on WooCommerce with a real-time availability calendar synced to Google Calendar, Stripe for secure card payments, and Twilio for automated SMS confirmations and reminders.</p>
+    <div class="sol-grid">
+      <div class="sol-card"><div class="sol-icon"><i data-lucide="calendar"></i></div><h4>Real-Time Availability</h4><p>Live calendar synced to Google Calendar — no double-bookings, ever.</p></div>
+      <div class="sol-card"><div class="sol-icon"><i data-lucide="credit-card"></i></div><h4>Stripe Payments</h4><p>Secure card processing with instant booking confirmation emails and receipts.</p></div>
+      <div class="sol-card"><div class="sol-icon"><i data-lucide="message-square"></i></div><h4>SMS Automation</h4><p>Twilio-powered SMS confirmations and 24-hour reminders — zero no-shows.</p></div>
+      <div class="sol-card"><div class="sol-icon"><i data-lucide="star"></i></div><h4>Luxury UI Design</h4><p>Dark, premium aesthetic with gold accents — brand-aligned and conversion-optimised.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="eyebrow">Results</div>
+    <h2><span class="text-gradient">Measurable Impact</span> Delivered</h2>
+    <div class="results-grid">
+      <div class="result-card"><div class="result-num">0</div><div class="result-label">Double-Bookings Since Launch</div></div>
+      <div class="result-card"><div class="result-num">82%</div><div class="result-label">Bookings Now Fully Online</div></div>
+      <div class="result-card"><div class="result-num">90%</div><div class="result-label">Reduction in No-Shows</div></div>
+      <div class="result-card"><div class="result-num">35%</div><div class="result-label">Increase in Monthly Revenue</div></div>
+      <div class="result-card"><div class="result-num">4.9★</div><div class="result-label">Client Satisfaction Score</div></div>
+      <div class="result-card"><div class="result-num">8 wk</div><div class="result-label">Full Delivery Timeline</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section">
+  <div class="container">
+    <div class="cs-nav">
+      <a href="cs-pearl-property.html">
+        <i data-lucide="arrow-left" style="width:20px;color:var(--primary);min-width:20px;"></i>
+        <div><div class="nav-dir">Previous Project</div><div class="nav-title">Pearl Property Solutions</div></div>
+      </a>
+      <a href="cs-suveinakama-legal.html" class="nav-next">
+        <div><div class="nav-dir">Next Project</div><div class="nav-title">Suveinakama Legal</div></div>
+        <i data-lucide="arrow-right" style="width:20px;color:var(--primary);min-width:20px;"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<section class="cs-cta">
+  <div class="container">
+    <h2>Ready to Build Something Like This?</h2>
+    <p>Let's build your booking platform — seamless, secure, and premium from day one.</p>
+    <a href="index.html#contact" class="btn-white">Get a Free Consultation</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container"><p>© 2026 WelkinGetter Global IT Solutions. <a href="index.html">Back to Home</a></p></div>
+</footer>
+<a href="https://wa.me/919770329202" class="wa-float"><i data-lucide="message-circle" style="width:26px;height:26px;"></i></a>
+<button class="back-top" id="backTop"><i data-lucide="arrow-up" style="width:20px;"></i></button>
+<script>
+  document.addEventListener('DOMContentLoaded',()=>{
+    lucide.createIcons();
+    const bt=document.getElementById('backTop');
+    window.addEventListener('scroll',()=>{bt.classList.toggle('show',window.scrollY>400);});
+    bt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  });
+</script>
+</body>
+</html>

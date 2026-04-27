@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suveinakama Legal — Case Study | WelkinGetter</title>
+<meta name="description" content="Professional legal services website with secure document submission and appointment scheduling, built by WelkinGetter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@0.395.0" defer></script>
+<style>
+:root{--primary:#8B5CF6;--secondary:#EC4899;--bg:#F8F9FA;--bg-dark:#0F172A;--text:#0F172A;--text2:#334155;--text3:#64748B;--font-heading:'Poppins',sans-serif;--font-body:'Inter',sans-serif;--grad:linear-gradient(135deg,var(--primary),var(--secondary));}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);color:var(--text);background:var(--bg);line-height:1.7;overflow-x:hidden;}
+img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
+h1,h2,h3,h4{font-family:var(--font-heading);font-weight:700;line-height:1.2;}
+.container{max-width:1100px;margin:0 auto;padding:0 2rem;}
+.text-gradient{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;border-radius:50px;font-weight:600;font-family:var(--font-heading);cursor:pointer;border:none;transition:all .3s ease;font-size:.9rem;}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 4px 20px rgba(139,92,246,.35);}
+.btn-primary:hover{transform:translateY(-2px);}
+.btn-outline{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.2);}
+.navbar{position:fixed;top:0;width:100%;height:72px;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,.06);display:flex;align-items:center;}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;width:100%;}
+.logo{display:flex;align-items:center;gap:.75rem;font-family:var(--font-heading);font-weight:800;font-size:1.3rem;color:var(--text);}
+.logo img{height:34px;border-radius:6px;}
+.nav-right{display:flex;align-items:center;gap:1.5rem;}
+.nav-right a{font-weight:500;color:var(--text3);font-size:.9rem;}
+.nav-right a:hover{color:var(--primary);}
+.cs-hero{padding-top:72px;background:linear-gradient(160deg,#0a0f1e 0%,#0d1b3e 50%,#0F172A 100%);color:#fff;position:relative;overflow:hidden;}
+.cs-hero::before{content:'';position:absolute;top:-150px;right:-150px;width:500px;height:500px;background:radial-gradient(circle,rgba(59,130,246,.18),transparent 70%);border-radius:50%;}
+.hero-content{padding:4rem 0 0;position:relative;z-index:2;}
+.breadcrumb{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:1.5rem;flex-wrap:wrap;}
+.breadcrumb a{color:rgba(255,255,255,.6);}.breadcrumb span{color:rgba(255,255,255,.3);}
+.cs-label{display:inline-block;background:rgba(59,130,246,.2);border:1px solid rgba(59,130,246,.4);color:#93c5fd;font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:.35rem 1rem;border-radius:50px;margin-bottom:1rem;}
+.hero-content h1{font-size:clamp(2.2rem,5vw,3.5rem);margin-bottom:1rem;color:#fff;}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,.7);max-width:600px;margin-bottom:2rem;}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem;}
+.hero-img-wrap{position:relative;z-index:2;margin-top:2rem;}
+.hero-img-wrap img{width:100%;height:420px;object-fit:cover;border-radius:20px 20px 0 0;box-shadow:0 -20px 60px rgba(59,130,246,.15);}
+.meta-strip{background:#fff;border-bottom:1px solid rgba(0,0,0,.06);}
+.meta-grid{display:grid;grid-template-columns:repeat(4,1fr);}
+.meta-item{padding:1.5rem 2rem;border-right:1px solid rgba(0,0,0,.06);}
+.meta-item:last-child{border-right:none;}
+.meta-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3);margin-bottom:.4rem;}
+.meta-value{font-size:.95rem;font-weight:600;color:var(--text);}
+@media(max-width:768px){.meta-grid{grid-template-columns:1fr 1fr;}.meta-item{border-right:none;border-bottom:1px solid rgba(0,0,0,.06);}}
+.section{padding:4rem 0;}.section-alt{background:#fff;}
+.eyebrow{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--primary);margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem;}
+.eyebrow::before{content:'';width:16px;height:2px;background:var(--grad);border-radius:2px;}
+.section h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:1.25rem;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+@media(max-width:768px){.two-col{grid-template-columns:1fr;gap:2rem;}}
+.sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;}
+@media(max-width:500px){.sol-grid{grid-template-columns:1fr;}}
+.sol-card{background:var(--bg);border:1px solid rgba(139,92,246,.12);border-radius:14px;padding:1.25rem;}
+.sol-card h4{font-size:.95rem;margin-bottom:.4rem;}
+.sol-card p{font-size:.85rem;color:var(--text3);margin:0;}
+.sol-icon{width:36px;height:36px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center;margin-bottom:.75rem;}
+.sol-icon svg{color:#fff;width:18px;height:18px;}
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem;}
+@media(max-width:768px){.results-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.results-grid{grid-template-columns:1fr;}}
+.result-card{background:#fff;border-radius:16px;padding:1.75rem;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid rgba(139,92,246,.08);}
+.result-num{font-family:var(--font-heading);font-size:2.5rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:.5rem;}
+.result-label{font-size:.85rem;color:var(--text3);font-weight:500;}
+.tech-pills{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem;}
+.tech-pill{background:#fff;border:1.5px solid rgba(139,92,246,.2);color:var(--primary);font-size:.8rem;font-weight:600;padding:.4rem 1rem;border-radius:50px;}
+.cs-cta{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;padding:4rem 0;text-align:center;}
+.cs-cta h2{color:#fff;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:1rem;}
+.cs-cta p{color:rgba(255,255,255,.8);max-width:500px;margin:0 auto 2rem;}
+.btn-white{background:#fff;color:var(--primary);font-weight:700;display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;border-radius:50px;font-family:var(--font-heading);transition:all .3s;}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2);}
+.footer{background:var(--bg-dark);color:rgba(255,255,255,.6);text-align:center;padding:1.5rem;font-size:.85rem;}
+.footer a{color:var(--primary);}
+.wa-float{position:fixed;bottom:2rem;left:2rem;width:54px;height:54px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:999;transition:transform .3s;}
+.wa-float:hover{transform:scale(1.1);}
+.back-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;background:var(--grad);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;opacity:0;visibility:hidden;transform:translateY(10px);transition:all .3s;z-index:999;}
+.back-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+.cs-nav{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;padding:3rem 0;}
+.cs-nav a{background:#fff;border:1px solid rgba(139,92,246,.15);border-radius:16px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1rem;transition:all .3s;}
+.cs-nav a:hover{border-color:var(--primary);transform:translateY(-3px);box-shadow:0 8px 24px rgba(139,92,246,.12);}
+.nav-dir{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text3);}
+.nav-title{font-weight:700;color:var(--text);font-size:.95rem;}
+.nav-next{justify-content:flex-end;text-align:right;flex-direction:row-reverse;}
+@media(max-width:600px){.cs-nav{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">
+      <img src="images/welkin_getter_logo.jpeg" alt="WelkinGetter">
+      <span>WelkinGetter</span>
+    </a>
+    <div class="nav-right">
+      <a href="index.html#portfolio">← All Projects</a>
+      <a href="index.html#contact" class="btn btn-primary" style="padding:.55rem 1.25rem;">Start a Project</a>
+    </div>
+  </div>
+</nav>
+
+<section class="cs-hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><span>/</span>
+        <a href="index.html#portfolio">Case Studies</a><span>/</span>
+        <span>Suveinakama Legal</span>
+      </div>
+      <div class="cs-label">Web Development · Legal Services</div>
+      <h1>Suveinakama<br><span class="text-gradient">Legal</span></h1>
+      <p class="hero-sub">A professional legal services website with AES-256 encrypted document submission, automated appointment scheduling, and a client portal — trust-first from day one.</p>
+      <div class="hero-ctas">
+        <a href="index.html#contact" class="btn btn-primary"><i data-lucide="zap" style="width:16px;"></i>Start Your Project</a>
+        <a href="index.html#portfolio" class="btn btn-outline">View All Work</a>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <img src="https://welkingetter.com/wp-content/uploads/2024/12/Suveinakama-Legal.jpg" alt="Suveinakama Legal Website">
+    </div>
+  </div>
+</section>
+
+<div class="meta-strip">
+  <div class="container">
+    <div class="meta-grid">
+      <div class="meta-item"><div class="meta-label">Industry</div><div class="meta-value">Legal Services</div></div>
+      <div class="meta-item"><div class="meta-label">Service</div><div class="meta-value">Web Development + Portal</div></div>
+      <div class="meta-item"><div class="meta-label">Duration</div><div class="meta-value">9 Weeks</div></div>
+      <div class="meta-item"><div class="meta-label">Year</div><div class="meta-value">2024</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <div class="eyebrow">Project Overview</div>
+        <h2>Digital Presence Built on <span class="text-gradient">Trust & Security</span></h2>
+        <p>Suveinakama Legal is a boutique law firm specialising in corporate, property, and immigration law. Their clients needed to share sensitive documents digitally — but without the security risks of email attachments.</p>
+        <p>WelkinGetter delivered a secure, professional website with an encrypted client portal for document submission, integrated Calendly-style appointment scheduling, a case updates tracker, and a clean legal aesthetic that inspires confidence from the first visit.</p>
+      </div>
+      <div>
+        <div class="eyebrow">Tech Stack</div>
+        <h2>Technologies Used</h2>
+        <div class="tech-pills">
+          <span class="tech-pill">WordPress</span>
+          <span class="tech-pill">AES-256 Encryption</span>
+          <span class="tech-pill">Secure File Upload Plugin</span>
+          <span class="tech-pill">Calendly API</span>
+          <span class="tech-pill">SSL / HTTPS</span>
+          <span class="tech-pill">Custom Client Portal</span>
+          <span class="tech-pill">Contact Form 7</span>
+          <span class="tech-pill">SMTP Secure Email</span>
+        </div>
+        <div style="margin-top:2rem;background:linear-gradient(135deg,rgba(59,130,246,.06),rgba(139,92,246,.04));border:1px solid rgba(59,130,246,.15);border-radius:16px;padding:1.5rem;">
+          <div style="font-weight:700;margin-bottom:.5rem;">Client</div>
+          <div style="color:var(--text2);font-size:.95rem;">Suveinakama Legal — a boutique law practice handling corporate, property, and immigration cases with a focus on high-net-worth individual clients.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <div class="eyebrow">The Challenge</div>
+        <h2>What We Were <span class="text-gradient">Solving</span></h2>
+        <p>Legal professionals handle some of the most sensitive documents imaginable. The firm's existing digital workflow had critical gaps:</p>
+        <div style="display:flex;flex-direction:column;gap:.9rem;margin-top:1rem;">
+          <div style="display:flex;align-items:flex-start;gap:.75rem;"><i data-lucide="alert-triangle" style="width:18px;min-width:18px;color:#f59e0b;margin-top:3px;"></i><span style="font-size:.95rem;color:var(--text2);">Clients emailing sensitive legal documents — major security risk</span></div>
+          <div style="display:flex;align-items:flex-start;gap:.75rem;"><i data-lucide="alert-triangle" style="width:18px;min-width:18px;color:#f59e0b;margin-top:3px;"></i><span style="font-size:.95rem;color:var(--text2);">Appointments booked by phone — staff spending 2+ hrs/day on scheduling</span></div>
+          <div style="display:flex;align-items:flex-start;gap:.75rem;"><i data-lucide="alert-triangle" style="width:18px;min-width:18px;color:#f59e0b;margin-top:3px;"></i><span style="font-size:.95rem;color:var(--text2);">No website trust signals — potential clients had no way to verify credibility</span></div>
+          <div style="display:flex;align-items:flex-start;gap:.75rem;"><i data-lucide="alert-triangle" style="width:18px;min-width:18px;color:#f59e0b;margin-top:3px;"></i><span style="font-size:.95rem;color:var(--text2);">Clients couldn't track their case status — constant phone enquiries</span></div>
+        </div>
+      </div>
+      <div style="background:var(--bg);border-radius:20px;padding:2rem;border:1px solid rgba(0,0,0,.06);">
+        <div class="eyebrow">Key Goals</div>
+        <h3 style="margin-bottom:1.25rem;">What Success Looked Like</h3>
+        <div style="display:flex;flex-direction:column;gap:.9rem;">
+          <div style="display:flex;align-items:center;gap:.75rem;"><i data-lucide="check-circle" style="width:20px;color:#10b981;min-width:20px;"></i><span style="font-size:.95rem;color:var(--text2);">Encrypted document upload portal for clients</span></div>
+          <div style="display:flex;align-items:center;gap:.75rem;"><i data-lucide="check-circle" style="width:20px;color:#10b981;min-width:20px;"></i><span style="font-size:.95rem;color:var(--text2);">Self-service appointment booking (no phone calls)</span></div>
+          <div style="display:flex;align-items:center;gap:.75rem;"><i data-lucide="check-circle" style="width:20px;color:#10b981;min-width:20px;"></i><span style="font-size:.95rem;color:var(--text2);">Professional, trust-inducing website design</span></div>
+          <div style="display:flex;align-items:center;gap:.75rem;"><i data-lucide="check-circle" style="width:20px;color:#10b981;min-width:20px;"></i><span style="font-size:.95rem;color:var(--text2);">Case status portal to reduce inbound calls</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">Our Solution</div>
+    <h2 style="max-width:600px;margin-bottom:1rem;">How WelkinGetter <span class="text-gradient">Engineered It</span></h2>
+    <p style="color:var(--text2);max-width:650px;margin-bottom:2rem;">We built a security-first legal website on WordPress with a custom AES-256 encrypted document portal, Calendly scheduling integration, and a restricted client login area for case status updates.</p>
+    <div class="sol-grid">
+      <div class="sol-card"><div class="sol-icon"><i data-lucide="lock"></i></div><h4>Encrypted Document Portal</h4><p>AES-256 encrypted file uploads — clients submit documents safely, lawyers access securely.</p></div>
+      <div class="sol-card"><div class="sol-icon"><i data-lucide="calendar-check"></i></div><h4>Appointment Scheduling</h4><p>Integrated Calendly with consultation types, duration options, and auto-confirmation emails.</p></div>
+      <div class="sol-card"><div class="sol-icon"><i data-lucide="folder-open"></i></div><h4>Case Status Tracker</h4><p>Password-protected client portal showing real-time case milestones and document status.</p></div>
+      <div class="sol-card"><div class="sol-icon"><i data-lucide="shield-check"></i></div><h4>Trust-First Design</h4><p>Professional navy/white aesthetic with credential display, team profiles, and client testimonials.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="eyebrow">Results</div>
+    <h2><span class="text-gradient">Measurable Impact</span> Delivered</h2>
+    <div class="results-grid">
+      <div class="result-card"><div class="result-num">100%</div><div class="result-label">Secure Document Submissions</div></div>
+      <div class="result-card"><div class="result-num">70%</div><div class="result-label">Reduction in Scheduling Calls</div></div>
+      <div class="result-card"><div class="result-num">45%</div><div class="result-label">More Enquiries via Website</div></div>
+      <div class="result-card"><div class="result-num">60%</div><div class="result-label">Fewer "Case Status" Phone Calls</div></div>
+      <div class="result-card"><div class="result-num">5★</div><div class="result-label">Client Portal Satisfaction</div></div>
+      <div class="result-card"><div class="result-num">9 wk</div><div class="result-label">Full Delivery Timeline</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section">
+  <div class="container">
+    <div class="cs-nav">
+      <a href="cs-limousine-london.html">
+        <i data-lucide="arrow-left" style="width:20px;color:var(--primary);min-width:20px;"></i>
+        <div><div class="nav-dir">Previous Project</div><div class="nav-title">Limousine London</div></div>
+      </a>
+      <a href="cs-the-professional.html" class="nav-next">
+        <div><div class="nav-dir">Next Project</div><div class="nav-title">The Professional</div></div>
+        <i data-lucide="arrow-right" style="width:20px;color:var(--primary);min-width:20px;"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<section class="cs-cta">
+  <div class="container">
+    <h2>Ready to Build Something Like This?</h2>
+    <p>Let's create your secure, professional digital presence — built to inspire trust and convert clients.</p>
+    <a href="index.html#contact" class="btn-white">Get a Free Consultation</a>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container"><p>© 2026 WelkinGetter Global IT Solutions. <a href="index.html">Back to Home</a></p></div>
+</footer>
+<a href="https://wa.me/919770329202" class="wa-float"><i data-lucide="message-circle" style="width:26px;height:26px;"></i></a>
+<button class="back-top" id="backTop"><i data-lucide="arrow-up" style="width:20px;"></i></button>
+<script>
+  document.addEventListener('DOMContentLoaded',()=>{
+    lucide.createIcons();
+    const bt=document.getElementById('backTop');
+    window.addEventListener('scroll',()=>{bt.classList.toggle('show',window.scrollY>400);});
+    bt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  });
+</script>
+</body>
+</html>

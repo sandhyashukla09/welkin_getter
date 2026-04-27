@@ -787,63 +787,225 @@
             }
         }
 
-        /* Process */
-        .process-section {
-            background: var(--bg);
+        /* ===== PREMIUM METHODOLOGY SECTION ===== */
+        .methodology-section {
+            background: linear-gradient(160deg, #faf8ff 0%, #f0f2ff 50%, #fdf4ff 100%);
+            position: relative;
+            overflow: hidden;
         }
 
-        .process-grid {
+        .methodology-section::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(139,92,246,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .methodology-section::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            right: -150px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(236,72,153,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Grid */
+        .methodology-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
+            gap: 1.75rem;
             position: relative;
         }
 
-        .process-card {
+        /* Connecting line between cards */
+        .methodology-grid::before {
+            content: '';
+            position: absolute;
+            top: 72px;
+            left: calc(12.5% - 1px);
+            width: 75%;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(139,92,246,0.15) 0%, rgba(236,72,153,0.35) 50%, rgba(139,92,246,0.15) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Individual Step Card */
+        .method-card {
             background: white;
-            padding: 1.5rem;
-            border-radius: 16px;
+            border-radius: 20px;
+            padding: 2rem 1.75rem 1.75rem;
             position: relative;
             z-index: 2;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            border: 1.5px solid rgba(139,92,246,0.08);
+            box-shadow: 0 4px 20px rgba(139,92,246,0.06), 0 1px 4px rgba(0,0,0,0.04);
+            transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1),
+                        box-shadow 0.35s ease,
+                        border-color 0.3s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
-        .process-step {
+        /* Hover border glow */
+        .method-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(139,92,246,0.18), 0 0 0 1.5px rgba(139,92,246,0.35);
+            border-color: rgba(139,92,246,0.4);
+        }
+
+        /* Subtle inner glow layer */
+        .method-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(139,92,246,0.04) 0%, rgba(236,72,153,0.03) 100%);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            pointer-events: none;
+        }
+
+        .method-card:hover::after {
+            opacity: 1;
+        }
+
+        /* Large Step Number – top right */
+        .method-number {
             font-family: var(--font-heading);
-            font-size: 3rem;
-            font-weight: 800;
-            color: rgba(18, 189, 247, 0.1);
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1;
             position: absolute;
             top: 1rem;
-            right: 1.5rem;
-            line-height: 1;
+            right: 1.25rem;
+            background: linear-gradient(135deg, rgba(139,92,246,0.12) 0%, rgba(236,72,153,0.08) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.35s ease;
+            user-select: none;
+            letter-spacing: -2px;
         }
 
-        .process-icon {
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
+        /* On hover number brightens with vivid gradient */
+        .method-card:hover .method-number {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 12px rgba(139,92,246,0.4));
         }
 
-        .process-card h3 {
-            margin-bottom: 0.5rem;
+        /* Icon container with gradient blur bg */
+        .method-icon-wrap {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(139,92,246,0.12), rgba(236,72,153,0.08));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            position: relative;
+            transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1),
+                        background 0.35s ease,
+                        box-shadow 0.35s ease;
+            flex-shrink: 0;
+        }
+
+        /* Icon bubble hover */
+        .method-card:hover .method-icon-wrap {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            transform: rotate(6deg) scale(1.12);
+            box-shadow: 0 8px 24px rgba(139,92,246,0.35);
+        }
+
+        .method-icon-wrap i {
+            transition: transform 0.35s ease;
+        }
+
+        .method-card:hover .method-icon-wrap i {
+            transform: rotate(-6deg);
+        }
+
+        /* Card body */
+        .method-body {
+            flex: 1;
+        }
+
+        /* Step label pill */
+        .method-step-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--primary);
+            background: rgba(139,92,246,0.08);
+            padding: 0.2rem 0.65rem;
+            border-radius: 20px;
+            margin-bottom: 0.6rem;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .method-card:hover .method-step-label {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .method-body h3 {
             font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
         }
 
-        .process-card p {
+        .method-body p {
+            font-size: 0.92rem;
             color: var(--text2);
-            font-size: 0.95rem;
+            line-height: 1.65;
         }
 
+        /* Animated bottom accent bar */
+        .method-bar {
+            height: 3px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            width: 0;
+            transition: width 0.5s cubic-bezier(0.34,1.56,0.64,1);
+            margin-top: auto;
+        }
+
+        .method-card:hover .method-bar {
+            width: 100%;
+        }
+
+        /* Responsiveness */
         @media (max-width: 1024px) {
-            .process-grid {
+            .methodology-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            .methodology-grid::before { display: none; }
         }
 
         @media (max-width: 600px) {
-            .process-grid {
+            .methodology-grid {
                 grid-template-columns: 1fr;
             }
+            .methodology-grid::before { display: none; }
         }
 
         /* Why Us */
@@ -989,88 +1151,239 @@
             }
         }
 
-        /* Portfolio */
+        /* ===== PORTFOLIO / CASE STUDIES ===== */
         .portfolio {
-            background: var(--bg);
+            background: linear-gradient(180deg, #f8f9fa 0%, #f0f2ff 100%);
+            position: relative;
+            overflow: hidden;
         }
 
-        .filter-pills {
+        .portfolio::before {
+            content: '';
+            position: absolute;
+            top: -120px;
+            right: -120px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(139,92,246,0.07) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .portfolio::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(236,72,153,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Filter Tabs */
+        .cs-filter-wrap {
             display: flex;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
             flex-wrap: wrap;
         }
 
-        .filter-pill {
-            padding: 0.5rem 1.5rem;
-            border-radius: 30px;
+        .cs-filter-btn {
+            padding: 0.55rem 1.5rem;
+            border-radius: 50px;
             background: white;
             color: var(--text2);
-            font-weight: 500;
+            font-weight: 600;
+            font-family: var(--font-heading);
+            font-size: 0.875rem;
             cursor: pointer;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            border: 1.5px solid rgba(139, 92, 246, 0.2);
+            transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            user-select: none;
         }
 
-        .filter-pill.active,
-        .filter-pill:hover {
-            background: var(--primary);
-            color: white;
+        .cs-filter-btn:hover {
             border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139,92,246,0.15);
         }
 
+        .cs-filter-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 6px 20px rgba(139,92,246,0.35);
+            transform: translateY(-2px);
+        }
+
+        /* Portfolio Grid */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.75rem;
         }
 
+        /* Case Card */
         .case-card {
             background: white;
-            border-radius: 16px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        box-shadow 0.35s ease;
+            cursor: pointer;
+            position: relative;
         }
 
         .case-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px) scale(1.01);
+            box-shadow: 0 28px 50px rgba(139, 92, 246, 0.18);
+        }
+
+        /* Card hidden state for filter */
+        .case-card.hidden {
+            display: none;
+        }
+
+        /* Image wrapper */
+        .case-img-wrap {
+            position: relative;
+            overflow: hidden;
+            height: 230px;
         }
 
         .case-img {
             width: 100%;
-            height: 250px;
+            height: 100%;
             object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: block;
         }
 
+        .case-card:hover .case-img {
+            transform: scale(1.08);
+        }
+
+        /* Hover overlay */
+        .case-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg,
+                rgba(139,92,246,0.75) 0%,
+                rgba(236,72,153,0.65) 100%);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .case-card:hover .case-overlay {
+            opacity: 1;
+        }
+
+        .case-overlay-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(8px);
+            border: 2px solid rgba(255,255,255,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transform: scale(0.7);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 0.05s;
+        }
+
+        .case-card:hover .case-overlay-icon {
+            transform: scale(1);
+        }
+
+        /* Category badge */
+        .case-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(6px);
+            color: var(--primary);
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0.3rem 0.75rem;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Card content */
         .case-content {
-            padding: 1rem;
+            padding: 1.25rem 1.4rem 1.5rem;
         }
 
         .case-category {
             color: var(--primary);
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             text-transform: uppercase;
             font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.45rem;
+            display: block;
         }
 
         .case-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
+            margin-bottom: 0.4rem;
+            color: var(--text);
+            line-height: 1.3;
         }
 
         .case-card p {
-            color: var(--text2);
-            font-size: 0.95rem;
+            color: var(--text3);
+            font-size: 0.88rem;
+            line-height: 1.6;
+            margin: 0;
         }
 
-        @media (max-width: 768px) {
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
             .portfolio-grid {
                 grid-template-columns: 1fr;
             }
+            .cs-filter-wrap {
+                gap: 0.5rem;
+            }
+            .cs-filter-btn {
+                font-size: 0.8rem;
+                padding: 0.45rem 1rem;
+            }
+        }
+
+        /* Card stagger animation */
+        .case-card.reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s ease, transform 0.6s ease,
+                        box-shadow 0.35s ease;
+        }
+        .case-card.reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .case-card.reveal.active:hover {
+            transform: translateY(-10px) scale(1.01);
         }
 
         /* Testimonials */
@@ -1929,46 +2242,72 @@
             </div>
         </section>
 
-        <!-- Process Section -->
-        <section id="process" class="process-section">
+        <!-- ===== PREMIUM METHODOLOGY SECTION ===== -->
+        <section id="process" class="methodology-section">
             <div class="container">
-                <span class="section-eyebrow reveal">Our Methodology</span>
+                <span class="section-eyebrow reveal">OUR METHODOLOGY</span>
                 <h2 class="section-heading reveal">How We Deliver <span class="text-gradient">Excellence</span></h2>
                 <p class="section-body reveal">A structured, enterprise-grade approach designed to minimize risk,
                     accelerate time-to-market, and ensure highly scalable digital foundations.</p>
 
-                <div class="process-grid">
-                    <div class="process-card reveal">
-                        <div class="process-step">01</div>
-                        <i data-lucide="search" class="process-icon" style="width:32px; height:32px;"></i>
-                        <h3>Discovery</h3>
-                        <p>We perform a deep dive into your business logic, enterprise requirements, and legacy
-                            constraints to produce a clear, agreed-upon project specification.</p>
+                <div class="methodology-grid">
+
+                    <!-- Step 01: Discovery -->
+                    <div class="method-card reveal" style="transition-delay: 0s;">
+                        <span class="method-number" aria-hidden="true">01</span>
+                        <div class="method-icon-wrap">
+                            <i data-lucide="search" style="width:26px; height:26px;"></i>
+                        </div>
+                        <div class="method-body">
+                            <span class="method-step-label">Step 01</span>
+                            <h3>Discovery</h3>
+                            <p>Deep dive into business logic, requirements, and constraints to produce a clear, agreed-upon project specification.</p>
+                        </div>
+                        <div class="method-bar"></div>
                     </div>
 
-                    <div class="process-card reveal" style="transition-delay: 0.1s;">
-                        <div class="process-step">02</div>
-                        <i data-lucide="layers" class="process-icon" style="width:32px; height:32px;"></i>
-                        <h3>Architecture</h3>
-                        <p>Designing scalable, secure, and cloud-native technical systems that integrate seamlessly with
-                            your existing operational workflows.</p>
+                    <!-- Step 02: Architecture -->
+                    <div class="method-card reveal" style="transition-delay: 0.12s;">
+                        <span class="method-number" aria-hidden="true">02</span>
+                        <div class="method-icon-wrap">
+                            <i data-lucide="layers" style="width:26px; height:26px;"></i>
+                        </div>
+                        <div class="method-body">
+                            <span class="method-step-label">Step 02</span>
+                            <h3>Architecture</h3>
+                            <p>Design scalable, secure, cloud-native systems that integrate seamlessly with your existing operational workflows.</p>
+                        </div>
+                        <div class="method-bar"></div>
                     </div>
 
-                    <div class="process-card reveal" style="transition-delay: 0.2s;">
-                        <div class="process-step">03</div>
-                        <i data-lucide="code" class="process-icon" style="width:32px; height:32px;"></i>
-                        <h3>Development</h3>
-                        <p>Agile sprints with direct founder-led QA checkpoints, WCAG-compliant UI delivery, and AES-256
-                            encrypted data handling throughout.</p>
+                    <!-- Step 03: Development -->
+                    <div class="method-card reveal" style="transition-delay: 0.24s;">
+                        <span class="method-number" aria-hidden="true">03</span>
+                        <div class="method-icon-wrap">
+                            <i data-lucide="code-2" style="width:26px; height:26px;"></i>
+                        </div>
+                        <div class="method-body">
+                            <span class="method-step-label">Step 03</span>
+                            <h3>Development</h3>
+                            <p>Agile execution with QA checkpoints, WCAG-compliant UI delivery, and secure AES-256 encrypted data handling.</p>
+                        </div>
+                        <div class="method-bar"></div>
                     </div>
 
-                    <div class="process-card reveal" style="transition-delay: 0.3s;">
-                        <div class="process-step">04</div>
-                        <i data-lucide="rocket" class="process-icon" style="width:32px; height:32px;"></i>
-                        <h3>Deployment</h3>
-                        <p>Continuous integration, zero-downtime global scaling, followed by rigorous post-launch
-                            monitoring and 24/7 prioritized support.</p>
+                    <!-- Step 04: Deployment -->
+                    <div class="method-card reveal" style="transition-delay: 0.36s;">
+                        <span class="method-number" aria-hidden="true">04</span>
+                        <div class="method-icon-wrap">
+                            <i data-lucide="rocket" style="width:26px; height:26px;"></i>
+                        </div>
+                        <div class="method-body">
+                            <span class="method-step-label">Step 04</span>
+                            <h3>Deployment</h3>
+                            <p>CI/CD pipelines, zero-downtime global scaling, and 24/7 post-launch monitoring and prioritized support.</p>
+                        </div>
+                        <div class="method-bar"></div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -2057,74 +2396,148 @@
             </div>
         </div>
 
-        <!-- Portfolio Section -->
+        <!-- Case Studies / Portfolio Section -->
         <section id="portfolio" class="portfolio">
             <div class="container">
-                <span class="section-eyebrow reveal">Case Studies</span>
-                <h2 class="section-heading reveal">Proven <span class="text-gradient">Success Stories</span></h2>
+                <span class="section-eyebrow reveal">CASE STUDIES</span>
+                <h2 class="section-heading reveal" style="font-size:clamp(2rem,5vw,2.75rem); font-weight:800; line-height:1.15;">
+                    Proven <span class="text-gradient">Success Stories</span>
+                </h2>
+                <p class="section-body reveal">Real projects. Real results. A showcase of enterprise solutions we've engineered for businesses across India and beyond.</p>
 
-                <div class="filter-pills reveal">
-                    <div class="filter-pill active">All Work</div>
-                    <div class="filter-pill">Web Development</div>
-                    <div class="filter-pill">Mobile App</div>
-                    <div class="filter-pill">Digital Marketing</div>
+                <!-- Filter Tabs -->
+                <div class="cs-filter-wrap reveal" id="caseFilters">
+                    <button class="cs-filter-btn active" data-filter="all" id="filter-all">All Work</button>
+                    <button class="cs-filter-btn" data-filter="web" id="filter-web">Web Development</button>
+                    <button class="cs-filter-btn" data-filter="mobile" id="filter-mobile">Mobile App</button>
+                    <button class="cs-filter-btn" data-filter="marketing" id="filter-marketing">Digital Marketing</button>
                 </div>
 
-                <div class="portfolio-grid">
-                    <div class="case-card reveal">
-                        <img src="https://welkingetter.com/wp-content/uploads/2024/12/Antra-Home.jpg"
-                            alt="Antra Entertainment" class="case-img">
+                <!-- Cards Grid -->
+                <div class="portfolio-grid" id="portfolioGrid">
+
+                    <!-- Card 1: Antra Entertainment -->
+                    <a href="cs-antra-entertainment.html" class="case-card reveal" data-category="web" style="transition-delay:0s; display:block; text-decoration:none; color:inherit;">
+                        <div class="case-img-wrap">
+                            <img src="https://welkingetter.com/wp-content/uploads/2024/12/Antra-Home.jpg"
+                                alt="Antra Entertainment" class="case-img" loading="lazy">
+                            <div class="case-overlay">
+                                <div class="case-overlay-icon">
+                                    <i data-lucide="external-link" style="width:22px;height:22px;"></i>
+                                </div>
+                            </div>
+                            <span class="case-badge">ENTERPRISE</span>
+                        </div>
                         <div class="case-content">
-                            <div class="case-category">Enterprise</div>
+                            <span class="case-category">Web Development</span>
                             <h3>Antra Entertainment</h3>
-                            <p>Full-stack entertainment platform with dynamic content management and streaming-optimised
-                                delivery.</p>
+                            <p>Full-stack entertainment platform with dynamic content management and streaming-optimised delivery.</p>
+                            <span style="display:inline-flex;align-items:center;gap:.35rem;margin-top:.75rem;font-size:.8rem;font-weight:700;color:var(--primary);">View Case Study <i data-lucide="arrow-right" style="width:14px;"></i></span>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="case-card reveal" style="transition-delay: 0.1s;">
-                        <img src="https://welkingetter.com/wp-content/uploads/2024/12/Pearl-Property-Solutions.jpg"
-                            alt="Pearl Property Solutions" class="case-img">
+                    <!-- Card 2: Pearl Property Solutions -->
+                    <a href="cs-pearl-property.html" class="case-card reveal" data-category="web" style="transition-delay:0.1s; display:block; text-decoration:none; color:inherit;">
+                        <div class="case-img-wrap">
+                            <img src="https://welkingetter.com/wp-content/uploads/2024/12/Pearl-Property-Solutions.jpg"
+                                alt="Pearl Property Solutions" class="case-img" loading="lazy">
+                            <div class="case-overlay">
+                                <div class="case-overlay-icon">
+                                    <i data-lucide="external-link" style="width:22px;height:22px;"></i>
+                                </div>
+                            </div>
+                            <span class="case-badge">ENTERPRISE</span>
+                        </div>
                         <div class="case-content">
-                            <div class="case-category">Enterprise</div>
+                            <span class="case-category">Web Development</span>
                             <h3>Pearl Property Solutions</h3>
-                            <p>Property listings portal with advanced search, agent dashboards, and lead capture
-                                workflows.</p>
+                            <p>Property listings portal with advanced search, agent dashboards, and lead capture workflows.</p>
+                            <span style="display:inline-flex;align-items:center;gap:.35rem;margin-top:.75rem;font-size:.8rem;font-weight:700;color:var(--primary);">View Case Study <i data-lucide="arrow-right" style="width:14px;"></i></span>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="case-card reveal" style="transition-delay: 0.2s;">
-                        <img src="https://welkingetter.com/wp-content/uploads/2024/12/Limousine-London-2.jpg"
-                            alt="Limousine London" class="case-img">
+                    <!-- Card 3: Limousine London -->
+                    <a href="cs-limousine-london.html" class="case-card reveal" data-category="web" style="transition-delay:0.2s; display:block; text-decoration:none; color:inherit;">
+                        <div class="case-img-wrap">
+                            <img src="https://welkingetter.com/wp-content/uploads/2024/12/Limousine-London-2.jpg"
+                                alt="Limousine London" class="case-img" loading="lazy">
+                            <div class="case-overlay">
+                                <div class="case-overlay-icon">
+                                    <i data-lucide="external-link" style="width:22px;height:22px;"></i>
+                                </div>
+                            </div>
+                            <span class="case-badge">ENTERPRISE</span>
+                        </div>
                         <div class="case-content">
-                            <div class="case-category">Enterprise</div>
+                            <span class="case-category">Web Development</span>
                             <h3>Limousine London</h3>
-                            <p>Premium booking platform for a luxury chauffeur service — real-time availability, Stripe
-                                payments, and SMS confirmations.</p>
+                            <p>Premium booking platform for a luxury chauffeur service — real-time availability, Stripe payments, and SMS confirmations.</p>
+                            <span style="display:inline-flex;align-items:center;gap:.35rem;margin-top:.75rem;font-size:.8rem;font-weight:700;color:var(--primary);">View Case Study <i data-lucide="arrow-right" style="width:14px;"></i></span>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="case-card reveal">
-                        <img src="https://welkingetter.com/wp-content/uploads/2024/12/Suveinakama-Legal.jpg"
-                            alt="Suveinakama Legal" class="case-img">
+                    <!-- Card 4: Suveinakama Legal -->
+                    <a href="cs-suveinakama-legal.html" class="case-card reveal" data-category="web" style="transition-delay:0.05s; display:block; text-decoration:none; color:inherit;">
+                        <div class="case-img-wrap">
+                            <img src="https://welkingetter.com/wp-content/uploads/2024/12/Suveinakama-Legal.jpg"
+                                alt="Suveinakama Legal" class="case-img" loading="lazy">
+                            <div class="case-overlay">
+                                <div class="case-overlay-icon">
+                                    <i data-lucide="external-link" style="width:22px;height:22px;"></i>
+                                </div>
+                            </div>
+                            <span class="case-badge">ENTERPRISE</span>
+                        </div>
                         <div class="case-content">
-                            <div class="case-category">Enterprise</div>
+                            <span class="case-category">Web Development</span>
                             <h3>Suveinakama Legal</h3>
-                            <p>Professional legal services website with secure document submission and appointment
-                                scheduling.</p>
+                            <p>Professional legal services website with secure document submission and appointment scheduling.</p>
+                            <span style="display:inline-flex;align-items:center;gap:.35rem;margin-top:.75rem;font-size:.8rem;font-weight:700;color:var(--primary);">View Case Study <i data-lucide="arrow-right" style="width:14px;"></i></span>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="case-card reveal" style="transition-delay: 0.1s;">
-                        <img src="https://welkingetter.com/wp-content/uploads/2024/12/The-Professional.jpg"
-                            alt="The Professional" class="case-img">
-                        <div class="case-content">
-                            <div class="case-category">Enterprise</div>
-                            <h3>The Professional</h3>
-                            <p>Corporate identity site with blog, lead funnel, and integrated CRM.</p>
+                    <!-- Card 5: The Professional -->
+                    <a href="cs-the-professional.html" class="case-card reveal" data-category="marketing" style="transition-delay:0.15s; display:block; text-decoration:none; color:inherit;">
+                        <div class="case-img-wrap">
+                            <img src="https://welkingetter.com/wp-content/uploads/2024/12/The-Professional.jpg"
+                                alt="The Professional" class="case-img" loading="lazy">
+                            <div class="case-overlay">
+                                <div class="case-overlay-icon">
+                                    <i data-lucide="external-link" style="width:22px;height:22px;"></i>
+                                </div>
+                            </div>
+                            <span class="case-badge">ENTERPRISE</span>
                         </div>
-                    </div>
-                </div>
+                        <div class="case-content">
+                            <span class="case-category">Digital Marketing</span>
+                            <h3>The Professional</h3>
+                            <p>Corporate identity site with blog, lead funnel, and integrated CRM for measurable ROI campaigns.</p>
+                            <span style="display:inline-flex;align-items:center;gap:.35rem;margin-top:.75rem;font-size:.8rem;font-weight:700;color:var(--primary);">View Case Study <i data-lucide="arrow-right" style="width:14px;"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Card 6: Nature In You (Mobile App) -->
+                    <a href="cs-nature-in-you.html" class="case-card reveal" data-category="mobile" style="transition-delay:0.25s; display:block; text-decoration:none; color:inherit;">
+                        <div class="case-img-wrap">
+                            <img src="https://welkingetter.com/wp-content/uploads/2024/12/NATURE-IN-YOU.png"
+                                alt="Nature In You" class="case-img" loading="lazy"
+                                style="object-fit:contain; background:#e8f5e9; padding:1rem;">
+                            <div class="case-overlay">
+                                <div class="case-overlay-icon">
+                                    <i data-lucide="external-link" style="width:22px;height:22px;"></i>
+                                </div>
+                            </div>
+                            <span class="case-badge">MOBILE</span>
+                        </div>
+                        <div class="case-content">
+                            <span class="case-category">Mobile App</span>
+                            <h3>Nature In You</h3>
+                            <p>Cross-platform lifestyle app built with Flutter featuring push notifications, product catalogue, and one-tap checkout.</p>
+                            <span style="display:inline-flex;align-items:center;gap:.35rem;margin-top:.75rem;font-size:.8rem;font-weight:700;color:var(--primary);">View Case Study <i data-lucide="arrow-right" style="width:14px;"></i></span>
+                        </div>
+                    </a>
+
+                </div><!-- /portfolio-grid -->
             </div>
         </section>
 
@@ -2246,30 +2659,30 @@
                         style="color:var(--primary); font-weight:600;">Browse all 12 articles →</a></p>
 
                 <div class="blog-grid">
-                    <div class="blog-card reveal">
+                    <a href="blog/lms-future-2026.html" class="blog-card reveal" style="display: block; text-decoration: none; color: inherit;">
                         <div class="blog-meta"><span>April 15, 2026</span><span>8 min</span></div>
                         <h4>The Future of LMS: AI-Driven Competency Tracking in 2026</h4>
-                        <a href="blog.html" class="blog-link">Read Article <i data-lucide="arrow-right"
-                                style="width:14px;"></i></a>
-                    </div>
-                    <div class="blog-card reveal" style="transition-delay: 0.1s;">
+                        <span class="blog-link">Read Article <i data-lucide="arrow-right"
+                                style="width:14px;"></i></span>
+                    </a>
+                    <a href="blog/scaling-for-bharat.html" class="blog-card reveal" style="transition-delay: 0.1s; display: block; text-decoration: none; color: inherit;">
                         <div class="blog-meta"><span>March 28, 2026</span><span>6 min</span></div>
                         <h4>Building for Bharat: Scaling Web Apps for 500M+ Users</h4>
-                        <a href="blog.html" class="blog-link">Read Article <i data-lucide="arrow-right"
-                                style="width:14px;"></i></a>
-                    </div>
-                    <div class="blog-card reveal" style="transition-delay: 0.2s;">
+                        <span class="blog-link">Read Article <i data-lucide="arrow-right"
+                                style="width:14px;"></i></span>
+                    </a>
+                    <a href="blog/roi-metrics-b2b.html" class="blog-card reveal" style="transition-delay: 0.2s; display: block; text-decoration: none; color: inherit;">
                         <div class="blog-meta"><span>March 12, 2026</span><span>10 min</span></div>
                         <h4>Beyond Performance: The New ROI Metrics for B2B Marketing</h4>
-                        <a href="blog.html" class="blog-link">Read Article <i data-lucide="arrow-right"
-                                style="width:14px;"></i></a>
-                    </div>
-                    <div class="blog-card reveal" style="transition-delay: 0.3s;">
+                        <span class="blog-link">Read Article <i data-lucide="arrow-right"
+                                style="width:14px;"></i></span>
+                    </a>
+                    <a href="blog/dpdp-act-guide.html" class="blog-card reveal" style="transition-delay: 0.3s; display: block; text-decoration: none; color: inherit;">
                         <div class="blog-meta"><span>February 20, 2026</span><span>7 min</span></div>
                         <h4>DPDP Act 2023: What Every Indian Tech Startup Must Do Now</h4>
-                        <a href="blog.html" class="blog-link">Read Article <i data-lucide="arrow-right"
-                                style="width:14px;"></i></a>
-                    </div>
+                        <span class="blog-link">Read Article <i data-lucide="arrow-right"
+                                style="width:14px;"></i></span>
+                    </a>
                 </div>
 
                 <div class="text-center reveal" style="text-align: center;">
@@ -2599,6 +3012,39 @@
                 });
             });
         });
+
+        // ===== CASE STUDIES FILTER =====
+        function initCaseFilter() {
+            const filterBtns = document.querySelectorAll('.cs-filter-btn');
+            const cards = document.querySelectorAll('#portfolioGrid .case-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active state
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filter = btn.getAttribute('data-filter');
+
+                    cards.forEach((card, i) => {
+                        const cat = card.getAttribute('data-category');
+                        const match = filter === 'all' || cat === filter;
+
+                        if (match) {
+                            card.classList.remove('hidden');
+                            // Re-trigger entrance animation
+                            card.classList.remove('active');
+                            setTimeout(() => {
+                                card.classList.add('active');
+                            }, 30 + i * 60);
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        }
+        initCaseFilter();
 
         // Toast functionality
         function showToast(e) {

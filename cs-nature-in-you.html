@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nature In You — Case Study | WelkinGetter</title>
+<meta name="description" content="Cross-platform lifestyle mobile app built with Flutter featuring push notifications, product catalogue, and one-tap checkout — by WelkinGetter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@0.395.0" defer></script>
+<style>
+:root{--primary:#8B5CF6;--secondary:#EC4899;--bg:#F8F9FA;--bg-dark:#0F172A;--text:#0F172A;--text2:#334155;--text3:#64748B;--font-heading:'Poppins',sans-serif;--font-body:'Inter',sans-serif;--grad:linear-gradient(135deg,var(--primary),var(--secondary));}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);color:var(--text);background:var(--bg);line-height:1.7;overflow-x:hidden;}
+img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
+h1,h2,h3,h4{font-family:var(--font-heading);font-weight:700;line-height:1.2;}
+.container{max-width:1100px;margin:0 auto;padding:0 2rem;}
+.text-gradient{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;border-radius:50px;font-weight:600;font-family:var(--font-heading);cursor:pointer;border:none;transition:all .3s ease;font-size:.9rem;}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 4px 20px rgba(139,92,246,.35);}
+.btn-primary:hover{transform:translateY(-2px);}
+.btn-outline{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.2);}
+.navbar{position:fixed;top:0;width:100%;height:72px;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,.06);display:flex;align-items:center;}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;width:100%;}
+.logo{display:flex;align-items:center;gap:.75rem;font-family:var(--font-heading);font-weight:800;font-size:1.3rem;color:var(--text);}
+.logo img{height:34px;border-radius:6px;}
+.nav-right{display:flex;align-items:center;gap:1.5rem;}
+.nav-right a{font-weight:500;color:var(--text3);font-size:.9rem;}
+.nav-right a:hover{color:var(--primary);}
+/* Hero — forest green gradient */
+.cs-hero{padding-top:72px;background:linear-gradient(160deg,#0a1f0a 0%,#0d2e14 40%,#0F172A 100%);color:#fff;position:relative;overflow:hidden;}
+.cs-hero::before{content:'';position:absolute;top:-150px;right:-150px;width:500px;height:500px;background:radial-gradient(circle,rgba(34,197,94,.18),transparent 70%);border-radius:50%;}
+.cs-hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:350px;height:350px;background:radial-gradient(circle,rgba(139,92,246,.12),transparent 70%);border-radius:50%;}
+.hero-content{padding:4rem 0 0;position:relative;z-index:2;}
+.breadcrumb{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:1.5rem;flex-wrap:wrap;}
+.breadcrumb a{color:rgba(255,255,255,.6);}.breadcrumb span{color:rgba(255,255,255,.3);}
+.cs-label{display:inline-block;background:rgba(34,197,94,.2);border:1px solid rgba(34,197,94,.4);color:#86efac;font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:.35rem 1rem;border-radius:50px;margin-bottom:1rem;}
+.hero-content h1{font-size:clamp(2.2rem,5vw,3.5rem);margin-bottom:1rem;color:#fff;}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,.7);max-width:600px;margin-bottom:2rem;}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem;}
+.hero-img-wrap{position:relative;z-index:2;margin-top:2rem;}
+.hero-img-wrap img{width:100%;height:420px;object-fit:contain;background:linear-gradient(135deg,#e8f5e9,#f1f8e9);border-radius:20px 20px 0 0;box-shadow:0 -20px 60px rgba(34,197,94,.15);padding:2rem;}
+.meta-strip{background:#fff;border-bottom:1px solid rgba(0,0,0,.06);}
+.meta-grid{display:grid;grid-template-columns:repeat(4,1fr);}
+.meta-item{padding:1.5rem 2rem;border-right:1px solid rgba(0,0,0,.06);}
+.meta-item:last-child{border-right:none;}
+.meta-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3);margin-bottom:.4rem;}
+.meta-value{font-size:.95rem;font-weight:600;color:var(--text);}
+@media(max-width:768px){.meta-grid{grid-template-columns:1fr 1fr;}.meta-item{border-right:none;border-bottom:1px solid rgba(0,0,0,.06);}}
+.section{padding:4rem 0;}.section-alt{background:#fff;}
+.eyebrow{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--primary);margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem;}
+.eyebrow::before{content:'';width:16px;height:2px;background:var(--grad);border-radius:2px;}
+.section h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:1.25rem;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+@media(max-width:768px){.two-col{grid-template-columns:1fr;gap:2rem;}}
+.sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;}
+@media(max-width:500px){.sol-grid{grid-template-columns:1fr;}}
+.sol-card{background:var(--bg);border:1px solid rgba(139,92,246,.12);border-radius:14px;padding:1.25rem;}
+.sol-card h4{font-size:.95rem;margin-bottom:.4rem;}
+.sol-card p{font-size:.85rem;color:var(--text3);margin:0;}
+.sol-icon{width:36px;height:36px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center;margin-bottom:.75rem;}
+.sol-icon svg{color:#fff;width:18px;height:18px;}
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem;}
+@media(max-width:768px){.results-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.results-grid{grid-template-columns:1fr;}}
+.result-card{background:#fff;border-radius:16px;padding:1.75rem;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid rgba(139,92,246,.08);}
+.result-num{font-family:var(--font-heading);font-size:2.5rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:.5rem;}
+.result-label{font-size:.85rem;color:var(--text3);font-weight:500;}
+.tech-pills{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem;}
+.tech-pill{background:#fff;border:1.5px solid rgba(139,92,246,.2);color:var(--primary);font-size:.8rem;font-weight:600;padding:.4rem 1rem;border-radius:50px;}
+.cs-cta{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;padding:4rem 0;text-align:center;}
+.cs-cta h2{color:#fff;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:1rem;}
+.cs-cta p{color:rgba(255,255,255,.8);max-width:500px;margin:0 auto 2rem;}
+.btn-white{background:#fff;color:var(--primary);font-weight:700;display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;border-radius:50px;font-family:var(--font-heading);transition:all .3s;}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2);}
+.footer{background:var(--bg-dark);color:rgba(255,255,255,.6);text-align:center;padding:1.5rem;font-size:.85rem;}
+.footer a{color:var(--primary);}
+.wa-float{position:fixed;bottom:2rem;left:2rem;width:54px;height:54px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:999;transition:transform .3s;}
+.wa-float:hover{transform:scale(1.1);}
+.back-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;background:var(--grad);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;opacity:0;visibility:hidden;transform:translateY(10px);transition:all .3s;z-index:999;}
+.back-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+.cs-nav{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;padding:3rem 0;}
+.cs-nav a{background:#fff;border:1px solid rgba(139,92,246,.15);border-radius:16px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1rem;transition:all .3s;}
+.cs-nav a:hover{border-color:var(--primary);transform:translateY(-3px);box-shadow:0 8px 24px rgba(139,92,246,.12);}
+.nav-dir{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text3);}
+.nav-title{font-weight:700;color:var(--text);font-size:.95rem;}
+.nav-next{justify-content:flex-end;text-align:right;flex-direction:row-reverse;}
+@media(max-width:600px){.cs-nav{grid-template-columns:1fr;}}
+/* Platform badges */
+.platform-badges{display:flex;gap:1rem;margin-top:1.5rem;flex-wrap:wrap;}
+.platform-badge{display:flex;align-items:center;gap:.5rem;background:#000;color:#fff;padding:.6rem 1.2rem;border-radius:12px;font-size:.85rem;font-weight:600;}
+.platform-badge svg{color:#fff;width:18px;height:18px;}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo"><img src="images/welkin_getter_logo.jpeg" alt="WelkinGetter"><span>WelkinGetter</span></a>
+    <div class="nav-right">
+      <a href="index.html#portfolio">← All Projects</a>
+      <a href="index.html#contact" class="btn btn-primary" style="padding:.55rem 1.25rem;">Start a Project</a>
+    </div>
+  </div>
+</nav>
+
+<section class="cs-hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="index.html#portfolio">Case Studies</a><span>/</span><span>Nature In You</span></div>
+      <div class="cs-label">Mobile App · Flutter · Lifestyle</div>
+      <h1>Nature In<br><span class="text-gradient">You</span></h1>
+      <p class="hero-sub">A cross-platform lifestyle and wellness app built with Flutter — featuring push notifications, a curated product catalogue, personalised recommendations, and one-tap checkout for iOS and Android.</p>
+      <div class="hero-ctas">
+        <a href="index.html#contact" class="btn btn-primary"><i data-lucide="zap" style="width:16px;"></i>Build Your App</a>
+        <a href="index.html#portfolio" class="btn btn-outline">View All Work</a>
+      </div>
+      <div class="platform-badges">
+        <div class="platform-badge"><i data-lucide="smartphone" style="width:16px;"></i> iOS App Store</div>
+        <div class="platform-badge"><i data-lucide="tablet" style="width:16px;"></i> Google Play Store</div>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <img src="https://welkingetter.com/wp-content/uploads/2024/12/NATURE-IN-YOU.png" alt="Nature In You App">
+    </div>
+  </div>
+</section>
+
+<div class="meta-strip">
+  <div class="container">
+    <div class="meta-grid">
+      <div class="meta-item"><div class="meta-label">Industry</div><div class="meta-value">Lifestyle & Wellness</div></div>
+      <div class="meta-item"><div class="meta-label">Service</div><div class="meta-value">Cross-Platform Mobile App</div></div>
+      <div class="meta-item"><div class="meta-label">Duration</div><div class="meta-value">14 Weeks</div></div>
+      <div class="meta-item"><div class="meta-label">Platforms</div><div class="meta-value">iOS + Android</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <div class="eyebrow">Project Overview</div>
+        <h2>One Codebase. <span class="text-gradient">Two Platforms. Zero Compromise.</span></h2>
+        <p>Nature In You is a wellness and natural lifestyle brand offering organic products, guided routines, and expert content. They needed a mobile app that felt premium on both iOS and Android — without paying for two separate development teams.</p>
+        <p>WelkinGetter delivered a single Flutter codebase that renders pixel-perfectly on both platforms: a curated product catalogue with category filtering, personalised push notifications, a guided wellness content library, and a frictionless one-tap checkout flow with Razorpay integration.</p>
+        <p>The app launched on both stores simultaneously — on time, on budget, and with a 4.7-star average user rating within the first month.</p>
+      </div>
+      <div>
+        <div class="eyebrow">Tech Stack</div>
+        <h2>Technologies Used</h2>
+        <div class="tech-pills">
+          <span class="tech-pill">Flutter 3.x</span>
+          <span class="tech-pill">Dart</span>
+          <span class="tech-pill">Firebase (Auth + Firestore)</span>
+          <span class="tech-pill">Firebase Cloud Messaging</span>
+          <span class="tech-pill">Razorpay SDK</span>
+          <span class="tech-pill">Provider (State Mgmt)</span>
+          <span class="tech-pill">REST API Backend</span>
+          <span class="tech-pill">Google Play + App Store</span>
+        </div>
+        <div style="margin-top:2rem;background:linear-gradient(135deg,rgba(34,197,94,.06),rgba(139,92,246,.04));border:1px solid rgba(34,197,94,.15);border-radius:16px;padding:1.5rem;">
+          <div style="font-weight:700;margin-bottom:.5rem;">Client</div>
+          <div style="color:var(--text2);font-size:.95rem;">Nature In You — a natural lifestyle brand selling organic wellness products and guided content to health-conscious consumers across India.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <div class="eyebrow">The Challenge</div>
+        <h2>What We Were <span class="text-gradient">Solving</span></h2>
+        <p>The brand had a decent website but zero mobile presence. Their target audience — health-conscious millennials — were primarily mobile users. The core challenges:</p>
+        <div style="display:flex;flex-direction:column;gap:.9rem;margin-top:1rem;">
+          <div style="display:flex;align-items:flex-start;gap:.75rem;"><i data-lucide="alert-triangle" style="width:18px;min-width:18px;color:#f59e0b;margin-top:3px;"></i><span style="font-size:.95rem;color:var(--text2);">No mobile app — 70% of traffic was mobile but conversion was low</span></div>
+          <div style="display:flex;align-items:flex-start;gap:.75rem;"><i data-lucide="alert-triangle" style="width:18px;min-width:18px;color:#f59e0b;margin-top:3px;"></i><span style="font-size:.95rem;color:var(--text2);">Budget for one development team — needed iOS and Android both</span></div>
+          <div style="display:flex;align-items:flex-start;gap:.75rem;"><i data-lucide="alert-triangle" style="width:18px;min-width:18px;color:#f59e0b;margin-top:3px;"></i><span style="font-size:.95rem;color:var(--text2);">No way to send personalised product notifications to users</span></div>
+          <div style="display:flex;align-items:flex-start;gap:.75rem;"><i data-lucide="alert-triangle" style="width:18px;min-width:18px;color:#f59e0b;margin-top:3px;"></i><span style="font-size:.95rem;color:var(--text2);">Checkout was 7 steps — cart abandonment was above 65%</span></div>
+        </div>
+      </div>
+      <div style="background:var(--bg);border-radius:20px;padding:2rem;border:1px solid rgba(0,0,0,.06);">
+        <div class="eyebrow">Key Goals</div>
+        <h3 style="margin-bottom:1.25rem;">What Success Looked Like</h3>
+        <div style="display:flex;flex-direction:column;gap:.9rem;">
+          <div style="display:flex;align-items:center;gap:.75rem;"><i data-lucide="check-circle" style="width:20px;color:#10b981;min-width:20px;"></i><span style="font-size:.95rem;color:var(--text2);">Single Flutter app for iOS + Android — one team, one codebase</span></div>
+          <div style="display:flex;align-items:center;gap:.75rem;"><i data-lucide="check-circle" style="width:20px;color:#10b981;min-width:20px;"></i><span style="font-size:.95rem;color:var(--text2);">Personalised push notifications via Firebase Cloud Messaging</span></div>
+          <div style="display:flex;align-items:center;gap:.75rem;"><i data-lucide="check-circle" style="width:20px;color:#10b981;min-width:20px;"></i><span style="font-size:.95rem;color:var(--text2);">Streamlined 2-tap checkout with Razorpay UPI + cards</span></div>
+          <div style="display:flex;align-items:center;gap:.75rem;"><i data-lucide="check-circle" style="width:20px;color:#10b981;min-width:20px;"></i><span style="font-size:.95rem;color:var(--text2);">Wellness content library with video and article support</span></div>
+          <div style="display:flex;align-items:center;gap:.75rem;"><i data-lucide="check-circle" style="width:20px;color:#10b981;min-width:20px;"></i><span style="font-size:.95rem;color:var(--text2);">Simultaneous launch on both app stores within 14 weeks</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">Our Solution</div>
+    <h2 style="max-width:600px;margin-bottom:1rem;">How WelkinGetter <span class="text-gradient">Built It</span></h2>
+    <p style="color:var(--text2);max-width:650px;margin-bottom:2rem;">We used Flutter for a single high-performance codebase across both platforms, Firebase for auth and real-time database, Firebase Cloud Messaging for smart push notifications, and Razorpay for seamless Indian payment flows.</p>
+    <div class="sol-grid">
+      <div class="sol-card"><div class="sol-icon"><i data-lucide="layers"></i></div><h4>Flutter Cross-Platform</h4><p>One codebase, two stores — identical premium experience on iOS and Android with native performance.</p></div>
+      <div class="sol-card"><div class="sol-icon"><i data-lucide="bell"></i></div><h4>Smart Push Notifications</h4><p>Firebase Cloud Messaging sends personalised product alerts, wellness reminders, and offer notifications.</p></div>
+      <div class="sol-card"><div class="sol-icon"><i data-lucide="shopping-bag"></i></div><h4>2-Tap Checkout</h4><p>Razorpay integration with UPI, cards, and wallets — cart to payment confirmed in under 30 seconds.</p></div>
+      <div class="sol-card"><div class="sol-icon"><i data-lucide="book-open"></i></div><h4>Wellness Content Library</h4><p>In-app articles and video routines curated by category — keeps users engaged between purchases.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="eyebrow">Results</div>
+    <h2><span class="text-gradient">Measurable Impact</span> Delivered</h2>
+    <div class="results-grid">
+      <div class="result-card"><div class="result-num">4.7★</div><div class="result-label">Average App Store Rating</div></div>
+      <div class="result-card"><div class="result-num">55%</div><div class="result-label">Lower Cart Abandonment Rate</div></div>
+      <div class="result-card"><div class="result-num">2×</div><div class="result-label">Mobile Conversion vs Website</div></div>
+      <div class="result-card"><div class="result-num">5K+</div><div class="result-label">Downloads in Month 1</div></div>
+      <div class="result-card"><div class="result-num">38%</div><div class="result-label">Push Notification Open Rate</div></div>
+      <div class="result-card"><div class="result-num">14 wk</div><div class="result-label">iOS + Android Both Launched</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section">
+  <div class="container">
+    <div class="cs-nav">
+      <a href="cs-the-professional.html">
+        <i data-lucide="arrow-left" style="width:20px;color:var(--primary);min-width:20px;"></i>
+        <div><div class="nav-dir">Previous Project</div><div class="nav-title">The Professional</div></div>
+      </a>
+      <a href="cs-antra-entertainment.html" class="nav-next">
+        <div><div class="nav-dir">Back to First</div><div class="nav-title">Antra Entertainment</div></div>
+        <i data-lucide="arrow-right" style="width:20px;color:var(--primary);min-width:20px;"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<section class="cs-cta">
+  <div class="container">
+    <h2>Ready to Launch Your Mobile App?</h2>
+    <p>Let's build your cross-platform app — one codebase, two stores, and a premium experience your users will love.</p>
+    <a href="index.html#contact" class="btn-white">Get a Free Consultation</a>
+  </div>
+</section>
+
+<footer class="footer"><div class="container"><p>© 2026 WelkinGetter Global IT Solutions. <a href="index.html">Back to Home</a></p></div></footer>
+<a href="https://wa.me/919770329202" class="wa-float"><i data-lucide="message-circle" style="width:26px;height:26px;"></i></a>
+<button class="back-top" id="backTop"><i data-lucide="arrow-up" style="width:20px;"></i></button>
+<script>
+  document.addEventListener('DOMContentLoaded',()=>{
+    lucide.createIcons();
+    const bt=document.getElementById('backTop');
+    window.addEventListener('scroll',()=>{bt.classList.toggle('show',window.scrollY>400);});
+    bt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  });
+</script>
+</body>
+</html>

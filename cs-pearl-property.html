@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pearl Property Solutions — Case Study | WelkinGetter</title>
+<meta name="description" content="How WelkinGetter built a property listings portal with advanced search, agent dashboards, and lead capture workflows for Pearl Property Solutions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@0.395.0" defer></script>
+<style>
+:root{--primary:#8B5CF6;--secondary:#EC4899;--bg:#F8F9FA;--bg-dark:#0F172A;--text:#0F172A;--text2:#334155;--text3:#64748B;--font-heading:'Poppins',sans-serif;--font-body:'Inter',sans-serif;--grad:linear-gradient(135deg,var(--primary),var(--secondary));}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);color:var(--text);background:var(--bg);line-height:1.7;overflow-x:hidden;}
+img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
+h1,h2,h3,h4{font-family:var(--font-heading);font-weight:700;line-height:1.2;}
+.container{max-width:1100px;margin:0 auto;padding:0 2rem;}
+.text-gradient{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;border-radius:50px;font-weight:600;font-family:var(--font-heading);cursor:pointer;border:none;transition:all .3s ease;font-size:.9rem;}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 4px 20px rgba(139,92,246,.35);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(139,92,246,.45);}
+.btn-outline{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.2);}
+.navbar{position:fixed;top:0;width:100%;height:72px;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,.06);display:flex;align-items:center;}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;width:100%;}
+.logo{display:flex;align-items:center;gap:.75rem;font-family:var(--font-heading);font-weight:800;font-size:1.3rem;color:var(--text);}
+.logo img{height:34px;border-radius:6px;}
+.nav-right{display:flex;align-items:center;gap:1.5rem;}
+.nav-right a{font-weight:500;color:var(--text3);font-size:.9rem;}
+.nav-right a:hover{color:var(--primary);}
+.cs-hero{padding-top:72px;background:linear-gradient(160deg,#0c1a0e 0%,#0f2d14 50%,#0F172A 100%);color:#fff;position:relative;overflow:hidden;}
+.cs-hero::before{content:'';position:absolute;top:-150px;right:-150px;width:500px;height:500px;background:radial-gradient(circle,rgba(16,185,129,.2),transparent 70%);border-radius:50%;}
+.cs-hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(139,92,246,.12),transparent 70%);border-radius:50%;}
+.hero-content{padding:4rem 0 0;position:relative;z-index:2;}
+.breadcrumb{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:1.5rem;flex-wrap:wrap;}
+.breadcrumb a{color:rgba(255,255,255,.6);}.breadcrumb a:hover{color:#6ee7b7;}.breadcrumb span{color:rgba(255,255,255,.3);}
+.cs-label{display:inline-block;background:rgba(16,185,129,.2);border:1px solid rgba(16,185,129,.4);color:#6ee7b7;font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:.35rem 1rem;border-radius:50px;margin-bottom:1rem;}
+.hero-content h1{font-size:clamp(2.2rem,5vw,3.5rem);margin-bottom:1rem;color:#fff;}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,.7);max-width:600px;margin-bottom:2rem;}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem;}
+.hero-img-wrap{position:relative;z-index:2;margin-top:2rem;}
+.hero-img-wrap img{width:100%;height:420px;object-fit:cover;border-radius:20px 20px 0 0;box-shadow:0 -20px 60px rgba(16,185,129,.2);}
+.meta-strip{background:#fff;border-bottom:1px solid rgba(0,0,0,.06);}
+.meta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+.meta-item{padding:1.5rem 2rem;border-right:1px solid rgba(0,0,0,.06);}
+.meta-item:last-child{border-right:none;}
+.meta-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3);margin-bottom:.4rem;}
+.meta-value{font-size:.95rem;font-weight:600;color:var(--text);}
+@media(max-width:768px){.meta-grid{grid-template-columns:1fr 1fr;}.meta-item{border-right:none;border-bottom:1px solid rgba(0,0,0,.06);}}
+.section{padding:4rem 0;}.section-alt{background:#fff;}
+.eyebrow{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--primary);margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem;}
+.eyebrow::before{content:'';width:16px;height:2px;background:var(--grad);border-radius:2px;}
+.section h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:1.25rem;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+@media(max-width:768px){.two-col{grid-template-columns:1fr;gap:2rem;}}
+.sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;}
+@media(max-width:500px){.sol-grid{grid-template-columns:1fr;}}
+.sol-card{background:var(--bg);border:1px solid rgba(139,92,246,.12);border-radius:14px;padding:1.25rem;}
+.sol-card h4{font-size:.95rem;margin-bottom:.4rem;color:var(--text);}
+.sol-card p{font-size:.85rem;color:var(--text3);margin:0;}
+.sol-icon{width:36px;height:36px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center;margin-bottom:.75rem;}
+.sol-icon svg{color:#fff;width:18px;height:18px;}
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem;}
+@media(max-width:768px){.results-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.results-grid{grid-template-columns:1fr;}}
+.result-card{background:#fff;border-radius:16px;padding:1.75rem;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid rgba(139,92,246,.08);}
+.result-num{font-family:var(--font-heading);font-size:2.5rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:.5rem;}
+.result-label{font-size:.85rem;color:var(--text3);font-weight:500;}
+.tech-pills{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem;}
+.tech-pill{background:#fff;border:1.5px solid rgba(139,92,246,.2);color:var(--primary);font-size:.8rem;font-weight:600;padding:.4rem 1rem;border-radius:50px;}
+.cs-cta{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;padding:4rem 0;text-align:center;}
+.cs-cta h2{color:#fff;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:1rem;}
+.cs-cta p{color:rgba(255,255,255,.8);max-width:500px;margin:0 auto 2rem;}
+.btn-white{background:#fff;color:var(--primary);font-weight:700;display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;border-radius:50px;font-family:var(--font-heading);transition:all .3s;}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2);}
+.footer{background:var(--bg-dark);color:rgba(255,255,255,.6);text-align:center;padding:1.5rem;font-size:.85rem;}
+.footer a{color:var(--primary);}
+.wa-float{position:fixed;bottom:2rem;left:2rem;width:54px;height:54px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(37,211,102,.4);z-index:999;transition:transform .3s;}
+.wa-float:hover{transform:scale(1.1);}
+.back-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;background:var(--grad);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(139,92,246,.4);cursor:pointer;border:none;opacity:0;visibility:hidden;transform:translateY(10px);transition:all .3s;z-index:999;}
+.back-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+.back-top:hover{transform:translateY(-3px);}
+.cs-nav{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;padding:3rem 0;}
+.cs-nav a{background:#fff;border:1px solid rgba(139,92,246,.15);border-radius:16px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1rem;transition:all .3s;}
+.cs-nav a:hover{border-color:var(--primary);transform:translateY(-3px);box-shadow:0 8px 24px rgba(139,92,246,.12);}
+.nav-dir{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text3);}
+.nav-title{font-weight:700;color:var(--text);font-size:.95rem;}
+.nav-next{justify-content:flex-end;text-align:right;flex-direction:row-reverse;}
+@media(max-width:600px){.cs-nav{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">
+      <img src="images/welkin_getter_logo.jpeg" alt="WelkinGetter">
+      <span>WelkinGetter</span>
+    </a>
+    <div class="nav-right">
+      <a href="index.html#portfolio">← All Projects</a>
+      <a href="index.html#contact" class="btn btn-primary" style="padding:.55rem 1.25rem;">Start a Project</a>
+    </div>
+  </div>
+</nav>
+
+<section class="cs-hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><span>/</span>
+        <a href="index.html#portfolio">Case Studies</a><span>/</span>
+        <span>Pearl Property Solutions</span>
+      </div>
+      <div class="cs-label">Web Development · Real Estate</div>
+      <h1>Pearl Property<br><span class="text-gradient">Solutions</span></h1>
+      <p class="hero-sub">A comprehensive property listings portal with advanced search filters, agent dashboards, automated lead capture, and a frictionless buyer experience.</p>
+      <div class="hero-ctas">
+        <a href="index.html#contact" class="btn btn-primary"><i data-lucide="zap" style="width:16px;"></i>Start Your Project</a>
+        <a href="index.html#portfolio" class="btn btn-outline">View All Work</a>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <img src="https://welkingetter.com/wp-content/uploads/2024/12/Pearl-Property-Solutions.jpg" alt="Pearl Property Solutions Portal">
+    </div>
+  </div>
+</section>
+
+<div class="meta-strip">
+  <div class="container">
+    <div class="meta-grid">
+      <div class="meta-item"><div class="meta-label">Industry</div><div class="meta-value">Real Estate & Property</div></div>
+      <div class="meta-item"><div class="meta-label">Service</div><div class="meta-value">Web Development + CRM</div></div>
+      <div class="meta-item"><div class="meta-label">Duration</div><div class="meta-value">12 Weeks</div></div>
+      <div class="meta-item"><div class="meta-label">Year</div><div class="meta-value">2024</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <div class="eyebrow">Project Overview</div>
+        <h2>A Listings Portal Built for <span class="text-gradient">Conversions</span></h2>
+        <p>Pearl Property Solutions operates a growing portfolio of residential and commercial listings across central India. They needed a digital platform that could match the trust and professionalism expected by today's property buyers — while generating qualified leads automatically.</p>
+        <p>WelkinGetter designed and built a full-featured property portal: advanced multi-filter search, individual agent dashboards, automated email lead routing, and WhatsApp enquiry integration — all in 12 weeks.</p>
+        <p>The result is a market-ready platform that converts browsers into buyers and gives agents the tools they need to close deals faster.</p>
+      </div>
+      <div>
+        <div class="eyebrow">Tech Stack</div>
+        <h2>Technologies Used</h2>
+        <div class="tech-pills">
+          <span class="tech-pill">WordPress</span>
+          <span class="tech-pill">Advanced Custom Fields</span>
+          <span class="tech-pill">WP All Import</span>
+          <span class="tech-pill">Elementor Pro</span>
+          <span class="tech-pill">Google Maps API</span>
+          <span class="tech-pill">WooCommerce (Premium Listings)</span>
+          <span class="tech-pill">SMTP Email Routing</span>
+          <span class="tech-pill">WhatsApp API</span>
+        </div>
+        <div style="margin-top:2rem;background:linear-gradient(135deg,rgba(16,185,129,.06),rgba(139,92,246,.04));border:1px solid rgba(16,185,129,.15);border-radius:16px;padding:1.5rem;">
+          <div style="font-weight:700;margin-bottom:.5rem;">Client</div>
+          <div style="color:var(--text2);font-size:.95rem;">Pearl Property Solutions — a mid-size real estate agency specialising in residential and commercial properties across Madhya Pradesh and Rajasthan.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <div class="eyebrow">The Challenge</div>
+        <h2>What We Were <span class="text-gradient">Solving</span></h2>
+        <p>Pearl Property Solutions was managing property listings through spreadsheets and WhatsApp groups. Their key pain points:</p>
+        <div style="display:flex;flex-direction:column;gap:.9rem;margin-top:1rem;">
+          <div style="display:flex;align-items:flex-start;gap:.75rem;"><i data-lucide="alert-triangle" style="width:18px;min-width:18px;color:#f59e0b;margin-top:3px;"></i><span style="font-size:.95rem;color:var(--text2);">No centralised listing database — agents duplicated work daily</span></div>
+          <div style="display:flex;align-items:flex-start;gap:.75rem;"><i data-lucide="alert-triangle" style="width:18px;min-width:18px;color:#f59e0b;margin-top:3px;"></i><span style="font-size:.95rem;color:var(--text2);">Buyers couldn't filter by location, price, type — high drop-off rate</span></div>
+          <div style="display:flex;align-items:flex-start;gap:.75rem;"><i data-lucide="alert-triangle" style="width:18px;min-width:18px;color:#f59e0b;margin-top:3px;"></i><span style="font-size:.95rem;color:var(--text2);">No lead capture form — enquiries were missed regularly</span></div>
+          <div style="display:flex;align-items:flex-start;gap:.75rem;"><i data-lucide="alert-triangle" style="width:18px;min-width:18px;color:#f59e0b;margin-top:3px;"></i><span style="font-size:.95rem;color:var(--text2);">Agents lacked individual dashboards to manage their listings</span></div>
+        </div>
+      </div>
+      <div style="background:var(--bg);border-radius:20px;padding:2rem;border:1px solid rgba(0,0,0,.06);">
+        <div class="eyebrow">Key Goals</div>
+        <h3 style="margin-bottom:1.25rem;">What Success Looked Like</h3>
+        <div style="display:flex;flex-direction:column;gap:.9rem;">
+          <div style="display:flex;align-items:center;gap:.75rem;"><i data-lucide="check-circle" style="width:20px;color:#10b981;min-width:20px;"></i><span style="font-size:.95rem;color:var(--text2);">Property search with 8+ filter parameters</span></div>
+          <div style="display:flex;align-items:center;gap:.75rem;"><i data-lucide="check-circle" style="width:20px;color:#10b981;min-width:20px;"></i><span style="font-size:.95rem;color:var(--text2);">Per-agent login dashboards</span></div>
+          <div style="display:flex;align-items:center;gap:.75rem;"><i data-lucide="check-circle" style="width:20px;color:#10b981;min-width:20px;"></i><span style="font-size:.95rem;color:var(--text2);">Automated lead routing to agent email + WhatsApp</span></div>
+          <div style="display:flex;align-items:center;gap:.75rem;"><i data-lucide="check-circle" style="width:20px;color:#10b981;min-width:20px;"></i><span style="font-size:.95rem;color:var(--text2);">Google Maps integration on listing pages</span></div>
+          <div style="display:flex;align-items:center;gap:.75rem;"><i data-lucide="check-circle" style="width:20px;color:#10b981;min-width:20px;"></i><span style="font-size:.95rem;color:var(--text2);">Mobile-optimised for field agents</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">Our Solution</div>
+    <h2 style="max-width:600px;margin-bottom:1rem;">How WelkinGetter <span class="text-gradient">Engineered It</span></h2>
+    <p style="color:var(--text2);max-width:650px;margin-bottom:2rem;">We built the portal on WordPress with Advanced Custom Fields for dynamic listing management, Google Maps API for geo-search, and a multi-role agent dashboard system with automated lead workflows.</p>
+    <div class="sol-grid">
+      <div class="sol-card"><div class="sol-icon"><i data-lucide="filter"></i></div><h4>Advanced Search Engine</h4><p>8+ filter parameters: price range, location, BHK, property type, furnishing, and area size.</p></div>
+      <div class="sol-card"><div class="sol-icon"><i data-lucide="user"></i></div><h4>Agent Dashboards</h4><p>Individual login portals for each agent to manage their listings, leads, and performance stats.</p></div>
+      <div class="sol-card"><div class="sol-icon"><i data-lucide="map-pin"></i></div><h4>Google Maps Integration</h4><p>Every listing page includes an embedded map with nearby amenities tagged for buyer convenience.</p></div>
+      <div class="sol-card"><div class="sol-icon"><i data-lucide="bell"></i></div><h4>Automated Lead Routing</h4><p>Enquiry forms auto-route leads to the relevant agent via email and WhatsApp — zero delay.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="eyebrow">Results</div>
+    <h2><span class="text-gradient">Measurable Impact</span> Delivered</h2>
+    <div class="results-grid">
+      <div class="result-card"><div class="result-num">4×</div><div class="result-label">More Qualified Leads / Month</div></div>
+      <div class="result-card"><div class="result-num">65%</div><div class="result-label">Reduction in Agent Admin Time</div></div>
+      <div class="result-card"><div class="result-num">200+</div><div class="result-label">Listings Live at Launch</div></div>
+      <div class="result-card"><div class="result-num">8</div><div class="result-label">Agent Dashboards Deployed</div></div>
+      <div class="result-card"><div class="result-num">40%</div><div class="result-label">Lower Bounce Rate vs Old Site</div></div>
+      <div class="result-card"><div class="result-num">12 wk</div><div class="result-label">Full Delivery Timeline</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section">
+  <div class="container">
+    <div class="cs-nav">
+      <a href="cs-antra-entertainment.html">
+        <i data-lucide="arrow-left" style="width:20px;color:var(--primary);min-width:20px;"></i>
+        <div><div class="nav-dir">Previous Project</div><div class="nav-title">Antra Entertainment</div></div>
+      </a>
+      <a href="cs-limousine-london.html" class="nav-next">
+        <div><div class="nav-dir">Next Project</div><div class="nav-title">Limousine London</div></div>
+        <i data-lucide="arrow-right" style="width:20px;color:var(--primary);min-width:20px;"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<section class="cs-cta">
+  <div class="container">
+    <h2>Ready to Build Something Like This?</h2>
+    <p>Let's design your next conversion-ready digital platform — beautiful, fast, and built to grow.</p>
+    <a href="index.html#contact" class="btn-white">Get a Free Consultation</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container"><p>© 2026 WelkinGetter Global IT Solutions. <a href="index.html">Back to Home</a></p></div>
+</footer>
+
+<a href="https://wa.me/919770329202" class="wa-float" aria-label="WhatsApp">
+  <i data-lucide="message-circle" style="width:26px;height:26px;"></i>
+</a>
+<button class="back-top" id="backTop" aria-label="Back to top">
+  <i data-lucide="arrow-up" style="width:20px;"></i>
+</button>
+<script>
+  document.addEventListener('DOMContentLoaded',()=>{
+    lucide.createIcons();
+    const bt=document.getElementById('backTop');
+    window.addEventListener('scroll',()=>{bt.classList.toggle('show',window.scrollY>400);});
+    bt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  });
+</script>
+</body>
+</html>

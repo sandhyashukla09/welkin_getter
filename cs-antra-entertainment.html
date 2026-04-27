@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antra Entertainment — Case Study | WelkinGetter</title>
+<meta name="description" content="How WelkinGetter built a full-stack entertainment platform with dynamic content management and streaming-optimised delivery for Antra Entertainment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@0.395.0" defer></script>
+<style>
+:root{--primary:#8B5CF6;--secondary:#EC4899;--bg:#F8F9FA;--bg-dark:#0F172A;--text:#0F172A;--text2:#334155;--text3:#64748B;--font-heading:'Poppins',sans-serif;--font-body:'Inter',sans-serif;--grad:linear-gradient(135deg,var(--primary),var(--secondary));}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);color:var(--text);background:var(--bg);line-height:1.7;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+h1,h2,h3,h4{font-family:var(--font-heading);font-weight:700;line-height:1.2;}
+.container{max-width:1100px;margin:0 auto;padding:0 2rem;}
+.text-gradient{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;border-radius:50px;font-weight:600;font-family:var(--font-heading);cursor:pointer;border:none;transition:all .3s ease;font-size:.9rem;}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 4px 20px rgba(139,92,246,.35);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(139,92,246,.45);}
+.btn-outline{background:#fff;color:var(--text2);border:1.5px solid rgba(139,92,246,.25);}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary);}
+
+/* NAV */
+.navbar{position:fixed;top:0;width:100%;height:72px;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,.06);display:flex;align-items:center;}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;width:100%;}
+.logo{display:flex;align-items:center;gap:.75rem;font-family:var(--font-heading);font-weight:800;font-size:1.3rem;color:var(--text);}
+.logo img{height:34px;border-radius:6px;}
+.nav-right{display:flex;align-items:center;gap:1.5rem;}
+.nav-right a{font-weight:500;color:var(--text3);font-size:.9rem;}
+.nav-right a:hover{color:var(--primary);}
+
+/* HERO */
+.cs-hero{padding-top:72px;background:linear-gradient(160deg,#0F172A 0%,#1e1040 50%,#0F172A 100%);color:#fff;position:relative;overflow:hidden;}
+.cs-hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.2),transparent 70%);border-radius:50%;}
+.cs-hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(236,72,153,.15),transparent 70%);border-radius:50%;}
+.hero-content{padding:4rem 0 0;position:relative;z-index:2;}
+.breadcrumb{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:1.5rem;flex-wrap:wrap;}
+.breadcrumb a{color:rgba(255,255,255,.6);}
+.breadcrumb a:hover{color:var(--secondary);}
+.breadcrumb span{color:rgba(255,255,255,.3);}
+.cs-label{display:inline-block;background:rgba(139,92,246,.2);border:1px solid rgba(139,92,246,.4);color:#c4b5fd;font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:.35rem 1rem;border-radius:50px;margin-bottom:1rem;}
+.hero-content h1{font-size:clamp(2.2rem,5vw,3.5rem);margin-bottom:1rem;color:#fff;}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,.7);max-width:600px;margin-bottom:2rem;}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem;}
+.hero-img-wrap{position:relative;z-index:2;margin-top:2rem;}
+.hero-img-wrap img{width:100%;height:420px;object-fit:cover;border-radius:20px 20px 0 0;box-shadow:0 -20px 60px rgba(139,92,246,.3);}
+
+/* META STRIP */
+.meta-strip{background:#fff;border-bottom:1px solid rgba(0,0,0,.06);}
+.meta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+.meta-item{padding:1.5rem 2rem;border-right:1px solid rgba(0,0,0,.06);}
+.meta-item:last-child{border-right:none;}
+.meta-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3);margin-bottom:.4rem;}
+.meta-value{font-size:.95rem;font-weight:600;color:var(--text);}
+@media(max-width:768px){.meta-grid{grid-template-columns:1fr 1fr;}.meta-item{border-right:none;border-bottom:1px solid rgba(0,0,0,.06);}}
+
+/* SECTIONS */
+.section{padding:4rem 0;}
+.section-alt{background:#fff;}
+.eyebrow{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--primary);margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem;}
+.eyebrow::before{content:'';width:16px;height:2px;background:var(--grad);border-radius:2px;}
+.section h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:1.25rem;}
+.section p{color:var(--text2);font-size:1rem;margin-bottom:1rem;}
+
+/* CHALLENGE / SOLUTION 2-COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+@media(max-width:768px){.two-col{grid-template-columns:1fr;gap:2rem;}}
+
+/* CHALLENGE LIST */
+.challenge-list{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin-top:1rem;}
+.challenge-list li{display:flex;align-items:flex-start;gap:.75rem;font-size:.95rem;color:var(--text2);}
+.challenge-list li::before{content:'';width:20px;height:20px;min-width:20px;border-radius:50%;background:linear-gradient(135deg,#fde68a,#f59e0b);display:flex;align-items:center;justify-content:center;margin-top:2px;}
+
+/* SOLUTION CARDS */
+.sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;}
+@media(max-width:500px){.sol-grid{grid-template-columns:1fr;}}
+.sol-card{background:var(--bg);border:1px solid rgba(139,92,246,.12);border-radius:14px;padding:1.25rem;}
+.sol-card h4{font-size:.95rem;margin-bottom:.4rem;color:var(--text);}
+.sol-card p{font-size:.85rem;color:var(--text3);margin:0;}
+.sol-icon{width:36px;height:36px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center;margin-bottom:.75rem;}
+.sol-icon svg{color:#fff;width:18px;height:18px;}
+
+/* RESULTS */
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem;}
+@media(max-width:768px){.results-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.results-grid{grid-template-columns:1fr;}}
+.result-card{background:#fff;border-radius:16px;padding:1.75rem;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid rgba(139,92,246,.08);}
+.result-num{font-family:var(--font-heading);font-size:2.5rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:.5rem;}
+.result-label{font-size:.85rem;color:var(--text3);font-weight:500;}
+
+/* TECH STACK */
+.tech-pills{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem;}
+.tech-pill{background:#fff;border:1.5px solid rgba(139,92,246,.2);color:var(--primary);font-size:.8rem;font-weight:600;padding:.4rem 1rem;border-radius:50px;}
+
+/* CTA */
+.cs-cta{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;padding:4rem 0;text-align:center;}
+.cs-cta h2{color:#fff;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:1rem;}
+.cs-cta p{color:rgba(255,255,255,.8);max-width:500px;margin:0 auto 2rem;}
+.cs-cta .btn-white{background:#fff;color:var(--primary);font-weight:700;}
+.cs-cta .btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2);}
+
+/* FOOTER */
+.footer{background:var(--bg-dark);color:rgba(255,255,255,.6);text-align:center;padding:1.5rem;font-size:.85rem;}
+.footer a{color:var(--primary);}
+
+/* WHATSAPP */
+.wa-float{position:fixed;bottom:2rem;left:2rem;width:54px;height:54px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(37,211,102,.4);z-index:999;transition:transform .3s;}
+.wa-float:hover{transform:scale(1.1);}
+
+/* BACK TO TOP */
+.back-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;background:var(--grad);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(139,92,246,.4);cursor:pointer;border:none;opacity:0;visibility:hidden;transform:translateY(10px);transition:all .3s;z-index:999;}
+.back-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+.back-top:hover{transform:translateY(-3px);}
+
+/* PREV/NEXT NAV */
+.cs-nav{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;padding:3rem 0;}
+.cs-nav a{background:#fff;border:1px solid rgba(139,92,246,.15);border-radius:16px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1rem;transition:all .3s;}
+.cs-nav a:hover{border-color:var(--primary);transform:translateY(-3px);box-shadow:0 8px 24px rgba(139,92,246,.12);}
+.cs-nav .nav-dir{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text3);}
+.cs-nav .nav-title{font-weight:700;color:var(--text);font-size:.95rem;}
+.cs-nav .nav-next{justify-content:flex-end;text-align:right;flex-direction:row-reverse;}
+@media(max-width:600px){.cs-nav{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">
+      <img src="images/welkin_getter_logo.jpeg" alt="WelkinGetter">
+      <span>WelkinGetter</span>
+    </a>
+    <div class="nav-right">
+      <a href="index.html#portfolio">← All Projects</a>
+      <a href="index.html#contact" class="btn btn-primary" style="padding:.55rem 1.25rem;">Start a Project</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="cs-hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><span>/</span>
+        <a href="index.html#portfolio">Case Studies</a><span>/</span>
+        <span>Antra Entertainment</span>
+      </div>
+      <div class="cs-label">Web Development · Enterprise</div>
+      <h1>Antra<br><span class="text-gradient">Entertainment</span></h1>
+      <p class="hero-sub">A full-stack entertainment platform with dynamic content management, streaming-optimised delivery, and a modern user experience — built from the ground up.</p>
+      <div class="hero-ctas">
+        <a href="index.html#contact" class="btn btn-primary"><i data-lucide="zap" style="width:16px;"></i>Start Your Project</a>
+        <a href="index.html#portfolio" class="btn btn-outline" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2);">View All Work</a>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <img src="https://welkingetter.com/wp-content/uploads/2024/12/Antra-Home.jpg" alt="Antra Entertainment Platform">
+    </div>
+  </div>
+</section>
+
+<!-- META STRIP -->
+<div class="meta-strip">
+  <div class="container">
+    <div class="meta-grid">
+      <div class="meta-item"><div class="meta-label">Industry</div><div class="meta-value">Entertainment & Media</div></div>
+      <div class="meta-item"><div class="meta-label">Service</div><div class="meta-value">Full-Stack Web Development</div></div>
+      <div class="meta-item"><div class="meta-label">Duration</div><div class="meta-value">10 Weeks</div></div>
+      <div class="meta-item"><div class="meta-label">Year</div><div class="meta-value">2024</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<section class="section">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <div class="eyebrow">Project Overview</div>
+        <h2>A Platform Built for <span class="text-gradient">Scale & Speed</span></h2>
+        <p>Antra Entertainment needed a robust digital home for their growing catalogue of entertainment content. The existing setup was fragmented — content scattered across multiple platforms, no unified admin panel, and a user experience that didn't match their premium brand positioning.</p>
+        <p>WelkinGetter was brought in to architect and deliver a unified full-stack platform: a blazing-fast public-facing site with a powerful CMS behind it, optimised for streaming delivery and searchability.</p>
+        <p>The result is a scalable, brand-aligned entertainment portal that gives Antra complete control over their content — and their audience a seamless experience.</p>
+      </div>
+      <div>
+        <div class="eyebrow">Tech Stack</div>
+        <h2>Technologies Used</h2>
+        <div class="tech-pills">
+          <span class="tech-pill">WordPress (Headless)</span>
+          <span class="tech-pill">REST API</span>
+          <span class="tech-pill">Next.js</span>
+          <span class="tech-pill">Vercel</span>
+          <span class="tech-pill">AWS S3</span>
+          <span class="tech-pill">CloudFront CDN</span>
+          <span class="tech-pill">MySQL</span>
+          <span class="tech-pill">Custom CMS</span>
+        </div>
+        <div style="margin-top:2rem;background:linear-gradient(135deg,rgba(139,92,246,.06),rgba(236,72,153,.04));border:1px solid rgba(139,92,246,.15);border-radius:16px;padding:1.5rem;">
+          <div style="font-weight:700;margin-bottom:.5rem;">Client</div>
+          <div style="color:var(--text2);font-size:.95rem;">Antra Entertainment — an independent media and entertainment brand serving audiences across India with original content, events, and artist management.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHALLENGE -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <div class="eyebrow">The Challenge</div>
+        <h2>What We Were <span class="text-gradient">Solving</span></h2>
+        <p>Antra came to us with a clear pain: their digital presence was not matching the quality of their content. Key challenges included:</p>
+        <ul class="challenge-list">
+          <li><i data-lucide="alert-triangle" style="width:18px;min-width:18px;color:#f59e0b;margin-top:2px;"></i>Slow page loads due to unoptimised media assets and no CDN</li>
+          <li><i data-lucide="alert-triangle" style="width:18px;min-width:18px;color:#f59e0b;margin-top:2px;"></i>No centralised content management — editors used 3 different tools</li>
+          <li><i data-lucide="alert-triangle" style="width:18px;min-width:18px;color:#f59e0b;margin-top:2px;"></i>Poor mobile UX leading to high bounce rates on smartphone visitors</li>
+          <li><i data-lucide="alert-triangle" style="width:18px;min-width:18px;color:#f59e0b;margin-top:2px;"></i>No SEO structure — content was not discoverable on search engines</li>
+          <li><i data-lucide="alert-triangle" style="width:18px;min-width:18px;color:#f59e0b;margin-top:2px;"></i>No analytics integration — zero visibility into content performance</li>
+        </ul>
+      </div>
+      <div style="background:var(--bg);border-radius:20px;padding:2rem;border:1px solid rgba(0,0,0,.06);">
+        <div class="eyebrow">Key Goals</div>
+        <h3 style="margin-bottom:1.25rem;">What Success Looked Like</h3>
+        <div style="display:flex;flex-direction:column;gap:.9rem;">
+          <div style="display:flex;align-items:center;gap:.75rem;"><i data-lucide="check-circle" style="width:20px;color:#10b981;min-width:20px;"></i><span style="font-size:.95rem;color:var(--text2);">Sub-2 second page load on mobile</span></div>
+          <div style="display:flex;align-items:center;gap:.75rem;"><i data-lucide="check-circle" style="width:20px;color:#10b981;min-width:20px;"></i><span style="font-size:.95rem;color:var(--text2);">Single admin panel for all content types</span></div>
+          <div style="display:flex;align-items:center;gap:.75rem;"><i data-lucide="check-circle" style="width:20px;color:#10b981;min-width:20px;"></i><span style="font-size:.95rem;color:var(--text2);">SEO-optimised content architecture</span></div>
+          <div style="display:flex;align-items:center;gap:.75rem;"><i data-lucide="check-circle" style="width:20px;color:#10b981;min-width:20px;"></i><span style="font-size:.95rem;color:var(--text2);">Streaming-ready media delivery via CDN</span></div>
+          <div style="display:flex;align-items:center;gap:.75rem;"><i data-lucide="check-circle" style="width:20px;color:#10b981;min-width:20px;"></i><span style="font-size:.95rem;color:var(--text2);">Full Google Analytics 4 integration</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">Our Solution</div>
+    <h2 style="max-width:600px;margin-bottom:1rem;">How WelkinGetter <span class="text-gradient">Engineered It</span></h2>
+    <p style="color:var(--text2);max-width:650px;margin-bottom:2rem;">We adopted a headless CMS architecture — WordPress as the content backend, Next.js as the blazing-fast frontend, deployed on Vercel's edge network with AWS CloudFront for media delivery.</p>
+    <div class="sol-grid">
+      <div class="sol-card"><div class="sol-icon"><i data-lucide="layout-dashboard"></i></div><h4>Custom CMS Dashboard</h4><p>Unified admin panel for articles, videos, events, and artist profiles with role-based access.</p></div>
+      <div class="sol-card"><div class="sol-icon"><i data-lucide="zap"></i></div><h4>Edge-Optimised Delivery</h4><p>AWS CloudFront CDN with smart caching reduces media load times by 73% globally.</p></div>
+      <div class="sol-card"><div class="sol-icon"><i data-lucide="smartphone"></i></div><h4>Mobile-First Design</h4><p>Fully responsive UI built with mobile-first breakpoints and touch-optimised navigation.</p></div>
+      <div class="sol-card"><div class="sol-icon"><i data-lucide="search"></i></div><h4>SEO Architecture</h4><p>Structured data, Open Graph tags, sitemap generation, and server-side rendering for discoverability.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="eyebrow">Results</div>
+    <h2><span class="text-gradient">Measurable Impact</span> Delivered</h2>
+    <div class="results-grid">
+      <div class="result-card"><div class="result-num">73%</div><div class="result-label">Faster Page Load Speed</div></div>
+      <div class="result-card"><div class="result-num">3×</div><div class="result-label">Increase in Organic Traffic</div></div>
+      <div class="result-card"><div class="result-num">58%</div><div class="result-label">Lower Bounce Rate on Mobile</div></div>
+      <div class="result-card"><div class="result-num">100%</div><div class="result-label">Content Managed in One Place</div></div>
+      <div class="result-card"><div class="result-num">99.9%</div><div class="result-label">Platform Uptime (Post Launch)</div></div>
+      <div class="result-card"><div class="result-num">10 wk</div><div class="result-label">Full Delivery Timeline</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PREV / NEXT -->
+<div class="section">
+  <div class="container">
+    <div class="cs-nav">
+      <a href="index.html#portfolio" class="cs-nav-prev">
+        <i data-lucide="arrow-left" style="width:20px;color:var(--primary);min-width:20px;"></i>
+        <div><div class="nav-dir">Back to</div><div class="nav-title">All Case Studies</div></div>
+      </a>
+      <a href="cs-pearl-property.html" class="cs-nav nav-next">
+        <div><div class="nav-dir">Next Project</div><div class="nav-title">Pearl Property Solutions</div></div>
+        <i data-lucide="arrow-right" style="width:20px;color:var(--primary);min-width:20px;"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cs-cta">
+  <div class="container">
+    <h2>Ready to Build Something Like This?</h2>
+    <p>Let's architect your next digital platform — fast, scalable, and built to impress.</p>
+    <a href="index.html#contact" class="btn btn-white">Get a Free Consultation</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 WelkinGetter Global IT Solutions. <a href="index.html">Back to Home</a></p>
+  </div>
+</footer>
+
+<a href="https://wa.me/919770329202" class="wa-float" aria-label="WhatsApp">
+  <i data-lucide="message-circle" style="width:26px;height:26px;"></i>
+</a>
+<button class="back-top" id="backTop" aria-label="Back to top">
+  <i data-lucide="arrow-up" style="width:20px;"></i>
+</button>
+
+<script>
+  document.addEventListener('DOMContentLoaded',()=>{
+    lucide.createIcons();
+    const bt=document.getElementById('backTop');
+    window.addEventListener('scroll',()=>{
+      bt.classList.toggle('show',window.scrollY>400);
+    });
+    bt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  });
+</script>
+</body>
+</html>
